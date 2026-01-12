@@ -16,13 +16,13 @@ export function Hero() {
         { value: '€10M+', label: 'Revenue Generated' },
         { value: '10+', label: 'Languages Built' },
         { value: 'Free', label: 'Public Beta' },
-        { value: '24h', label: 'Support Response' },
+        { value: '<48h', label: 'Support Response' },
       ]
     : [
         { value: '€10M+', label: 'Omzet Gegenereerd' },
         { value: '10+', label: 'Talen Gebouwd' },
         { value: 'Gratis', label: 'Publieke Beta' },
-        { value: '24u', label: 'Support Reactie' },
+        { value: '<48u', label: 'Support Reactie' },
       ];
 
   return (
