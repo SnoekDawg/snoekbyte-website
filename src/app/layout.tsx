@@ -1,17 +1,12 @@
 import type { Metadata } from 'next';
-import localFont from 'next/font/local';
+import { Inter } from 'next/font/google';
 import './globals.css';
 
-const geistSans = localFont({
-  src: './fonts/GeistVF.woff',
-  variable: '--font-geist-sans',
-  weight: '100 900',
-});
-
-const geistMono = localFont({
-  src: './fonts/GeistMonoVF.woff',
-  variable: '--font-geist-mono',
-  weight: '100 900',
+// Inter - optimized for screen readability, professional, modern
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -19,8 +14,8 @@ export const metadata: Metadata = {
     template: '%s | SnoekByte',
     default: 'SnoekByte - Powerful Apps for E-commerce Growth',
   },
-  description: 'We build smart Shopify applications that help store owners increase revenue, streamline operations, and never miss a sale.',
-  keywords: ['Shopify', 'e-commerce', 'apps', 'BackorderPRO', 'pre-order', 'backorder', 'inventory management'],
+  description: 'We build smart Shopify applications that help store owners automate inventory management and never miss a sale. Over €10M revenue generated for businesses.',
+  keywords: ['Shopify', 'e-commerce', 'apps', 'BackorderPRO', 'inventory management', 'backorder', 'dropshipping', 'automation'],
   authors: [{ name: 'SnoekByte' }],
   creator: 'SnoekByte',
   metadataBase: new URL('https://snoekbyte.com'),
@@ -30,7 +25,7 @@ export const metadata: Metadata = {
     url: 'https://snoekbyte.com',
     siteName: 'SnoekByte',
     title: 'SnoekByte - Powerful Apps for E-commerce Growth',
-    description: 'We build smart Shopify applications that help store owners increase revenue, streamline operations, and never miss a sale.',
+    description: 'Smart Shopify applications for inventory automation. Over €10M revenue generated for businesses.',
     images: [
       {
         url: '/images/og-image.png',
@@ -43,7 +38,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'SnoekByte - Powerful Apps for E-commerce Growth',
-    description: 'We build smart Shopify applications that help store owners increase revenue.',
+    description: 'Smart Shopify applications for inventory automation.',
     images: ['/images/og-image.png'],
     creator: '@snoekbyte',
   },
@@ -67,9 +62,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen`}
-      >
+      <body className={`${inter.variable} font-sans antialiased min-h-screen`}>
         {children}
       </body>
     </html>

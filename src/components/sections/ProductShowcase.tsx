@@ -24,7 +24,9 @@ export function ProductShowcase() {
           {/* Content */}
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pike/10 border border-pike/30 mb-6">
-              <span className="text-pike text-sm font-medium">Featured Product</span>
+              <span className="text-pike text-sm font-medium">
+                {locale === 'en' ? 'Free During Beta' : 'Gratis Tijdens Beta'}
+              </span>
             </div>
             
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
@@ -63,7 +65,7 @@ export function ProductShowcase() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button variant="primary" href={`/${locale}/products`}>
-                Learn More
+                {locale === 'en' ? 'Learn More' : 'Meer Info'}
                 <svg
                   className="ml-2 w-5 h-5"
                   fill="none"
@@ -91,7 +93,7 @@ export function ProductShowcase() {
             </div>
           </div>
 
-          {/* Product visual */}
+          {/* Product visual - Updated to show BackorderPRO workflow */}
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden bg-navy-50/50 border border-circuit/20 p-8">
               {/* Mock dashboard */}
@@ -101,52 +103,81 @@ export function ProductShowcase() {
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-lg bg-pike/20 flex items-center justify-center">
                       <svg className="w-6 h-6 text-pike" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2 1 3 3 3h10c2 0 3-1 3-3V7c0-2-1-3-3-3H7C5 4 4 5 4 7z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6M12 9v6" />
                       </svg>
                     </div>
                     <div>
                       <div className="font-semibold text-white">BackorderPRO</div>
-                      <div className="text-xs text-gray-400">Dashboard</div>
+                      <div className="text-xs text-gray-400">
+                        {locale === 'en' ? 'Feed Sync Dashboard' : 'Feed Sync Dashboard'}
+                      </div>
                     </div>
                   </div>
                   <div className="px-3 py-1 rounded-full bg-pike/20 text-pike text-sm">
-                    Active
+                    {locale === 'en' ? 'Synced' : 'Gesynchroniseerd'}
+                  </div>
+                </div>
+
+                {/* Workflow visualization */}
+                <div className="grid grid-cols-3 gap-2 text-center py-4">
+                  <div className="bg-navy/50 rounded-lg p-3">
+                    <div className="text-xs text-gray-400 mb-1">
+                      {locale === 'en' ? 'Supplier Feed' : 'Leverancier Feed'}
+                    </div>
+                    <div className="text-lg font-bold text-circuit">CSV</div>
+                  </div>
+                  <div className="flex items-center justify-center">
+                    <svg className="w-6 h-6 text-pike" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </div>
+                  <div className="bg-navy/50 rounded-lg p-3">
+                    <div className="text-xs text-gray-400 mb-1">Shopify</div>
+                    <div className="text-lg font-bold text-pike">
+                      {locale === 'en' ? 'Updated' : 'Bijgewerkt'}
+                    </div>
                   </div>
                 </div>
 
                 {/* Stats cards */}
                 <div className="grid grid-cols-3 gap-4">
                   <div className="bg-navy/50 rounded-lg p-4">
-                    <div className="text-2xl font-bold text-circuit">127</div>
-                    <div className="text-xs text-gray-400">Pre-orders</div>
+                    <div className="text-2xl font-bold text-circuit">1,247</div>
+                    <div className="text-xs text-gray-400">
+                      {locale === 'en' ? 'Products Synced' : 'Producten Gesynchroniseerd'}
+                    </div>
                   </div>
                   <div className="bg-navy/50 rounded-lg p-4">
-                    <div className="text-2xl font-bold text-pike">$8.4K</div>
-                    <div className="text-xs text-gray-400">Revenue</div>
+                    <div className="text-2xl font-bold text-pike">89%</div>
+                    <div className="text-xs text-gray-400">
+                      {locale === 'en' ? 'Match Rate' : 'Match Rate'}
+                    </div>
                   </div>
                   <div className="bg-navy/50 rounded-lg p-4">
-                    <div className="text-2xl font-bold text-white">94%</div>
-                    <div className="text-xs text-gray-400">Fulfilled</div>
+                    <div className="text-2xl font-bold text-white">Auto</div>
+                    <div className="text-xs text-gray-400">
+                      {locale === 'en' ? 'Daily Sync' : 'Dagelijkse Sync'}
+                    </div>
                   </div>
                 </div>
 
-                {/* Recent orders */}
+                {/* Recent sync log */}
                 <div className="space-y-2">
-                  <div className="text-sm font-medium text-gray-300">Recent Backorders</div>
+                  <div className="text-sm font-medium text-gray-300">
+                    {locale === 'en' ? 'Recent Rules Applied' : 'Recent Toegepaste Regels'}
+                  </div>
                   {[
-                    { product: 'Premium Headphones', status: 'Pending', amount: '$299' },
-                    { product: 'Wireless Keyboard', status: 'Shipped', amount: '$149' },
-                    { product: 'USB-C Hub Pro', status: 'Processing', amount: '$89' },
-                  ].map((order, i) => (
+                    { rule: locale === 'en' ? 'Stock > 0 → Enable Backorder' : 'Voorraad > 0 → Backorder Aan', count: 847 },
+                    { rule: locale === 'en' ? 'Stock = 0 → Disable Backorder' : 'Voorraad = 0 → Backorder Uit', count: 312 },
+                    { rule: locale === 'en' ? 'ETA < 7 days → Enable' : 'ETA < 7 dagen → Aan', count: 88 },
+                  ].map((item, i) => (
                     <div
                       key={i}
                       className="flex items-center justify-between py-2 px-3 rounded-lg bg-navy/30"
                     >
-                      <div>
-                        <div className="text-sm text-white">{order.product}</div>
-                        <div className="text-xs text-gray-500">{order.status}</div>
-                      </div>
-                      <div className="text-sm font-medium text-circuit">{order.amount}</div>
+                      <div className="text-sm text-white">{item.rule}</div>
+                      <div className="text-sm font-medium text-circuit">{item.count}</div>
                     </div>
                   ))}
                 </div>
@@ -164,7 +195,7 @@ export function ProductShowcase() {
             </div>
             <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-circuit/20 rounded-xl border border-circuit/30 flex items-center justify-center animate-float animation-delay-300">
               <svg className="w-8 h-8 text-circuit" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
               </svg>
             </div>
           </div>

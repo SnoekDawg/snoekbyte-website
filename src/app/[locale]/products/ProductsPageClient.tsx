@@ -12,6 +12,22 @@ export default function ProductsPageClient() {
   const locale = getLocaleFromPath(pathname) as Locale;
   const t = getTranslation(locale);
 
+  const workflowSteps = locale === 'en'
+    ? [
+        { step: '1', title: 'Add Feed', desc: 'Upload URL, FTP, or file' },
+        { step: '2', title: 'Map Columns', desc: 'Link SKU/EAN fields' },
+        { step: '3', title: 'Set Rules', desc: 'Define backorder conditions' },
+        { step: '4', title: 'Schedule', desc: 'Auto-sync daily/weekly' },
+        { step: '5', title: 'Done!', desc: 'Inventory managed automatically' },
+      ]
+    : [
+        { step: '1', title: 'Feed Toevoegen', desc: 'Upload URL, FTP of bestand' },
+        { step: '2', title: 'Kolommen Mappen', desc: 'Koppel SKU/EAN velden' },
+        { step: '3', title: 'Regels Instellen', desc: 'Definieer backorder condities' },
+        { step: '4', title: 'Plannen', desc: 'Auto-sync dagelijks/wekelijks' },
+        { step: '5', title: 'Klaar!', desc: 'Voorraad automatisch beheerd' },
+      ];
+
   return (
     <>
       {/* Hero Section */}
@@ -23,6 +39,12 @@ export default function ProductsPageClient() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-pike/10 border border-pike/30 mb-6">
+              <span className="w-2 h-2 bg-pike rounded-full animate-pulse" />
+              <span className="text-pike text-sm font-medium">
+                {locale === 'en' ? 'Free During Public Beta' : 'Gratis Tijdens Publieke Beta'}
+              </span>
+            </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               {t.products.title}
             </h1>
@@ -33,18 +55,13 @@ export default function ProductsPageClient() {
         </div>
       </section>
 
-      {/* BackorderPRO Section */}
+      {/* BackorderPRO Main Section */}
       <section className="pb-20 lg:pb-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-navy-50/30 border border-circuit/20 rounded-3xl overflow-hidden">
             <div className="grid lg:grid-cols-2">
               {/* Content */}
               <div className="p-8 lg:p-12">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pike/10 border border-pike/30 mb-6">
-                  <span className="w-2 h-2 bg-pike rounded-full animate-pulse" />
-                  <span className="text-pike text-sm font-medium">Flagship Product</span>
-                </div>
-
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                   {t.products.backorderpro.name}
                 </h2>
@@ -84,55 +101,61 @@ export default function ProductsPageClient() {
                     {t.products.backorderpro.cta}
                   </Button>
                   <Button variant="secondary" href={`/${locale}/pricing`}>
-                    View Pricing
+                    {locale === 'en' ? 'View Pricing' : 'Bekijk Prijzen'}
                   </Button>
                 </div>
               </div>
 
-              {/* Visual */}
+              {/* Visual - File format support */}
               <div className="relative bg-navy/50 p-8 lg:p-12 flex items-center justify-center">
-                {/* Mock UI */}
                 <div className="w-full max-w-md space-y-6">
-                  {/* Product card mock */}
-                  <div className="bg-white rounded-xl p-6 shadow-xl">
-                    <div className="flex gap-4">
-                      <div className="w-24 h-24 bg-gray-100 rounded-lg flex items-center justify-center">
-                        <svg className="w-12 h-12 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                        </svg>
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="font-semibold text-gray-900">Premium Headphones</h3>
-                        <p className="text-sm text-gray-500 mt-1">Wireless Noise Cancelling</p>
-                        <p className="text-lg font-bold text-gray-900 mt-2">$299.00</p>
-                      </div>
+                  {/* Supported formats */}
+                  <div className="text-center mb-6">
+                    <div className="text-sm text-gray-400 mb-4">
+                      {locale === 'en' ? 'Supported Formats' : 'Ondersteunde Formaten'}
                     </div>
-                    <div className="mt-4 space-y-2">
-                      <div className="text-sm text-red-500 font-medium">Out of Stock</div>
-                      <button className="w-full py-3 px-4 bg-pike text-white font-semibold rounded-lg hover:bg-pike-700 transition-colors">
-                        Pre-Order Now
-                      </button>
-                      <p className="text-xs text-gray-500 text-center">Expected restock: Feb 15, 2024</p>
+                    <div className="flex justify-center gap-4">
+                      {['CSV', 'XLS', 'XLSX', 'XML'].map((format) => (
+                        <div key={format} className="px-4 py-2 bg-navy-50 rounded-lg border border-circuit/30 text-circuit font-mono text-sm">
+                          {format}
+                        </div>
+                      ))}
                     </div>
                   </div>
 
-                  {/* Notification mock */}
-                  <div className="bg-navy-50 rounded-xl p-4 border border-circuit/30 animate-slide-up">
-                    <div className="flex items-start gap-3">
-                      <div className="w-10 h-10 rounded-full bg-pike/20 flex items-center justify-center flex-shrink-0">
-                        <svg className="w-5 h-5 text-pike" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                      </div>
-                      <div>
-                        <p className="text-sm font-medium text-white">Pre-order Confirmed!</p>
-                        <p className="text-xs text-gray-400 mt-1">Customer will be notified when item ships</p>
-                      </div>
+                  {/* Import sources */}
+                  <div className="bg-navy-50 rounded-xl p-6 border border-circuit/20">
+                    <div className="text-sm font-medium text-white mb-4">
+                      {locale === 'en' ? 'Import Sources' : 'Import Bronnen'}
                     </div>
+                    <div className="space-y-3">
+                      {[
+                        { icon: '🔗', name: locale === 'en' ? 'Direct URL' : 'Directe URL', desc: 'https://supplier.com/feed.csv' },
+                        { icon: '📁', name: 'FTP/SFTP', desc: 'ftp://supplier.com/inventory/' },
+                        { icon: '📤', name: locale === 'en' ? 'File Upload' : 'Bestand Upload', desc: locale === 'en' ? 'Manual upload supported' : 'Handmatige upload ondersteund' },
+                      ].map((source, i) => (
+                        <div key={i} className="flex items-center gap-3 p-3 bg-navy/50 rounded-lg">
+                          <span className="text-xl">{source.icon}</span>
+                          <div>
+                            <div className="text-sm font-medium text-white">{source.name}</div>
+                            <div className="text-xs text-gray-500 font-mono">{source.desc}</div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Sync indicator */}
+                  <div className="flex items-center justify-center gap-3 p-4 bg-pike/10 rounded-xl border border-pike/30">
+                    <svg className="w-5 h-5 text-pike animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                    </svg>
+                    <span className="text-pike font-medium">
+                      {locale === 'en' ? 'Auto-sync every 24h' : 'Auto-sync elke 24u'}
+                    </span>
                   </div>
                 </div>
 
-                {/* Background decoration */}
                 <div className="absolute inset-0 bg-gradient-to-br from-circuit/5 via-transparent to-pike/5 pointer-events-none" />
               </div>
             </div>
@@ -140,13 +163,53 @@ export default function ProductsPageClient() {
         </div>
       </section>
 
-      {/* Key Benefits */}
+      {/* How It Works */}
       <section className="py-20 lg:py-32 bg-navy-50/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="section-title">How BackorderPRO Helps You</h2>
+            <h2 className="section-title">
+              {locale === 'en' ? 'How It Works' : 'Hoe Het Werkt'}
+            </h2>
             <p className="section-subtitle mx-auto">
-              Turn inventory challenges into opportunities for growth
+              {locale === 'en' 
+                ? 'Get started in under 5 minutes with our simple setup flow'
+                : 'Start binnen 5 minuten met onze eenvoudige setup flow'}
+            </p>
+          </div>
+
+          {/* Workflow steps */}
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 md:gap-0">
+            {workflowSteps.map((item, index) => (
+              <React.Fragment key={item.step}>
+                <div className="flex md:flex-col items-center md:items-center gap-4 md:gap-2 flex-1">
+                  <div className="w-12 h-12 rounded-full bg-circuit/20 border-2 border-circuit flex items-center justify-center text-circuit font-bold text-lg">
+                    {item.step}
+                  </div>
+                  <div className="md:text-center">
+                    <div className="font-semibold text-white">{item.title}</div>
+                    <div className="text-sm text-gray-400">{item.desc}</div>
+                  </div>
+                </div>
+                {index < workflowSteps.length - 1 && (
+                  <div className="hidden md:block w-full max-w-[60px] h-0.5 bg-circuit/30" />
+                )}
+              </React.Fragment>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Key Benefits */}
+      <section className="py-20 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="section-title">
+              {locale === 'en' ? 'Why BackorderPRO?' : 'Waarom BackorderPRO?'}
+            </h2>
+            <p className="section-subtitle mx-auto">
+              {locale === 'en' 
+                ? 'Built to solve the real problems dropshippers and retailers face daily'
+                : 'Gebouwd om de echte problemen op te lossen waar dropshippers en retailers dagelijks mee te maken hebben'}
             </p>
           </div>
 
@@ -155,20 +218,24 @@ export default function ProductsPageClient() {
               {
                 icon: (
                   <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 ),
-                title: 'Recover Lost Revenue',
-                description: 'Stop losing sales when products go out of stock. Capture customer intent and convert it into orders.',
+                title: locale === 'en' ? 'Save 5+ Hours/Week' : 'Bespaar 5+ Uur/Week',
+                description: locale === 'en' 
+                  ? 'Stop manually updating inventory from supplier spreadsheets. Let automation handle it.'
+                  : 'Stop met handmatig voorraad bijwerken uit leveranciers spreadsheets. Laat automatisering het doen.',
               },
               {
                 icon: (
                   <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 ),
-                title: 'Automated Updates',
-                description: 'Keep customers informed automatically with email notifications about their pre-order status.',
+                title: locale === 'en' ? 'Prevent Overselling' : 'Voorkom Overselling',
+                description: locale === 'en'
+                  ? 'Never accidentally sell products your supplier doesn\'t have. Smart rules protect your business.'
+                  : 'Verkoop nooit per ongeluk producten die je leverancier niet heeft. Slimme regels beschermen je bedrijf.',
               },
               {
                 icon: (
@@ -176,8 +243,10 @@ export default function ProductsPageClient() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                   </svg>
                 ),
-                title: 'Actionable Insights',
-                description: 'Understand demand patterns with analytics that help you make smarter inventory decisions.',
+                title: locale === 'en' ? 'Track Backorder Revenue' : 'Track Backorder Omzet',
+                description: locale === 'en'
+                  ? 'See exactly how much revenue comes from backorders. Make data-driven inventory decisions.'
+                  : 'Zie precies hoeveel omzet uit backorders komt. Neem data-gedreven voorraad beslissingen.',
               },
             ].map((benefit, index) => (
               <Card key={index}>
@@ -197,14 +266,16 @@ export default function ProductsPageClient() {
       </section>
 
       {/* Coming Soon */}
-      <section className="py-20 lg:py-32">
+      <section className="py-20 lg:py-32 bg-navy-50/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-circuit/10 border border-circuit/30 mb-6">
               <svg className="w-4 h-4 text-circuit" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              <span className="text-circuit text-sm font-medium">Coming Soon</span>
+              <span className="text-circuit text-sm font-medium">
+                {locale === 'en' ? 'Coming Soon' : 'Binnenkort'}
+              </span>
             </div>
 
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -215,7 +286,7 @@ export default function ProductsPageClient() {
             </p>
 
             <Button variant="secondary" href={`/${locale}/contact`}>
-              Get Notified About New Products
+              {locale === 'en' ? 'Get Notified About New Products' : 'Ontvang Meldingen Over Nieuwe Producten'}
             </Button>
           </div>
         </div>

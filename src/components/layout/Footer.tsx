@@ -85,12 +85,10 @@ export function Footer() {
         <div className="mt-12 pt-8 border-t border-circuit/10 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-gray-500 text-sm">{t.footer.copyright}</p>
           
-          {/* Shopify Partner Badge */}
+          {/* Beta Badge instead of Shopify Partner */}
           <div className="flex items-center gap-2 text-gray-500 text-sm">
-            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M15.337 23.979l7.216-1.561s-2.604-17.613-2.625-17.73c-.018-.116-.114-.192-.211-.192s-1.929-.136-1.929-.136-.801-.771-1.074-1.042-.802-.273-.802-.273L15.337 24v-.021zm-3.019-9.574c-.477-.253-1.009-.506-1.582-.506-1.284 0-1.347.801-1.347 1.009 0 1.093 2.862 1.516 2.862 4.074 0 2.013-1.284 3.312-3.014 3.312-2.073 0-3.138-1.284-3.138-1.284l.558-1.831s1.093.939 2.013.939c.6 0 .853-.477.853-.822 0-1.432-2.348-1.495-2.348-3.836 0-1.979 1.411-3.893 4.285-3.893 1.106 0 1.652.316 1.652.316l-.795 2.522zm.591-6.859s-.801.19-.801.19l-.168-1.022s.211-.116.591-.116c.653 0 1.054.316 1.054.316l-.168 1.022s-.38-.39-.508-.39z"/>
-            </svg>
-            <span>Shopify Partner</span>
+            <div className="w-2 h-2 bg-pike rounded-full animate-pulse" />
+            <span>{locale === 'en' ? 'Public Beta' : 'Publieke Beta'}</span>
           </div>
         </div>
       </div>

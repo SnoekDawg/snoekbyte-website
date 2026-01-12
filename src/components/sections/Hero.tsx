@@ -11,6 +11,20 @@ export function Hero() {
   const locale = getLocaleFromPath(pathname) as Locale;
   const t = getTranslation(locale);
 
+  const stats = locale === 'en' 
+    ? [
+        { value: '€10M+', label: 'Revenue Generated' },
+        { value: '10+', label: 'Languages Built' },
+        { value: 'Free', label: 'Public Beta' },
+        { value: '24h', label: 'Support Response' },
+      ]
+    : [
+        { value: '€10M+', label: 'Omzet Gegenereerd' },
+        { value: '10+', label: 'Talen Gebouwd' },
+        { value: 'Gratis', label: 'Publieke Beta' },
+        { value: '24u', label: 'Support Reactie' },
+      ];
+
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
       {/* Animated background elements */}
@@ -57,7 +71,9 @@ export function Hero() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-pike/10 border border-pike/30 mb-8 animate-fade-in">
             <span className="w-2 h-2 bg-pike rounded-full animate-pulse" />
-            <span className="text-pike text-sm font-medium">Shopify App Partner</span>
+            <span className="text-pike text-sm font-medium">
+              {locale === 'en' ? 'Public Beta — Free Access' : 'Publieke Beta — Gratis Toegang'}
+            </span>
           </div>
 
           {/* Main heading */}
@@ -97,12 +113,7 @@ export function Hero() {
 
         {/* Stats */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 animate-fade-in animation-delay-400">
-          {[
-            { value: '500+', label: 'Active Stores' },
-            { value: '50K+', label: 'Orders Processed' },
-            { value: '4.9', label: 'App Rating' },
-            { value: '24/7', label: 'Support' },
-          ].map((stat) => (
+          {stats.map((stat) => (
             <div key={stat.label} className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-circuit mb-1">
                 {stat.value}
