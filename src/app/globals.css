@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0A1628;
+  --foreground: #FFFFFF;
+  --navy: #0A1628;
+  --navy-light: #1E3A5F;
+  --circuit: #4DC3E0;
+  --pike: #5CB85C;
+  --pike-dark: #3D7A3D;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-navy text-white antialiased;
+    background-image: 
+      radial-gradient(ellipse at top, rgba(30, 58, 95, 0.4) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom right, rgba(77, 195, 224, 0.1) 0%, transparent 40%);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    @apply bg-circuit/30 text-white;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 
+           bg-pike text-white font-semibold rounded-lg
+           transition-all duration-300 ease-out
+           hover:bg-pike-700 hover:shadow-glow-pike
+           focus:outline-none focus:ring-2 focus:ring-pike focus:ring-offset-2 focus:ring-offset-navy
+           active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 
+           bg-transparent text-circuit font-semibold rounded-lg
+           border-2 border-circuit
+           transition-all duration-300 ease-out
+           hover:bg-circuit/10 hover:shadow-glow-circuit
+           focus:outline-none focus:ring-2 focus:ring-circuit focus:ring-offset-2 focus:ring-offset-navy
+           active:scale-95;
+  }
+
+  .card {
+    @apply bg-navy-50/50 backdrop-blur-sm rounded-xl 
+           border border-circuit/20
+           transition-all duration-300
+           hover:border-circuit/40 hover:shadow-glow-circuit;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4;
+  }
+
+  .section-subtitle {
+    @apply text-lg md:text-xl text-gray-300 max-w-2xl;
+  }
+
+  .nav-link {
+    @apply text-gray-300 hover:text-circuit transition-colors duration-200
+           relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 
+           after:bg-circuit after:transition-all after:duration-300
+           hover:after:w-full;
+  }
+
+  .nav-link-active {
+    @apply text-circuit after:w-full;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-circuit to-pike bg-clip-text text-transparent;
+  }
+
+  .circuit-line {
+    @apply absolute bg-circuit/30 rounded-full;
+  }
+
+  .circuit-dot {
+    @apply absolute w-2 h-2 bg-circuit rounded-full animate-pulse-glow;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A1628;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E3A5F;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4DC3E0;
+}
