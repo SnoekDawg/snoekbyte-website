@@ -1,14 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Output as static HTML for easy hosting
-  output: 'export',
+  // Let Vercel handle Next.js natively (no static export needed)
+  // This enables middleware for locale detection/redirect
   
-  // Disable image optimization for static export
   images: {
     unoptimized: true,
   },
   
-  // Trailing slashes for better static hosting compatibility
+  // Trailing slashes for cleaner URLs
   trailingSlash: true,
 };
 
