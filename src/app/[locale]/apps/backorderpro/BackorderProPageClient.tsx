@@ -33,11 +33,11 @@ export default function BackorderProPageClient() {
               <span className="text-white">{app.name}</span>
             </nav>
 
-            {/* Badge */}
+            {/* Free Plan Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-pike/10 border border-pike/30 mb-6">
-              <span className="w-2 h-2 bg-pike rounded-full animate-pulse" />
+              <span className="w-2 h-2 bg-pike rounded-full" />
               <span className="text-pike text-sm font-medium">
-                {locale === 'nl' ? 'Publieke Beta — Gratis' : 'Public Beta — Free'}
+                {locale === 'nl' ? 'Gratis Plan Beschikbaar' : 'Free Plan Available'}
               </span>
             </div>
 
@@ -59,7 +59,7 @@ export default function BackorderProPageClient() {
                 href="https://backorder-pro.fly.dev/auth/login"
                 target="_blank"
               >
-                {t.apps.installNow}
+                {t.apps.getStarted}
                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
@@ -89,8 +89,32 @@ export default function BackorderProPageClient() {
         </div>
       </section>
 
+      {/* Pricing Teaser */}
+      <section className="py-12 bg-navy-light/30 border-y border-circuit/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap items-center justify-between gap-6">
+            <div>
+              <h2 className="text-xl font-bold text-white mb-1">
+                {locale === 'nl' ? 'Prijzen vanaf €0/maand' : 'Pricing starts at $0/month'}
+              </h2>
+              <p className="text-gray-400">
+                {locale === 'nl' 
+                  ? 'Gratis plan voor kleine winkels, betaalde plannen voor meer kracht.' 
+                  : 'Free plan for small stores, paid plans for more power.'}
+              </p>
+            </div>
+            <Button variant="secondary" href={`/${locale}/apps/backorderpro/pricing`}>
+              {t.apps.viewPricing}
+              <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
-      <section className="py-16 md:py-24 bg-navy-light/20">
+      <section className="py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-12 text-center">
             {locale === 'nl' ? 'Belangrijkste Functies' : 'Key Features'}
@@ -100,7 +124,7 @@ export default function BackorderProPageClient() {
             {app.features.map((feature, index) => (
               <div
                 key={index}
-                className="bg-navy/50 backdrop-blur-sm rounded-xl p-6 border border-circuit/20 hover:border-circuit/40 transition-all duration-300"
+                className="bg-navy-light/30 backdrop-blur-sm rounded-xl p-6 border border-circuit/20 hover:border-circuit/40 transition-all duration-300"
               >
                 <div className="w-10 h-10 rounded-lg bg-circuit/20 flex items-center justify-center mb-4">
                   <svg className="w-5 h-5 text-circuit" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -115,7 +139,7 @@ export default function BackorderProPageClient() {
       </section>
 
       {/* How It Works */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24 bg-navy-light/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-12 text-center">
             {locale === 'nl' ? 'Hoe Het Werkt' : 'How It Works'}
@@ -141,15 +165,15 @@ export default function BackorderProPageClient() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-navy-light/20 to-navy">
+      <section className="py-16 md:py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
             {locale === 'nl' ? 'Klaar om te Starten?' : 'Ready to Get Started?'}
           </h2>
           <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
             {locale === 'nl' 
-              ? 'Installeer BackorderPRO gratis tijdens onze publieke beta en ervaar geautomatiseerd backorder beheer.'
-              : 'Install BackorderPRO for free during our public beta and experience automated backorder management.'}
+              ? 'Installeer BackorderPRO en ervaar geautomatiseerd backorder beheer. Start gratis, geen creditcard nodig.'
+              : 'Install BackorderPRO and experience automated backorder management. Start free, no credit card required.'}
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button
@@ -158,14 +182,14 @@ export default function BackorderProPageClient() {
               href="https://backorder-pro.fly.dev/auth/login"
               target="_blank"
             >
-              {t.apps.installNow}
+              {t.apps.getStarted}
             </Button>
             <Button
               variant="secondary"
               size="lg"
-              href={`/${locale}/contact`}
+              href={`/${locale}/apps/backorderpro/pricing`}
             >
-              {t.contact.email.cta}
+              {t.apps.viewPricing}
             </Button>
           </div>
         </div>

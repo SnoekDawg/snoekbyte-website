@@ -12,6 +12,7 @@ export default function BackorderProPricingClient() {
   const locale = getLocaleFromPath(pathname) as Locale;
   const t = getTranslation(locale);
   const app = t.apps.backorderpro;
+  const [isYearly, setIsYearly] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
@@ -38,91 +39,111 @@ export default function BackorderProPricingClient() {
 
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="section-title mb-4">{app.pricing.title}</h1>
-            <p className="section-subtitle mx-auto">{app.pricing.subtitle}</p>
+            <p className="section-subtitle mx-auto mb-8">{app.pricing.subtitle}</p>
+            
+            {/* Billing Toggle */}
+            <div className="inline-flex items-center gap-4 p-1 bg-navy-light/50 rounded-full border border-circuit/20">
+              <button
+                onClick={() => setIsYearly(false)}
+                className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
+                  !isYearly ? 'bg-circuit text-navy' : 'text-gray-400 hover:text-white'
+                }`}
+              >
+                {app.pricing.monthly}
+              </button>
+              <button
+                onClick={() => setIsYearly(true)}
+                className={`px-6 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2 ${
+                  isYearly ? 'bg-circuit text-navy' : 'text-gray-400 hover:text-white'
+                }`}
+              >
+                {app.pricing.yearly}
+                <span className="text-xs px-2 py-0.5 bg-pike/20 text-pike rounded-full">
+                  {app.pricing.yearlySave}
+                </span>
+              </button>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Pricing Cards */}
       <section className="py-12 md:py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {app.pricing.plans.map((plan, index) => (
               <div
                 key={index}
-                className={`relative rounded-2xl overflow-hidden ${
+                className={`relative rounded-2xl overflow-hidden flex flex-col ${
                   plan.popular
-                    ? 'bg-gradient-to-br from-circuit/10 to-pike/10 border-2 border-circuit/50'
-                    : 'bg-navy-light/30 border border-circuit/20'
-                }`}
+                    ? 'bg-gradient-to-br from-circuit/20 to-pike/10 border-2 border-circuit ring-2 ring-circuit/20'
+                    : 'bg-navy-light/30 border border-circuit/20 hover:border-circuit/40'
+                } transition-all duration-300`}
               >
                 {plan.popular && (
-                  <div className="absolute top-0 right-0 bg-pike text-white text-xs font-bold px-4 py-1 rounded-bl-lg">
-                    {locale === 'nl' ? 'HUIDIGE AANBIEDING' : 'CURRENT OFFER'}
+                  <div className="absolute top-0 left-0 right-0 bg-circuit text-navy text-xs font-bold py-1 text-center">
+                    {locale === 'nl' ? 'MEEST GEKOZEN' : 'MOST POPULAR'}
                   </div>
                 )}
                 
-                <div className="p-8 md:p-10">
-                  <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
-                    {/* Plan Info */}
-                    <div>
-                      <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
-                        {plan.name}
-                      </h2>
-                      <div className="flex items-baseline gap-2 mb-4">
-                        <span className="text-4xl md:text-5xl font-bold text-circuit">
-                          {plan.price}
-                        </span>
-                        {plan.period && (
-                          <span className="text-gray-400">{plan.period}</span>
-                        )}
-                      </div>
-                      <p className="text-gray-400 max-w-md">
-                        {plan.description}
-                      </p>
+                <div className={`p-6 flex-1 flex flex-col ${plan.popular ? 'pt-10' : ''}`}>
+                  {/* Plan Name */}
+                  <h2 className="text-xl font-bold text-white mb-2">{plan.name}</h2>
+                  
+                  {/* Price */}
+                  <div className="mb-4">
+                    <div className="flex items-baseline gap-1">
+                      <span className="text-3xl md:text-4xl font-bold text-circuit">
+                        {isYearly && plan.yearlyPrice ? plan.yearlyPrice : plan.price}
+                      </span>
+                      <span className="text-gray-400 text-sm">
+                        {isYearly && plan.yearlyPeriod ? plan.yearlyPeriod : plan.period}
+                      </span>
                     </div>
-
-                    {/* Features */}
-                    <div className="flex-1 lg:max-w-sm">
-                      <ul className="space-y-3">
-                        {plan.features.map((feature, i) => (
-                          <li key={i} className="flex items-start gap-3">
-                            <svg className="w-5 h-5 text-pike flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span className="text-gray-300">{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                    {plan.trial && (
+                      <span className="text-xs text-pike mt-1 block">{plan.trial}</span>
+                    )}
                   </div>
-
-                  {/* CTA */}
-                  <div className="mt-8 pt-8 border-t border-circuit/20">
-                    <div className="flex flex-wrap gap-4">
-                      <Button
-                        variant="primary"
-                        size="lg"
-                        href="https://backorder-pro.fly.dev/auth/login"
-                        target="_blank"
-                      >
-                        {plan.cta}
-                        <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  
+                  {/* Description */}
+                  <p className="text-gray-400 text-sm mb-6">{plan.description}</p>
+                  
+                  {/* Features */}
+                  <ul className="space-y-3 mb-6 flex-1">
+                    {plan.features.map((feature, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm">
+                        <svg className="w-4 h-4 text-pike flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
-                      </Button>
-                      <Button
-                        variant="secondary"
-                        size="lg"
-                        href={`/${locale}/apps/backorderpro`}
-                      >
-                        {locale === 'nl' ? 'Meer Info' : 'Learn More'}
-                      </Button>
-                    </div>
-                  </div>
+                        <span className="text-gray-300">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  
+                  {/* CTA */}
+                  <Button
+                    variant={plan.popular ? 'primary' : 'secondary'}
+                    href="https://backorder-pro.fly.dev/auth/login"
+                    target="_blank"
+                    className="w-full justify-center"
+                  >
+                    {plan.cta}
+                  </Button>
                 </div>
               </div>
             ))}
+          </div>
+          
+          {/* Enterprise Note */}
+          <div className="mt-12 text-center">
+            <p className="text-gray-400">
+              {locale === 'nl' 
+                ? 'Meer nodig? ' 
+                : 'Need more? '}
+              <Link href={`/${locale}/contact`} className="text-circuit hover:underline">
+                {locale === 'nl' ? 'Neem contact op voor enterprise oplossingen.' : 'Contact us for enterprise solutions.'}
+              </Link>
+            </p>
           </div>
         </div>
       </section>
@@ -161,6 +182,37 @@ export default function BackorderProPricingClient() {
                 )}
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-16 md:py-24">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+            {locale === 'nl' ? 'Klaar om te Starten?' : 'Ready to Get Started?'}
+          </h2>
+          <p className="text-gray-300 mb-8">
+            {locale === 'nl' 
+              ? 'Start vandaag nog met BackorderPRO. Gratis plan beschikbaar, geen creditcard nodig.'
+              : 'Start with BackorderPRO today. Free plan available, no credit card required.'}
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Button
+              variant="primary"
+              size="lg"
+              href="https://backorder-pro.fly.dev/auth/login"
+              target="_blank"
+            >
+              {t.apps.getStarted}
+            </Button>
+            <Button
+              variant="secondary"
+              size="lg"
+              href={`/${locale}/apps/backorderpro`}
+            >
+              {locale === 'nl' ? 'Meer Info' : 'Learn More'}
+            </Button>
           </div>
         </div>
       </section>

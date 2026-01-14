@@ -17,8 +17,7 @@ export default function AppsPageClient() {
       name: t.apps.backorderpro.name,
       tagline: t.apps.backorderpro.tagline,
       description: t.apps.backorderpro.shortDescription,
-      status: 'beta',
-      statusLabel: locale === 'nl' ? 'Publieke Beta' : 'Public Beta',
+      startingPrice: locale === 'nl' ? 'Vanaf €0/maand' : 'From $0/month',
       href: `/${locale}/apps/backorderpro`,
       color: 'circuit',
     },
@@ -58,7 +57,7 @@ export default function AppsPageClient() {
                           {app.name}
                         </h2>
                         <span className="px-3 py-1 text-xs font-medium bg-pike/20 text-pike rounded-full border border-pike/30">
-                          {app.statusLabel}
+                          {app.startingPrice}
                         </span>
                       </div>
                       <p className="text-circuit text-lg font-medium mb-3">

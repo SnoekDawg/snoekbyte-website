@@ -1,5 +1,18 @@
 export type Locale = 'en' | 'nl' | 'de' | 'fr' | 'es' | 'pl' | 'cs' | 'sv';
 
+export interface PricingPlan {
+  name: string;
+  price: string;
+  yearlyPrice?: string;
+  period: string;
+  yearlyPeriod?: string;
+  description: string;
+  features: string[];
+  cta: string;
+  popular?: boolean;
+  trial?: string;
+}
+
 export interface Translation {
   nav: {
     home: string;
@@ -32,6 +45,8 @@ export interface Translation {
     viewAppStore: string;
     installNow: string;
     privacyPolicy: string;
+    startTrial: string;
+    getStarted: string;
     comingSoon: { title: string; description: string };
     backorderpro: {
       name: string;
@@ -42,15 +57,10 @@ export interface Translation {
       pricing: {
         title: string;
         subtitle: string;
-        plans: {
-          name: string;
-          price: string;
-          period: string;
-          description: string;
-          features: string[];
-          cta: string;
-          popular?: boolean;
-        }[];
+        monthly: string;
+        yearly: string;
+        yearlySave: string;
+        plans: PricingPlan[];
         faq: { question: string; answer: string }[];
       };
     };
@@ -105,16 +115,6 @@ export interface Feature {
   icon: React.ReactNode;
   title: string;
   description: string;
-}
-
-export interface PricingPlan {
-  name: string;
-  price: string;
-  period: string;
-  description: string;
-  features: string[];
-  cta: string;
-  popular?: boolean;
 }
 
 export interface FAQItem {
