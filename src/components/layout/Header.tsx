@@ -27,8 +27,8 @@ export function Header() {
 
   const navItems = [
     { label: t.nav.home, href: `/${locale}` },
-    { label: t.nav.products, href: `/${locale}/products` },
-    { label: t.nav.pricing, href: `/${locale}/pricing` },
+    { label: t.nav.apps, href: `/${locale}/apps` },
+    { label: t.nav.services, href: `/${locale}/services` },
     { label: t.nav.contact, href: `/${locale}/contact` },
   ];
 
@@ -80,7 +80,7 @@ export function Header() {
               <LanguageSwitcher variant="desktop" />
               
               <Button variant="primary" size="sm" href={`/${locale}/contact`}>
-                {t.hero.secondaryCta}
+                {t.contact.email.cta}
               </Button>
             </div>
 

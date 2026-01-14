@@ -12,74 +12,56 @@ export function Footer() {
   const locale = getLocaleFromPath(pathname) as Locale;
   const t = getTranslation(locale);
 
-  const footerLinks = locale === 'en'
-    ? [
-        {
-          title: 'Products',
-          items: [
-            { label: 'BackorderPRO', href: `/${locale}/products` },
-            { label: 'Pricing', href: `/${locale}/pricing` },
-          ],
-        },
-        {
-          title: 'Company',
-          items: [
-            { label: 'Contact', href: `/${locale}/contact` },
-          ],
-        },
-        {
-          title: 'Legal',
-          items: [
-            { label: 'Privacy Policy', href: `/${locale}/privacy/backorderpro` },
-          ],
-        },
-      ]
-    : [
-        {
-          title: 'Producten',
-          items: [
-            { label: 'BackorderPRO', href: `/${locale}/products` },
-            { label: 'Prijzen', href: `/${locale}/pricing` },
-          ],
-        },
-        {
-          title: 'Bedrijf',
-          items: [
-            { label: 'Contact', href: `/${locale}/contact` },
-          ],
-        },
-        {
-          title: 'Juridisch',
-          items: [
-            { label: 'Privacybeleid', href: `/${locale}/privacy/backorderpro` },
-          ],
-        },
-      ];
+  const footerLinks = [
+    {
+      title: t.nav.apps,
+      links: [
+        { label: 'BackorderPRO', href: `/${locale}/apps/backorderpro` },
+        { label: locale === 'nl' ? 'Alle Apps' : 'All Apps', href: `/${locale}/apps` },
+      ],
+    },
+    {
+      title: t.nav.services,
+      links: [
+        { label: t.services.webdev.name, href: `/${locale}/services/web-development` },
+        { label: t.services.marketing.name, href: `/${locale}/services/marketing` },
+        { label: t.services.appdev.name, href: `/${locale}/services/app-development` },
+      ],
+    },
+    {
+      title: locale === 'nl' ? 'Bedrijf' : 'Company',
+      links: [
+        { label: t.nav.contact, href: `/${locale}/contact` },
+        { label: locale === 'nl' ? 'Privacybeleid' : 'Privacy Policy', href: `/${locale}/privacy/backorderpro` },
+      ],
+    },
+  ];
 
   return (
-    <footer className="bg-navy-50/30 border-t border-circuit/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-          {/* Brand column */}
-          <div className="lg:col-span-1">
-            <Logo className="mb-4" />
-            <p className="text-gray-400 text-sm leading-relaxed">
+    <footer className="bg-navy border-t border-circuit/20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        {/* Top section */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+          {/* Logo & description */}
+          <div className="col-span-2 md:col-span-1">
+            <Logo />
+            <p className="mt-4 text-gray-400 text-sm leading-relaxed">
               {t.footer.tagline}
             </p>
           </div>
 
-          {/* Link columns */}
+          {/* Links */}
           {footerLinks.map((section) => (
             <div key={section.title}>
               <h3 className="text-white font-semibold mb-4">{section.title}</h3>
-              <ul className="space-y-3">
-                {section.items.map((item) => (
-                  <li key={item.href}>
+              <ul className="space-y-2">
+                {section.links.map((link) => (
+                  <li key={link.href}>
                     <Link
-                      href={item.href}
+                      href={link.href}
                       className="text-gray-400 hover:text-circuit transition-colors text-sm"
                     >
-                      {item.label}
+                      {link.label}
                     </Link>
                   </li>
                 ))}
@@ -88,14 +70,20 @@ export function Footer() {
           ))}
         </div>
 
-        {/* Bottom bar */}
-        <div className="mt-12 pt-8 border-t border-circuit/10 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-gray-500 text-sm">{t.footer.copyright}</p>
-          
-          {/* Beta Badge */}
-          <div className="flex items-center gap-2 text-gray-500 text-sm">
-            <div className="w-2 h-2 bg-pike rounded-full animate-pulse" />
-            <span>{locale === 'en' ? 'Public Beta' : 'Publieke Beta'}</span>
+        {/* Bottom section */}
+        <div className="pt-8 border-t border-circuit/20">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-gray-500 text-sm">
+              {t.footer.copyright}
+            </p>
+            <div className="flex items-center gap-4">
+              <a
+                href="mailto:info@snoekbyte.nl"
+                className="text-gray-400 hover:text-circuit transition-colors text-sm"
+              >
+                info@snoekbyte.nl
+              </a>
+            </div>
           </div>
         </div>
       </div>

@@ -4,7 +4,18 @@ const locales = ['en', 'nl', 'de', 'fr', 'es', 'pl', 'cs', 'sv'];
 const baseUrl = 'https://snoekbyte.nl';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ['', '/products', '/pricing', '/contact'];
+  const routes = [
+    '', // Home
+    '/apps',
+    '/apps/backorderpro',
+    '/apps/backorderpro/pricing',
+    '/services',
+    '/services/web-development',
+    '/services/marketing',
+    '/services/app-development',
+    '/contact',
+    '/privacy/backorderpro',
+  ];
   
   const sitemapEntries: MetadataRoute.Sitemap = [];
 
@@ -14,7 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         url: `${baseUrl}/${locale}${route}`,
         lastModified: new Date(),
         changeFrequency: route === '' ? 'weekly' : 'monthly',
-        priority: route === '' ? 1 : 0.8,
+        priority: route === '' ? 1 : route.includes('/apps') ? 0.9 : 0.8,
       });
     }
   }

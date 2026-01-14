@@ -117,7 +117,7 @@ export function MobileNav({ isOpen, onClose, navItems, locale, currentPath }: Mo
         {/* CTA Button */}
         <div className="p-4 border-t border-circuit/20">
           <Button variant="primary" className="w-full" href={`/${locale}/contact`} onClick={onClose}>
-            {t.hero.secondaryCta}
+            {t.contact.email.cta}
           </Button>
         </div>
       </div>

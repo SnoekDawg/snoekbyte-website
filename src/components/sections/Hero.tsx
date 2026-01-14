@@ -11,20 +11,6 @@ export function Hero() {
   const locale = getLocaleFromPath(pathname) as Locale;
   const t = getTranslation(locale);
 
-  const stats = locale === 'en' 
-    ? [
-        { value: '€10M+', label: 'Revenue Generated' },
-        { value: '10+', label: 'Languages Built' },
-        { value: 'Free', label: 'Public Beta' },
-        { value: '<48h', label: 'Support Response' },
-      ]
-    : [
-        { value: '€10M+', label: 'Omzet Gegenereerd' },
-        { value: '10+', label: 'Talen Gebouwd' },
-        { value: 'Gratis', label: 'Publieke Beta' },
-        { value: '<48u', label: 'Support Reactie' },
-      ];
-
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
       {/* Animated background elements */}
@@ -72,7 +58,7 @@ export function Hero() {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-pike/10 border border-pike/30 mb-8 animate-fade-in">
             <span className="w-2 h-2 bg-pike rounded-full animate-pulse" />
             <span className="text-pike text-sm font-medium">
-              {locale === 'en' ? 'Public Beta — Free Access' : 'Publieke Beta — Gratis Toegang'}
+              {t.hero.badge}
             </span>
           </div>
 
@@ -89,7 +75,7 @@ export function Hero() {
 
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up animation-delay-200">
-            <Button variant="primary" size="lg" href={`/${locale}/products`}>
+            <Button variant="primary" size="lg" href={`/${locale}/apps`}>
               {t.hero.cta}
               <svg
                 className="ml-2 w-5 h-5"
@@ -105,7 +91,7 @@ export function Hero() {
                 />
               </svg>
             </Button>
-            <Button variant="secondary" size="lg" href={`/${locale}/contact`}>
+            <Button variant="secondary" size="lg" href={`/${locale}/services`}>
               {t.hero.secondaryCta}
             </Button>
           </div>
@@ -113,7 +99,7 @@ export function Hero() {
 
         {/* Stats */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 animate-fade-in animation-delay-400">
-          {stats.map((stat) => (
+          {t.about.stats.map((stat) => (
             <div key={stat.label} className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-circuit mb-1">
                 {stat.value}
