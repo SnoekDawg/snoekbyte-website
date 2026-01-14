@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-const locales = ['en', 'nl'];
+const locales = ['en', 'nl', 'de', 'fr', 'es', 'pl', 'cs', 'sv'];
 const defaultLocale = 'en';
 
 function getLocale(request: NextRequest): string {
@@ -24,8 +24,10 @@ function getLocale(request: NextRequest): string {
       .sort((a, b) => b.priority - a.priority);
 
     for (const { code } of languages) {
-      if (locales.includes(code)) {
-        return code;
+      // Map language codes to our supported locales
+      const mappedCode = code === 'cs' || code === 'cz' ? 'cs' : code === 'sv' || code === 'se' ? 'sv' : code;
+      if (locales.includes(mappedCode)) {
+        return mappedCode;
       }
     }
   }

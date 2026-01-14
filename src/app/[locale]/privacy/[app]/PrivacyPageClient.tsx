@@ -602,3 +602,4 @@ function BackorderProPrivacy({ locale: _locale }: { locale: Locale }) {
     </article>
   );
 }
+

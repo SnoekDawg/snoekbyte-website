@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Logo } from '@/components/ui/Logo';
 import { Button } from '@/components/ui/Button';
+import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
 import { MobileNav } from './MobileNav';
 import { getTranslation, getLocaleFromPath } from '@/lib/i18n';
 import type { Locale } from '@/types';
@@ -36,12 +37,6 @@ export function Header() {
       return pathname === `/${locale}` || pathname === `/${locale}/`;
     }
     return pathname.startsWith(href);
-  };
-
-  const toggleLocale = () => {
-    const newLocale = locale === 'en' ? 'nl' : 'en';
-    const pathWithoutLocale = pathname.replace(`/${locale}`, '');
-    return `/${newLocale}${pathWithoutLocale || ''}`;
   };
 
   return (
@@ -81,13 +76,8 @@ export function Header() {
 
             {/* Right side actions */}
             <div className="hidden md:flex items-center gap-4">
-              {/* Language Switcher */}
-              <Link
-                href={toggleLocale()}
-                className="text-sm text-gray-400 hover:text-circuit transition-colors px-2 py-1 rounded border border-transparent hover:border-circuit/30"
-              >
-                {locale === 'en' ? 'NL' : 'EN'}
-              </Link>
+              {/* Language Switcher Dropdown */}
+              <LanguageSwitcher variant="desktop" />
               
               <Button variant="primary" size="sm" href={`/${locale}/contact`}>
                 {t.hero.secondaryCta}

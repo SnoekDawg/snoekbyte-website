@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
-const locales = ['en', 'nl'];
-const baseUrl = 'https://snoekbyte.com';
+const locales = ['en', 'nl', 'de', 'fr', 'es', 'pl', 'cs', 'sv'];
+const baseUrl = 'https://snoekbyte.nl';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = ['', '/products', '/pricing', '/contact'];
