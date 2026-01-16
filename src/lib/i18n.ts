@@ -58,6 +58,9 @@ const translations: Record<Locale, Translation> = {
           'Backorder revenue tracking & analytics',
           'Multi-language support (8 languages)',
           'GDPR compliant - no customer data stored',
+          'Set delivery times per supplier',
+          'Works with Search & Discovery for stock filters',
+          'Works with Translate & Adapt',
         ],
         pricing: {
           title: 'BackorderPRO Pricing',
@@ -176,7 +179,7 @@ const translations: Record<Locale, Translation> = {
         tagline: 'Automatiseer Je Backorder Beleid met Leveranciersfeeds',
         shortDescription: 'Synchroniseer automatisch leveranciersfeeds met je Shopify producten.',
         description: 'BackorderPRO synchroniseert automatisch je leveranciers-voorraadfeeds met je Shopify producten. Slimme regels bepalen welke producten op backorder verkocht mogen worden.',
-        features: ['Importeer feeds via URL, FTP of upload', 'Auto-match via SKU of EAN', 'Slimme regel-engine', 'Geplande auto-sync', 'Omzet tracking & analytics', 'Meertalig (8 talen)', 'GDPR compliant'],
+        features: ['Importeer feeds via URL, FTP of upload', 'Auto-match via SKU of EAN', 'Slimme regel-engine', 'Geplande auto-sync', 'Omzet tracking & analytics', 'Meertalig (8 talen)', 'GDPR compliant', 'Levertijden per leverancier instellen', 'Werkt met Search & Discovery voor stock filters', 'Werkt met Translate & Adapt'],
         pricing: {
           title: 'BackorderPRO Prijzen',
           subtitle: 'Kies het plan dat bij je winkel past. Start gratis of unlock meer kracht.',
@@ -233,7 +236,7 @@ const translations: Record<Locale, Translation> = {
         tagline: 'Automatisieren Sie Ihre Nachbestellungsrichtlinie',
         shortDescription: 'Synchronisiert automatisch Lieferanten-Feeds mit Shopify-Produkten.',
         description: 'BackorderPRO synchronisiert automatisch Ihre Lieferanten-Inventar-Feeds mit Ihren Shopify-Produkten.',
-        features: ['Feeds per URL, FTP oder Upload', 'Auto-Match über SKU oder EAN', 'Intelligente Regel-Engine', 'Geplante Auto-Sync', 'Umsatztracking', 'Mehrsprachig', 'DSGVO-konform'],
+        features: ['Feeds per URL, FTP oder Upload', 'Auto-Match über SKU oder EAN', 'Intelligente Regel-Engine', 'Geplante Auto-Sync', 'Umsatztracking', 'Mehrsprachig', 'DSGVO-konform', 'Lieferzeiten pro Lieferant einstellen', 'Funktioniert mit Search & Discovery für Lagerfilter', 'Funktioniert mit Translate & Adapt'],
         pricing: {
           title: 'BackorderPRO Preise',
           subtitle: 'Wählen Sie den Plan, der zu Ihrem Shop passt.',
@@ -277,7 +280,7 @@ const translations: Record<Locale, Translation> = {
         tagline: 'Automatisez Votre Politique de Précommande',
         shortDescription: 'Synchronise automatiquement les feeds fournisseurs.',
         description: 'BackorderPRO synchronise automatiquement vos feeds d\'inventaire fournisseurs.',
-        features: ['Import via URL, FTP ou upload', 'Auto-match via SKU ou EAN', 'Moteur de règles intelligent', 'Auto-sync programmée', 'Analytics des revenus', 'Multilingue', 'Conforme RGPD'],
+        features: ['Import via URL, FTP ou upload', 'Auto-match via SKU ou EAN', 'Moteur de règles intelligent', 'Auto-sync programmée', 'Analytics des revenus', 'Multilingue', 'Conforme RGPD', 'Délais de livraison par fournisseur', 'Fonctionne avec Search & Discovery', 'Fonctionne avec Translate & Adapt'],
         pricing: {
           title: 'Prix BackorderPRO',
           subtitle: 'Choisissez le plan qui correspond à votre boutique.',
@@ -321,7 +324,7 @@ const translations: Record<Locale, Translation> = {
         tagline: 'Automatiza Tu Política de Pedidos Anticipados',
         shortDescription: 'Sincroniza automáticamente feeds de proveedores.',
         description: 'BackorderPRO sincroniza automáticamente tus feeds de inventario de proveedores.',
-        features: ['Importar vía URL, FTP o subida', 'Auto-coincidencia vía SKU o EAN', 'Motor de reglas inteligente', 'Auto-sync programada', 'Analytics de ingresos', 'Multiidioma', 'Cumple RGPD'],
+        features: ['Importar vía URL, FTP o subida', 'Auto-coincidencia vía SKU o EAN', 'Motor de reglas inteligente', 'Auto-sync programada', 'Analytics de ingresos', 'Multiidioma', 'Cumple RGPD', 'Tiempos de entrega por proveedor', 'Funciona con Search & Discovery', 'Funciona con Translate & Adapt'],
         pricing: {
           title: 'Precios BackorderPRO',
           subtitle: 'Elige el plan que se adapte a tu tienda.',
@@ -365,7 +368,7 @@ const translations: Record<Locale, Translation> = {
         tagline: 'Automatyzuj Politykę Zamówień z Feedami Dostawców',
         shortDescription: 'Automatycznie synchronizuje feedy dostawców.',
         description: 'BackorderPRO automatycznie synchronizuje feedy magazynowe dostawców.',
-        features: ['Import przez URL, FTP lub upload', 'Auto-dopasowanie przez SKU lub EAN', 'Inteligentny silnik reguł', 'Zaplanowana auto-sync', 'Analytics przychodów', 'Wielojęzyczny', 'Zgodny z RODO'],
+        features: ['Import przez URL, FTP lub upload', 'Auto-dopasowanie przez SKU lub EAN', 'Inteligentny silnik reguł', 'Zaplanowana auto-sync', 'Analytics przychodów', 'Wielojęzyczny', 'Zgodny z RODO', 'Czasy dostawy na dostawcę', 'Działa z Search & Discovery', 'Działa z Translate & Adapt'],
         pricing: {
           title: 'Ceny BackorderPRO',
           subtitle: 'Wybierz plan pasujący do Twojego sklepu.',
@@ -409,7 +412,7 @@ const translations: Record<Locale, Translation> = {
         tagline: 'Automatizujte Politiku Předobjednávek s Dodavatelskými Feedy',
         shortDescription: 'Automaticky synchronizuje dodavatelské feedy.',
         description: 'BackorderPRO automaticky synchronizuje vaše dodavatelské skladové feedy.',
-        features: ['Import přes URL, FTP nebo upload', 'Auto-párování přes SKU nebo EAN', 'Chytrý engine pravidel', 'Plánovaná auto-sync', 'Analytics příjmů', 'Vícejazyčný', 'GDPR kompatibilní'],
+        features: ['Import přes URL, FTP nebo upload', 'Auto-párování přes SKU nebo EAN', 'Chytrý engine pravidel', 'Plánovaná auto-sync', 'Analytics příjmů', 'Vícejazyčný', 'GDPR kompatibilní', 'Dodací lhůty podle dodavatele', 'Funguje se Search & Discovery', 'Funguje s Translate & Adapt'],
         pricing: {
           title: 'Ceny BackorderPRO',
           subtitle: 'Vyberte si plán, který vyhovuje vašemu obchodu.',
@@ -453,7 +456,7 @@ const translations: Record<Locale, Translation> = {
         tagline: 'Automatisera Din Restorderpolicy med Leverantörsflöden',
         shortDescription: 'Synkroniserar automatiskt leverantörsflöden.',
         description: 'BackorderPRO synkroniserar automatiskt dina leverantörers lagerflöden.',
-        features: ['Importera via URL, FTP eller uppladdning', 'Auto-matchning via SKU eller EAN', 'Smart regelmotor', 'Schemalagd auto-synk', 'Intäktsanalytik', 'Flerspråkig', 'GDPR-kompatibel'],
+        features: ['Importera via URL, FTP eller uppladdning', 'Auto-matchning via SKU eller EAN', 'Smart regelmotor', 'Schemalagd auto-synk', 'Intäktsanalytik', 'Flerspråkig', 'GDPR-kompatibel', 'Leveranstider per leverantör', 'Fungerar med Search & Discovery', 'Fungerar med Translate & Adapt'],
         pricing: {
           title: 'BackorderPRO Priser',
           subtitle: 'Välj den plan som passar din butik.',

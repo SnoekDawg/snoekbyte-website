@@ -7,6 +7,51 @@ import { Button } from '@/components/ui/Button';
 import { getTranslation, getLocaleFromPath } from '@/lib/i18n';
 import type { Locale } from '@/types';
 
+// Feature icons mapped by index
+const featureIcons = [
+  // 0: Import feeds via URL, FTP, or file upload
+  <svg key="upload" className="w-5 h-5 text-circuit" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+  </svg>,
+  // 1: Auto-match products via SKU or EAN
+  <svg key="link" className="w-5 h-5 text-circuit" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+  </svg>,
+  // 2: Smart rule engine
+  <svg key="cog" className="w-5 h-5 text-circuit" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+  </svg>,
+  // 3: Scheduled auto-sync
+  <svg key="clock" className="w-5 h-5 text-circuit" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+  </svg>,
+  // 4: Revenue tracking & analytics
+  <svg key="chart" className="w-5 h-5 text-circuit" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+  </svg>,
+  // 5: Multi-language support
+  <svg key="globe" className="w-5 h-5 text-circuit" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+  </svg>,
+  // 6: GDPR compliant
+  <svg key="shield" className="w-5 h-5 text-circuit" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+  </svg>,
+  // 7: Set delivery times per supplier
+  <svg key="truck" className="w-5 h-5 text-circuit" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+  </svg>,
+  // 8: Works with Search & Discovery
+  <svg key="search" className="w-5 h-5 text-circuit" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
+  </svg>,
+  // 9: Works with Translate & Adapt
+  <svg key="translate" className="w-5 h-5 text-circuit" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+  </svg>,
+];
+
 export default function BackorderProPageClient() {
   const pathname = usePathname();
   const locale = getLocaleFromPath(pathname) as Locale;
@@ -127,9 +172,7 @@ export default function BackorderProPageClient() {
                 className="bg-navy-light/30 backdrop-blur-sm rounded-xl p-6 border border-circuit/20 hover:border-circuit/40 transition-all duration-300"
               >
                 <div className="w-10 h-10 rounded-lg bg-circuit/20 flex items-center justify-center mb-4">
-                  <svg className="w-5 h-5 text-circuit" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
+                  {featureIcons[index] || featureIcons[0]}
                 </div>
                 <p className="text-gray-300">{feature}</p>
               </div>
@@ -164,8 +207,58 @@ export default function BackorderProPageClient() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Integrations */}
       <section className="py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+              {locale === 'nl' ? 'Werkt Naadloos met Shopify Apps' : 'Works Seamlessly with Shopify Apps'}
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              {locale === 'nl' 
+                ? 'BackorderPRO integreert met populaire Shopify apps voor een complete oplossing.'
+                : 'BackorderPRO integrates with popular Shopify apps for a complete solution.'}
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            <div className="bg-navy-light/30 rounded-xl p-6 border border-circuit/20">
+              <div className="flex items-center gap-4 mb-3">
+                <div className="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center">
+                  <svg className="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  </svg>
+                </div>
+                <h3 className="font-semibold text-white">Search & Discovery</h3>
+              </div>
+              <p className="text-gray-400 text-sm">
+                {locale === 'nl' 
+                  ? 'Maak automatisch stock filters om alleen producten op voorraad of met backorder te tonen.'
+                  : 'Automatically create stock filters to show only in-stock or backorder products.'}
+              </p>
+            </div>
+            
+            <div className="bg-navy-light/30 rounded-xl p-6 border border-circuit/20">
+              <div className="flex items-center gap-4 mb-3">
+                <div className="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center">
+                  <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+                  </svg>
+                </div>
+                <h3 className="font-semibold text-white">Translate & Adapt</h3>
+              </div>
+              <p className="text-gray-400 text-sm">
+                {locale === 'nl' 
+                  ? 'Backorder berichten en levertijden worden automatisch vertaald naar alle talen.'
+                  : 'Backorder messages and delivery times are automatically translated to all languages.'}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-16 md:py-24 bg-navy-light/20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
             {locale === 'nl' ? 'Klaar om te Starten?' : 'Ready to Get Started?'}
