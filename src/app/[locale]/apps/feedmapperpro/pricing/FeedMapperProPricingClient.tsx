@@ -133,14 +133,14 @@ export default function FeedMapperProPricingClient() {
                   <th className="text-left py-4 px-4 text-gray-400 font-medium">Feature</th>
                   <th className="text-center py-4 px-4 text-white font-medium">Free</th>
                   <th className="text-center py-4 px-4 text-white font-medium">Starter</th>
-                  <th className="text-center py-4 px-4 text-circuit font-medium">Professional</th>
+                  <th className="text-center py-4 px-4 text-circuit font-medium">Pro</th>
                   <th className="text-center py-4 px-4 text-white font-medium">Enterprise</th>
                 </tr>
               </thead>
               <tbody>
                 {[
                   { feature: locale === 'nl' ? 'Feeds' : 'Feeds', values: ['1', '3', '10', locale === 'nl' ? 'Onbeperkt' : 'Unlimited'] },
-                  { feature: locale === 'nl' ? 'Producten' : 'Products', values: ['100', '1,000', '10,000', locale === 'nl' ? 'Onbeperkt' : 'Unlimited'] },
+                  { feature: locale === 'nl' ? 'Producten' : 'Products', values: ['500', '2,500', '25,000', locale === 'nl' ? 'Onbeperkt' : 'Unlimited'] },
                   { feature: 'Templates', values: ['Google Shopping', '5', '15+', locale === 'nl' ? '15+ + Custom' : '15+ + Custom'] },
                   { feature: locale === 'nl' ? 'Update Frequentie' : 'Update Frequency', values: ['24h', '6h', '1h', 'Real-time'] },
                   { feature: 'Transformations', values: ['5', '15', '25+', 'All + Custom'] },
