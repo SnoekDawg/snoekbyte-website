@@ -6,6 +6,7 @@ const locales = ['en', 'nl', 'de', 'fr', 'es', 'pl', 'cs', 'sv'];
 export async function generateStaticParams() {
   return locales.flatMap((locale) => [
     { locale, app: 'backorderpro' },
+    { locale, app: 'feedmapperpro' },
   ]);
 }
 
@@ -14,7 +15,11 @@ export async function generateMetadata({
 }: {
   params: { locale: string; app: string };
 }): Promise<Metadata> {
-  const appName = params.app === 'backorderpro' ? 'BackorderPRO' : params.app;
+  const appNames: Record<string, string> = {
+    backorderpro: 'BackorderPRO',
+    feedmapperpro: 'FeedMapper PRO',
+  };
+  const appName = appNames[params.app] || params.app;
   
   const titles: Record<string, string> = {
     en: `Privacy Policy - ${appName}`,

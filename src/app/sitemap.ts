@@ -7,6 +7,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     '', // Home
     '/apps',
+    '/apps/feedmapperpro',
+    '/apps/feedmapperpro/pricing',
     '/apps/backorderpro',
     '/apps/backorderpro/pricing',
     '/services',
@@ -14,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/services/marketing',
     '/services/app-development',
     '/contact',
+    '/privacy/feedmapperpro',
     '/privacy/backorderpro',
   ];
   

@@ -48,6 +48,22 @@ export interface Translation {
     startTrial: string;
     getStarted: string;
     comingSoon: { title: string; description: string };
+    feedmapperpro: {
+      name: string;
+      tagline: string;
+      shortDescription: string;
+      description: string;
+      features: string[];
+      pricing: {
+        title: string;
+        subtitle: string;
+        monthly: string;
+        yearly: string;
+        yearlySave: string;
+        plans: PricingPlan[];
+        faq: { question: string; answer: string }[];
+      };
+    };
     backorderpro: {
       name: string;
       tagline: string;

@@ -7,8 +7,8 @@ import { getLocaleFromPath } from '@/lib/i18n';
 import type { Locale } from '@/types';
 
 const apps = [
+  { id: 'feedmapperpro', name: 'FeedMapper PRO' },
   { id: 'backorderpro', name: 'BackorderPRO' },
-  // Future apps can be added here
 ];
 
 export default function PrivacyPageClient() {
@@ -56,6 +56,7 @@ export default function PrivacyPageClient() {
       {/* Privacy Policy Content */}
       <section className="py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          {currentApp === 'feedmapperpro' && <FeedMapperProPrivacy locale={locale} />}
           {currentApp === 'backorderpro' && <BackorderProPrivacy locale={locale} />}
         </div>
       </section>
@@ -597,6 +598,241 @@ function BackorderProPrivacy({ locale: _locale }: { locale: Locale }) {
         <li>✅ Automatic data deletion on uninstall</li>
         <li>✅ Configurable data retention</li>
         <li>✅ Encrypted credential storage</li>
+        <li>✅ Transparent data practices</li>
+      </ul>
+    </article>
+  );
+}
+
+function FeedMapperProPrivacy({ locale: _locale }: { locale: Locale }) {
+  void _locale;
+  return (
+    <article className="prose prose-invert prose-lg max-w-none">
+      <style jsx global>{`
+        .prose h1, .prose h2, .prose h3, .prose h4 { color: white; font-weight: 600; }
+        .prose p, .prose li { color: #9ca3af; }
+        .prose strong { color: white; }
+        .prose a { color: #4DC3E0; }
+        .prose table { width: 100%; }
+        .prose th { color: white; background: rgba(30, 58, 95, 0.5); padding: 12px; text-align: left; }
+        .prose td { color: #9ca3af; padding: 12px; border-bottom: 1px solid rgba(77, 195, 224, 0.1); }
+        .prose hr { border-color: rgba(77, 195, 224, 0.2); margin: 2rem 0; }
+        .prose code { color: #4DC3E0; background: rgba(77, 195, 224, 0.1); padding: 2px 6px; border-radius: 4px; }
+      `}</style>
+
+      <h1>Privacy Policy - FeedMapper PRO</h1>
+      
+      <p><strong>Last Updated: January 20, 2026</strong></p>
+      
+      <p>This Privacy Policy describes how SnoekByte (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) collects, uses, and shares information when you use the FeedMapper PRO application (&quot;App&quot;) available through the Shopify App Store.</p>
+      
+      <hr />
+      
+      <h2>1. Introduction</h2>
+      
+      <p>FeedMapper PRO is a Shopify application that helps merchants export and manage product feeds for advertising platforms like Google Shopping, Facebook, Amazon, and more. We are committed to protecting your privacy and handling your data in an open and transparent manner.</p>
+      
+      <hr />
+      
+      <h2>2. Information We Collect</h2>
+      
+      <h3>2.1 Merchant Information</h3>
+      
+      <p>When you install FeedMapper PRO, we collect and store:</p>
+      
+      <table>
+        <thead>
+          <tr>
+            <th>Data Type</th>
+            <th>Purpose</th>
+            <th>Retention</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Shop domain</td>
+            <td>Identify your store</td>
+            <td>Until app uninstall + 48 hours</td>
+          </tr>
+          <tr>
+            <td>Access tokens</td>
+            <td>API authentication</td>
+            <td>Until app uninstall</td>
+          </tr>
+          <tr>
+            <td>Feed configurations</td>
+            <td>Generate product feeds</td>
+            <td>Until app uninstall</td>
+          </tr>
+          <tr>
+            <td>Field mappings & rules</td>
+            <td>Transform product data</td>
+            <td>Until app uninstall</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <h3>2.2 Product Information</h3>
+      
+      <p>To generate feeds, we process:</p>
+      
+      <table>
+        <thead>
+          <tr>
+            <th>Data Type</th>
+            <th>Purpose</th>
+            <th>Retention</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Product titles, descriptions</td>
+            <td>Include in feed output</td>
+            <td>Cached until next sync</td>
+          </tr>
+          <tr>
+            <td>Product prices & variants</td>
+            <td>Include in feed output</td>
+            <td>Cached until next sync</td>
+          </tr>
+          <tr>
+            <td>Product images & URLs</td>
+            <td>Include in feed output</td>
+            <td>Cached until next sync</td>
+          </tr>
+          <tr>
+            <td>Inventory levels</td>
+            <td>Determine availability status</td>
+            <td>Cached until next sync</td>
+          </tr>
+          <tr>
+            <td>SKUs, GTINs, MPNs</td>
+            <td>Product identification</td>
+            <td>Cached until next sync</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <h3>2.3 What We Do NOT Collect</h3>
+      
+      <p><strong>We explicitly do NOT collect or store:</strong></p>
+      
+      <ul>
+        <li>❌ Customer names or email addresses</li>
+        <li>❌ Customer shipping or billing addresses</li>
+        <li>❌ Payment information</li>
+        <li>❌ Order or customer data</li>
+        <li>❌ Any personally identifiable information (PII) of your customers</li>
+      </ul>
+      
+      <hr />
+      
+      <h2>3. How We Use Your Information</h2>
+      
+      <p>We use the collected information solely to:</p>
+      
+      <ol>
+        <li><strong>Generate Feeds</strong> - Create product feeds in various formats (CSV, XML) for advertising platforms</li>
+        <li><strong>Apply Transformations</strong> - Process your rules and mappings to transform product data</li>
+        <li><strong>Validate Data</strong> - Check feeds for compliance with platform requirements</li>
+        <li><strong>Schedule Updates</strong> - Run automated feed generation at configured intervals</li>
+        <li><strong>Provide Analytics</strong> - Show quality scores and error statistics</li>
+      </ol>
+      
+      <hr />
+      
+      <h2>4. Feed URLs & Access</h2>
+      
+      <p>When you generate a feed, we create a unique URL for that feed. This URL:</p>
+      
+      <ul>
+        <li>Contains a unique, unguessable identifier</li>
+        <li>Can optionally be password-protected</li>
+        <li>Is intended to be shared with advertising platforms</li>
+        <li>Only exposes product data you have configured in the feed</li>
+      </ul>
+      
+      <hr />
+      
+      <h2>5. Data Storage & Security</h2>
+      
+      <h3>5.1 Security Measures</h3>
+      
+      <table>
+        <thead>
+          <tr>
+            <th>Measure</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Encryption at rest</td>
+            <td>All data encrypted on disk</td>
+          </tr>
+          <tr>
+            <td>Secure transmission</td>
+            <td>All data via HTTPS/TLS</td>
+          </tr>
+          <tr>
+            <td>Unique feed URLs</td>
+            <td>Unguessable identifiers</td>
+          </tr>
+          <tr>
+            <td>Optional password</td>
+            <td>Additional feed protection</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <hr />
+      
+      <h2>6. Data Deletion on Uninstall</h2>
+      
+      <p>When you uninstall FeedMapper PRO:</p>
+      <ul>
+        <li>Your session data is immediately deleted</li>
+        <li>Within 48 hours, all feed configurations are permanently deleted</li>
+        <li>All cached product data is removed</li>
+        <li>Feed URLs become invalid</li>
+      </ul>
+      
+      <hr />
+      
+      <h2>7. Your Rights (GDPR)</h2>
+      
+      <p>Under GDPR, you have the right to:</p>
+      
+      <ul>
+        <li><strong>Access</strong> - Request a copy of your data</li>
+        <li><strong>Rectification</strong> - Correct inaccurate data</li>
+        <li><strong>Erasure</strong> - Delete your data (uninstall the app)</li>
+        <li><strong>Portability</strong> - Export your data</li>
+      </ul>
+      
+      <p>Contact us at <strong>privacy@snoekbyte.nl</strong> to exercise these rights.</p>
+      
+      <hr />
+      
+      <h2>8. Contact Us</h2>
+      
+      <p><strong>SnoekByte</strong></p>
+      <ul>
+        <li>Email: privacy@snoekbyte.nl</li>
+        <li>Website: https://snoekbyte.nl</li>
+      </ul>
+      
+      <hr />
+      
+      <h2>Summary</h2>
+      
+      <p>FeedMapper PRO is designed with privacy in mind:</p>
+      <ul>
+        <li>✅ No customer PII collected</li>
+        <li>✅ GDPR compliant</li>
+        <li>✅ Automatic data deletion on uninstall</li>
+        <li>✅ Optional password-protected feeds</li>
+        <li>✅ Product data only (no orders or customers)</li>
         <li>✅ Transparent data practices</li>
       </ul>
     </article>

@@ -13,6 +13,16 @@ export default function AppsPageClient() {
 
   const apps = [
     {
+      id: 'feedmapperpro',
+      name: t.apps.feedmapperpro.name,
+      tagline: t.apps.feedmapperpro.tagline,
+      description: t.apps.feedmapperpro.shortDescription,
+      startingPrice: locale === 'nl' ? 'Vanaf €0/maand' : 'From €0/month',
+      href: `/${locale}/apps/feedmapperpro`,
+      color: 'purple',
+      badge: 'NEW',
+    },
+    {
       id: 'backorderpro',
       name: t.apps.backorderpro.name,
       tagline: t.apps.backorderpro.tagline,
@@ -52,10 +62,15 @@ export default function AppsPageClient() {
                   <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
                     {/* Left: Info */}
                     <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-4">
+                      <div className="flex items-center gap-3 mb-4 flex-wrap">
                         <h2 className="text-2xl md:text-3xl font-bold text-white">
                           {app.name}
                         </h2>
+                        {'badge' in app && app.badge && (
+                          <span className="px-2 py-0.5 text-xs font-bold bg-purple-500 text-white rounded">
+                            {app.badge}
+                          </span>
+                        )}
                         <span className="px-3 py-1 text-xs font-medium bg-pike/20 text-pike rounded-full border border-pike/30">
                           {app.startingPrice}
                         </span>
