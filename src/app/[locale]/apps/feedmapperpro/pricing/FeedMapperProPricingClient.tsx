@@ -146,7 +146,7 @@ export default function FeedMapperProPricingClient() {
                   { feature: 'Transformations', values: ['5', '15', '25+', 'All + Custom'] },
                   { feature: 'Calculated Fields', values: ['❌', '❌', '✅', '✅'] },
                   { feature: 'Auto-Validation', values: ['❌', '❌', '✅', '✅'] },
-                  { feature: 'Multi-Market', values: ['❌', '❌', '3', locale === 'nl' ? 'Onbeperkt' : 'Unlimited'] },
+                  { feature: 'Multi-Market', values: ['❌', '❌', '5', locale === 'nl' ? 'Onbeperkt' : 'Unlimited'] },
                   { feature: locale === 'nl' ? 'Wachtwoord Beveiliging' : 'Password Protection', values: ['❌', '✅', '✅', '✅'] },
                   { feature: 'API Access', values: ['❌', '❌', '❌', '✅'] },
                   { feature: 'Support', values: ['Community', 'Email', 'Priority', 'Dedicated'] },

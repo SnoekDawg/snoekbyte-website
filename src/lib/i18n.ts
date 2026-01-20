@@ -97,7 +97,7 @@ const translations: Record<Locale, Translation> = {
               period: '/month',
               yearlyPeriod: '/year',
               description: 'For established stores needing advanced features.',
-              features: ['10 feeds', '25,000 products', 'All 15+ templates', '1h to 24h updates', 'Advanced transformations (25+ types)', 'Calculated fields', 'Auto-validation', 'Full analytics', '3 markets', 'Priority email support'],
+              features: ['10 feeds', '25,000 products', 'All 15+ templates', '1h to 24h updates', 'Advanced transformations (25+ types)', 'Calculated fields', 'Auto-validation', 'Full analytics', '5 markets', 'Priority email support'],
               cta: 'Start Free Trial',
               trial: '14-day free trial',
               popular: true,
@@ -268,7 +268,7 @@ const translations: Record<Locale, Translation> = {
           plans: [
             { name: 'Free', price: '€0', period: '/voor altijd', description: 'Perfect voor kleine winkels die starten met feeds.', features: ['1 feed', '500 producten', 'Google Shopping template', '24u update frequentie', 'Basis transformaties (5 types)', 'Basis validatie', 'Basis stats', 'Community support'], cta: 'Start Gratis', popular: false },
             { name: 'Starter', price: '€19', yearlyPrice: '€182', period: '/maand', yearlyPeriod: '/jaar', description: 'Voor groeiende winkels die uitbreiden naar meerdere kanalen.', features: ['3 feeds', '2.500 producten', '5 platform templates', '6u, 12u, 24u updates', 'Standaard transformaties (15 types)', 'Standaard validatie', 'Standaard analytics', 'Wachtwoord beveiliging', 'Email support'], cta: 'Start Proefperiode', trial: '14 dagen gratis', popular: false },
-            { name: 'Pro', price: '€49', yearlyPrice: '€470', period: '/maand', yearlyPeriod: '/jaar', description: 'Voor gevestigde winkels die geavanceerde features nodig hebben.', features: ['10 feeds', '25.000 producten', 'Alle 15+ templates', '1u tot 24u updates', 'Geavanceerde transformaties (25+ types)', 'Calculated fields', 'Auto-validatie', 'Volledige analytics', '3 markten', 'Priority email support'], cta: 'Start Proefperiode', trial: '14 dagen gratis', popular: true },
+            { name: 'Pro', price: '€49', yearlyPrice: '€470', period: '/maand', yearlyPeriod: '/jaar', description: 'Voor gevestigde winkels die geavanceerde features nodig hebben.', features: ['10 feeds', '25.000 producten', 'Alle 15+ templates', '1u tot 24u updates', 'Geavanceerde transformaties (25+ types)', 'Calculated fields', 'Auto-validatie', 'Volledige analytics', '5 markten', 'Priority email support'], cta: 'Start Proefperiode', trial: '14 dagen gratis', popular: true },
             { name: 'Enterprise', price: '€149', yearlyPrice: '€1.430', period: '/maand', yearlyPeriod: '/jaar', description: 'Voor high-volume winkels met complexe vereisten.', features: ['Onbeperkte feeds', 'Onbeperkte producten', 'Alle templates + custom', 'Real-time updates', 'Alle transformaties + custom', 'Volledige analytics + export', 'Onbeperkte markten', 'API toegang', 'Dedicated support'], cta: 'Start Proefperiode', trial: '14 dagen gratis', popular: false },
           ],
           faq: [
