@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SnoekByte Website
 
-## Getting Started
+Marketing website for SnoekByte, built with Next.js 14 (App Router) and Tailwind CSS.
 
-First, run the development server:
+## Tech Stack
+
+- Next.js 14
+- React 18
+- TypeScript
+- Tailwind CSS
+
+## Local Development
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Start development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Production Domain
 
-## Learn More
+Primary production domain:
 
-To learn more about Next.js, take a look at the following resources:
+```text
+https://snoekbyte.nl
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Keep all canonical URLs, sitemap entries, and robots references aligned with this domain.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Hosting and Deployments
 
-## Deploy on Vercel
+This project is hosted on Vercel and uses the native Next.js runtime (including middleware for locale redirects).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Recommended branch flow
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `master`: production
+- Feature branches: preview deployments (automatic in Vercel)
+
+### Deployment process
+
+1. Push branch to GitHub.
+2. Vercel creates a preview deployment for non-`master` branches.
+3. Merge to `master` to deploy to production.
+4. Validate:
+   - homepage and locale redirects (`/` -> `/en/`)
+   - `https://snoekbyte.nl/sitemap.xml`
+   - `https://snoekbyte.nl/robots.txt`
+
+## Environment Variables
+
+No required runtime environment variables are currently documented in this repository.
+
+If new variables are introduced:
+
+- add them in Vercel Project Settings (Preview + Production as needed)
+- document them in this README with purpose and example values
+- avoid committing any `.env*` files containing secrets
+
+## Useful Scripts
+
+- `npm run dev` - start local dev server
+- `npm run build` - create production build
+- `npm run start` - run production build locally
+- `npm run lint` - run ESLint

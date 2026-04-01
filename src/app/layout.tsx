@@ -18,11 +18,11 @@ export const metadata: Metadata = {
   keywords: ['Shopify', 'e-commerce', 'apps', 'BackorderPRO', 'inventory management', 'backorder', 'dropshipping', 'automation'],
   authors: [{ name: 'SnoekByte' }],
   creator: 'SnoekByte',
-  metadataBase: new URL('https://snoekbyte.com'),
+  metadataBase: new URL('https://snoekbyte.nl'),
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://snoekbyte.com',
+    url: 'https://snoekbyte.nl',
     siteName: 'SnoekByte',
     title: 'SnoekByte - Powerful Apps for E-commerce Growth',
     description: 'Smart Shopify applications for inventory automation. Over €10M revenue generated for businesses.',

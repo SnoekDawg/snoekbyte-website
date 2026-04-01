@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://snoekbyte.com/sitemap.xml
+Sitemap: https://snoekbyte.nl/sitemap.xml
 
 # Disallow admin/private paths
 Disallow: /api/
