@@ -13,6 +13,7 @@ interface ButtonProps {
   onClick?: () => void;
   disabled?: boolean;
   type?: 'button' | 'submit' | 'reset';
+  title?: string;
 }
 
 export function Button({
@@ -26,6 +27,7 @@ export function Button({
   onClick,
   disabled,
   type = 'button',
+  title,
 }: ButtonProps) {
   const baseStyles = 'inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-navy active:scale-95';
   
@@ -52,6 +54,7 @@ export function Button({
         target={isExternal ? '_blank' : undefined}
         rel={isExternal ? 'noopener noreferrer' : undefined}
         onClick={onClick}
+        title={title}
       >
         {children}
       </a>
@@ -64,6 +67,7 @@ export function Button({
       onClick={onClick}
       disabled={disabled}
       type={type}
+      title={title}
     >
       {children}
     </button>

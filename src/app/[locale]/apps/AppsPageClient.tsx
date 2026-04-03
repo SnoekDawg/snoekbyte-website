@@ -18,8 +18,6 @@ export default function AppsPageClient() {
       tagline: t.apps.feedmapperpro.tagline,
       description: t.apps.feedmapperpro.shortDescription,
       startingPrice: locale === 'nl' ? 'Vanaf €0/maand' : 'From €0/month',
-      href: `/${locale}/apps/feedmapperpro`,
-      color: 'purple',
       badge: 'NEW',
     },
     {
@@ -28,8 +26,6 @@ export default function AppsPageClient() {
       tagline: t.apps.backorderpro.tagline,
       description: t.apps.backorderpro.shortDescription,
       startingPrice: locale === 'nl' ? 'Vanaf €0/maand' : 'From $0/month',
-      href: `/${locale}/apps/backorderpro`,
-      color: 'circuit',
     },
   ];
 
@@ -56,9 +52,18 @@ export default function AppsPageClient() {
             {apps.map((app) => (
               <div
                 key={app.id}
-                className="bg-navy-light/30 backdrop-blur-sm rounded-2xl border border-circuit/20 overflow-hidden hover:border-circuit/40 transition-all duration-300"
+                id={`app-${app.id}`}
+                className="relative bg-navy-light/30 backdrop-blur-sm rounded-2xl border border-circuit/20 overflow-hidden hover:border-circuit/40 transition-all duration-300 scroll-mt-24"
               >
-                <div className="p-8 md:p-10">
+                <div
+                  className="pointer-events-none absolute inset-x-0 top-0 z-20 flex justify-center px-2"
+                  aria-hidden
+                >
+                  <div className="max-w-[min(100%,28rem)] rounded-b-md border border-b border-x border-amber-400/70 bg-amber-500 px-3 py-1.5 text-center text-[0.65rem] font-bold uppercase tracking-wide text-navy shadow-md sm:text-xs sm:normal-case sm:tracking-normal">
+                    {t.apps.internalUseOnly}
+                  </div>
+                </div>
+                <div className="p-8 pb-8 pt-12 md:p-10 md:pt-14">
                   <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
                     {/* Left: Info */}
                     <div className="flex-1">
@@ -85,13 +90,23 @@ export default function AppsPageClient() {
 
                     {/* Right: Actions */}
                     <div className="flex flex-col sm:flex-row lg:flex-col gap-3 lg:min-w-[200px]">
-                      <Button variant="primary" href={app.href} className="w-full justify-center">
+                      <Button
+                        variant="primary"
+                        disabled
+                        title={t.apps.internalUseOnly}
+                        className="w-full cursor-not-allowed justify-center opacity-45 pointer-events-none"
+                      >
                         {locale === 'nl' ? 'Bekijk Details' : 'View Details'}
                         <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
                       </Button>
-                      <Button variant="secondary" href={`/${locale}/apps/${app.id}/pricing`} className="w-full justify-center">
+                      <Button
+                        variant="secondary"
+                        disabled
+                        title={t.apps.internalUseOnly}
+                        className="w-full cursor-not-allowed justify-center opacity-45 pointer-events-none"
+                      >
                         {t.apps.viewPricing}
                       </Button>
                     </div>

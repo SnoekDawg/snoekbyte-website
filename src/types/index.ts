@@ -47,6 +47,8 @@ export interface Translation {
     privacyPolicy: string;
     startTrial: string;
     getStarted: string;
+    /** Shown on app cards when product pages are temporarily closed */
+    internalUseOnly: string;
     comingSoon: { title: string; description: string };
     feedmapperpro: {
       name: string;

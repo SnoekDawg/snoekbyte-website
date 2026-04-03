@@ -44,6 +44,7 @@ const translations: Record<Locale, Translation> = {
       privacyPolicy: 'Privacy Policy',
       startTrial: 'Start 14-Day Trial',
       getStarted: 'Get Started Free',
+      internalUseOnly: 'Currently for internal use only',
       comingSoon: { title: 'More Apps Coming', description: 'We\'re constantly building new solutions. Stay tuned!' },
       feedmapperpro: {
         name: 'FeedMapper PRO',
@@ -252,6 +253,7 @@ const translations: Record<Locale, Translation> = {
       privacyPolicy: 'Privacybeleid',
       startTrial: 'Start 14-Dagen Proefperiode',
       getStarted: 'Start Gratis',
+      internalUseOnly: 'Momenteel alleen voor intern gebruik',
       comingSoon: { title: 'Meer Apps Binnenkort', description: 'We bouwen continu nieuwe oplossingen.' },
       feedmapperpro: {
         name: 'FeedMapper PRO',
@@ -336,6 +338,7 @@ const translations: Record<Locale, Translation> = {
       privacyPolicy: 'Datenschutz',
       startTrial: '14-Tage-Test Starten',
       getStarted: 'Kostenlos Starten',
+      internalUseOnly: 'Derzeit nur für den internen Gebrauch',
       comingSoon: { title: 'Weitere Apps', description: 'Wir bauen ständig neue Lösungen.' },
       feedmapperpro: {
         name: 'FeedMapper PRO',
@@ -399,6 +402,7 @@ const translations: Record<Locale, Translation> = {
       privacyPolicy: 'Confidentialité',
       startTrial: 'Essai 14 Jours',
       getStarted: 'Commencer Gratuitement',
+      internalUseOnly: 'Réservé à un usage interne pour le moment',
       comingSoon: { title: 'Plus d\'Apps Bientôt', description: 'Nous construisons constamment.' },
       feedmapperpro: {
         name: 'FeedMapper PRO',
@@ -462,6 +466,7 @@ const translations: Record<Locale, Translation> = {
       privacyPolicy: 'Privacidad',
       startTrial: 'Prueba 14 Días',
       getStarted: 'Empezar Gratis',
+      internalUseOnly: 'Actualmente solo para uso interno',
       comingSoon: { title: 'Más Apps Pronto', description: 'Constantemente creamos nuevas soluciones.' },
       feedmapperpro: {
         name: 'FeedMapper PRO',
@@ -525,6 +530,7 @@ const translations: Record<Locale, Translation> = {
       privacyPolicy: 'Prywatność',
       startTrial: '14-Dniowy Okres Próbny',
       getStarted: 'Zacznij Za Darmo',
+      internalUseOnly: 'Obecnie tylko do użytku wewnętrznego',
       comingSoon: { title: 'Więcej Aplikacji Wkrótce', description: 'Ciągle tworzymy nowe rozwiązania.' },
       feedmapperpro: {
         name: 'FeedMapper PRO',
@@ -588,6 +594,7 @@ const translations: Record<Locale, Translation> = {
       privacyPolicy: 'Soukromí',
       startTrial: '14-Denní Zkušební Doba',
       getStarted: 'Začít Zdarma',
+      internalUseOnly: 'Momentálně pouze pro interní použití',
       comingSoon: { title: 'Další Aplikace Brzy', description: 'Neustále vytváříme nová řešení.' },
       feedmapperpro: {
         name: 'FeedMapper PRO',
@@ -651,6 +658,7 @@ const translations: Record<Locale, Translation> = {
       privacyPolicy: 'Integritet',
       startTrial: '14-Dagars Testperiod',
       getStarted: 'Börja Gratis',
+      internalUseOnly: 'För närvarande endast för internt bruk',
       comingSoon: { title: 'Fler Appar Snart', description: 'Vi bygger ständigt nya lösningar.' },
       feedmapperpro: {
         name: 'FeedMapper PRO',
