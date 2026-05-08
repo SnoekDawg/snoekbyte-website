@@ -140,12 +140,12 @@ export default function BackorderProPageClient() {
           <div className="flex flex-wrap items-center justify-between gap-6">
             <div>
               <h2 className="text-xl font-bold text-white mb-1">
-                {locale === 'nl' ? 'Prijzen vanaf €0/maand' : 'Pricing starts at $0/month'}
+                {locale === 'nl' ? 'Prijzen vanaf $0/maand' : 'Pricing starts at $0/month'}
               </h2>
               <p className="text-gray-400">
                 {locale === 'nl' 
-                  ? 'Gratis plan voor kleine winkels, betaalde plannen voor meer kracht.' 
-                  : 'Free plan for small stores, paid plans for more power.'}
+                  ? 'Gratis plan voor kleine winkels, betaalde plannen vanaf $14/maand. Annual billing = 2 maanden gratis.' 
+                  : 'Free plan for small stores, paid plans from $14/month. Annual billing = 2 months free.'}
               </p>
             </div>
             <Button variant="secondary" href={`/${locale}/apps/backorderpro/pricing`}>

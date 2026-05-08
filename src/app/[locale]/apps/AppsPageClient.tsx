@@ -25,7 +25,7 @@ export default function AppsPageClient() {
       name: t.apps.backorderpro.name,
       tagline: t.apps.backorderpro.tagline,
       description: t.apps.backorderpro.shortDescription,
-      startingPrice: locale === 'nl' ? 'Vanaf €0/maand' : 'From $0/month',
+      startingPrice: locale === 'nl' ? 'Vanaf $0/maand' : 'From $0/month',
     },
   ];
 
