@@ -17,7 +17,7 @@ export function Footer() {
       title: t.nav.apps,
       links: [
         { label: 'FeedMapper PRO', href: `/${locale}/apps#feedmapperpro` },
-        { label: 'BackorderPRO', href: `/${locale}/apps#backorderpro` },
+        { label: 'BackorderPRO', href: `/${locale}/apps/backorderpro` },
         { label: locale === 'nl' ? 'Alle apps' : 'All Apps', href: `/${locale}/apps` },
       ],
     },

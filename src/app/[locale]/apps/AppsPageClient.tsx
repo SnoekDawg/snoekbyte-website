@@ -6,12 +6,22 @@ import { Button } from '@/components/ui/Button';
 import { getTranslation, getLocaleFromPath } from '@/lib/i18n';
 import type { Locale } from '@/types';
 
+type AppCard = {
+  id: string;
+  name: string;
+  tagline: string;
+  description: string;
+  startingPrice: string;
+  badge?: string;
+  internal?: boolean;
+};
+
 export default function AppsPageClient() {
   const pathname = usePathname();
   const locale = getLocaleFromPath(pathname) as Locale;
   const t = getTranslation(locale);
 
-  const apps = [
+  const apps: AppCard[] = [
     {
       id: 'feedmapperpro',
       name: t.apps.feedmapperpro.name,
@@ -19,6 +29,7 @@ export default function AppsPageClient() {
       description: t.apps.feedmapperpro.shortDescription,
       startingPrice: locale === 'nl' ? 'Vanaf €0/maand' : 'From €0/month',
       badge: 'NEW',
+      internal: true,
     },
     {
       id: 'backorderpro',
@@ -55,15 +66,17 @@ export default function AppsPageClient() {
                 id={`app-${app.id}`}
                 className="relative bg-navy-light/30 backdrop-blur-sm rounded-2xl border border-circuit/20 overflow-hidden hover:border-circuit/40 transition-all duration-300 scroll-mt-24"
               >
-                <div
-                  className="pointer-events-none absolute inset-x-0 top-0 z-20 flex justify-center px-2"
-                  aria-hidden
-                >
-                  <div className="max-w-[min(100%,28rem)] rounded-b-md border border-b border-x border-amber-400/70 bg-amber-500 px-3 py-1.5 text-center text-[0.65rem] font-bold uppercase tracking-wide text-navy shadow-md sm:text-xs sm:normal-case sm:tracking-normal">
-                    {t.apps.internalUseOnly}
+                {app.internal && (
+                  <div
+                    className="pointer-events-none absolute inset-x-0 top-0 z-20 flex justify-center px-2"
+                    aria-hidden
+                  >
+                    <div className="max-w-[min(100%,28rem)] rounded-b-md border border-b border-x border-amber-400/70 bg-amber-500 px-3 py-1.5 text-center text-[0.65rem] font-bold uppercase tracking-wide text-navy shadow-md sm:text-xs sm:normal-case sm:tracking-normal">
+                      {t.apps.internalUseOnly}
+                    </div>
                   </div>
-                </div>
-                <div className="p-8 pb-8 pt-12 md:p-10 md:pt-14">
+                )}
+                <div className={`p-8 md:p-10 ${app.internal ? 'pb-8 pt-12 md:pt-14' : ''}`}>
                   <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
                     {/* Left: Info */}
                     <div className="flex-1">
@@ -71,7 +84,7 @@ export default function AppsPageClient() {
                         <h2 className="text-2xl md:text-3xl font-bold text-white">
                           {app.name}
                         </h2>
-                        {'badge' in app && app.badge && (
+                        {app.badge && (
                           <span className="px-2 py-0.5 text-xs font-bold bg-purple-500 text-white rounded">
                             {app.badge}
                           </span>
@@ -90,25 +103,41 @@ export default function AppsPageClient() {
 
                     {/* Right: Actions */}
                     <div className="flex flex-col sm:flex-row lg:flex-col gap-3 lg:min-w-[200px]">
-                      <Button
-                        variant="primary"
-                        disabled
-                        title={t.apps.internalUseOnly}
-                        className="w-full cursor-not-allowed justify-center opacity-45 pointer-events-none"
-                      >
-                        {locale === 'nl' ? 'Bekijk Details' : 'View Details'}
-                        <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </Button>
-                      <Button
-                        variant="secondary"
-                        disabled
-                        title={t.apps.internalUseOnly}
-                        className="w-full cursor-not-allowed justify-center opacity-45 pointer-events-none"
-                      >
-                        {t.apps.viewPricing}
-                      </Button>
+                      {app.internal ? (
+                        <>
+                          <Button
+                            variant="primary"
+                            disabled
+                            title={t.apps.internalUseOnly}
+                            className="w-full cursor-not-allowed justify-center opacity-45 pointer-events-none"
+                          >
+                            {locale === 'nl' ? 'Bekijk Details' : 'View Details'}
+                            <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                          </Button>
+                          <Button
+                            variant="secondary"
+                            disabled
+                            title={t.apps.internalUseOnly}
+                            className="w-full cursor-not-allowed justify-center opacity-45 pointer-events-none"
+                          >
+                            {t.apps.viewPricing}
+                          </Button>
+                        </>
+                      ) : (
+                        <>
+                          <Button variant="primary" href={`/${locale}/apps/${app.id}`} className="w-full justify-center">
+                            {locale === 'nl' ? 'Bekijk Details' : 'View Details'}
+                            <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                          </Button>
+                          <Button variant="secondary" href={`/${locale}/apps/${app.id}/pricing`} className="w-full justify-center">
+                            {t.apps.viewPricing}
+                          </Button>
+                        </>
+                      )}
                     </div>
                   </div>
                 </div>
