@@ -123,7 +123,7 @@ export default function BackorderProPricingClient() {
                   {/* CTA */}
                   <Button
                     variant={plan.popular ? 'primary' : 'secondary'}
-                    href="https://backorder-pro.fly.dev/auth/login"
+                    href="https://apps.shopify.com/backorderpro"
                     target="_blank"
                     className="w-full justify-center"
                   >
@@ -201,10 +201,10 @@ export default function BackorderProPricingClient() {
             <Button
               variant="primary"
               size="lg"
-              href="https://backorder-pro.fly.dev/auth/login"
+              href="https://apps.shopify.com/backorderpro"
               target="_blank"
             >
-              {t.apps.getStarted}
+              {t.apps.installNow}
             </Button>
             <Button
               variant="secondary"
