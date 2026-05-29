@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import { BelcoChat } from '@/components/third-party/BelcoChat';
 import './globals.css';
 
 // Inter - optimized for screen readability, professional, modern
@@ -64,6 +65,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.variable} font-sans antialiased min-h-screen`}>
         {children}
+        <BelcoChat />
       </body>
     </html>
   );
