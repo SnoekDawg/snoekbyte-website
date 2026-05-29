@@ -98,14 +98,17 @@ export default function FeedMapperProPricingClient() {
               </div>
 
               <ul className="space-y-3 mb-6">
-                {plan.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-start gap-2 text-sm text-gray-300">
-                    <svg className="w-4 h-4 text-pike mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    {feature}
-                  </li>
-                ))}
+                {plan.features.map((feature, featureIndex) => {
+                  const label = typeof feature === 'string' ? feature : feature.text;
+                  return (
+                    <li key={featureIndex} className="flex items-start gap-2 text-sm text-gray-300">
+                      <svg className="w-4 h-4 text-pike mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      {label}
+                    </li>
+                  );
+                })}
               </ul>
 
               <Button

@@ -110,14 +110,27 @@ export default function BackorderProPricingClient() {
                   
                   {/* Features */}
                   <ul className="space-y-3 mb-6 flex-1">
-                    {plan.features.map((feature, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm">
-                        <svg className="w-4 h-4 text-pike flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span className="text-gray-300">{feature}</span>
-                      </li>
-                    ))}
+                    {plan.features.map((feature, i) => {
+                      const isObject = typeof feature !== 'string';
+                      const included = isObject ? feature.included : true;
+                      const label = isObject ? feature.text : feature;
+                      return (
+                        <li key={i} className="flex items-start gap-2 text-sm">
+                          {included ? (
+                            <svg className="w-4 h-4 text-pike flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                            </svg>
+                          ) : (
+                            <svg className="w-4 h-4 text-gray-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                          )}
+                          <span className={included ? 'text-gray-300' : 'text-gray-500 line-through decoration-gray-600'}>
+                            {label}
+                          </span>
+                        </li>
+                      );
+                    })}
                   </ul>
                   
                   {/* CTA */}

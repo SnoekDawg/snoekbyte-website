@@ -1,5 +1,7 @@
 export type Locale = 'en' | 'nl' | 'de' | 'fr' | 'es' | 'pl' | 'cs' | 'sv';
 
+export type PricingFeature = string | { text: string; included: false };
+
 export interface PricingPlan {
   name: string;
   price: string;
@@ -7,7 +9,7 @@ export interface PricingPlan {
   period: string;
   yearlyPeriod?: string;
   description: string;
-  features: string[];
+  features: PricingFeature[];
   cta: string;
   popular?: boolean;
   trial?: string;
