@@ -23,33 +23,8 @@ interface ProcessStep {
 }
 
 interface ShowcaseItem {
-  mock: 'product' | 'tracker';
   title: string;
   text: string;
-}
-
-interface MockLabels {
-  product: {
-    vendor: string;
-    name: string;
-    price: string;
-    stockTag: string;
-    leadBadge: string;
-    restock: string;
-    preorderBtn: string;
-    preorderSub: string;
-    addToCart: string;
-  };
-  tracker: {
-    title: string;
-    colOrder: string;
-    colProduct: string;
-    colQty: string;
-    colStatus: string;
-    statusOnTrack: string;
-    statusDueSoon: string;
-    statusOverdue: string;
-  };
 }
 
 export interface BackorderProContent {
@@ -66,8 +41,20 @@ export interface BackorderProContent {
   testimonial: { placeholder: boolean; quote: string; name: string; role: string };
   midCta: { title: string };
   finalCta: { title: string; subtitle: string; body: string };
-  mockLabels: MockLabels;
 }
+
+export const BACKORDERPRO_HERO_IMAGE = '/images/backorderpro/product-preorder-button.png';
+
+export const BACKORDERPRO_SHOWCASE_IMAGES = [
+  '/images/backorderpro/leadtime-card.png',
+  '/images/backorderpro/product-card-preorder.png',
+  '/images/backorderpro/cart-preorder.png',
+  '/images/backorderpro/account-overview.png',
+  '/images/backorderpro/admin-tracker.png',
+  '/images/backorderpro/delivery-update.png',
+  '/images/backorderpro/buy-advice.png',
+  '/images/backorderpro/shopify-filter.png',
+];
 
 const content: Record<Locale, BackorderProContent> = {
   nl: {
@@ -110,11 +97,17 @@ const content: Record<Locale, BackorderProContent> = {
       ],
     },
     showcase: {
-      title: 'Zie het op je storefront',
-      intro: 'Alle teksten en kleuren stel je in de app in \u2014 geen aanpassingen aan je themacode nodig.',
+      title: 'Zie BackorderPRO in actie',
+      intro: 'Van storefront tot admin \u2014 een korte rondleiding langs wat je klant ziet en hoe jij de regie houdt.',
       items: [
-        { mock: 'product', title: 'Levertijd & pre-order op de productpagina', text: 'Een duidelijke lead-time badge, de verwachte voorraad-datum en \u2014 als de voorraad op is \u2014 een pre-order knop in plaats van de gewone add-to-cart. De klant weet precies waar hij aan toe is en bestelt door.' },
-        { mock: 'tracker', title: 'Backorder Tracker: nooit meer een order kwijt', text: 'Alle openstaande backorders gegroepeerd per order, met status (op tijd / bijna te laat / te laat), snooze, bulk-acties en CSV-export. Plus Buy Advice voor je inkooplijst.' },
+        { title: 'Levertijd vooraf zichtbaar', text: 'Toon een levertijd op de productkaart zodra het artikel bij je leverancier op voorraad is \u2014 zo blijft de klant met vertrouwen bestellen.' },
+        { title: 'Pre-order met leverdatum', text: 'Uitverkocht? De kaart toont de verwachte leverdatum en laat de klant meteen pre-orderen in plaats van af te haken.' },
+        { title: 'Glashelder in de winkelwagen', text: 'De pre-order en verwachte leverdatum blijven zichtbaar in het winkelmandje, zodat de klant precies weet wat hij bestelt.' },
+        { title: 'De klant ziet zijn eigen pre-orders', text: 'Optioneel overzicht in het klantaccount met alle pre-orders en backorders, verwachte leverdatums en het type order.' },
+        { title: 'Alle backorders op \u00e9\u00e9n dashboard', text: 'Zie open backorders, wachttijd en verwachte leverdatum in \u00e9\u00e9n overzicht \u2014 filter op vendor, status of dagen wachten.' },
+        { title: 'Leverdatum gewijzigd? Mail de klant in \u00e9\u00e9n klik', text: 'Pas de verwachte leverdatum aan en verstuur automatisch een nette update in de eigen taal van de klant.' },
+        { title: 'Inkoopadvies: weet wat je moet bijbestellen', text: 'BackorderPRO bundelt alles wat al verkocht is maar nog binnen moet komen tot een inkooplijst per leverancier \u2014 afvinken en exporteren.' },
+        { title: 'Levertijden als filter in Shopify', text: 'Leverstatussen worden metafields, zodat je ze als filter in Search & Discovery kunt gebruiken.' },
       ],
     },
     beforeAfter: {
@@ -175,10 +168,6 @@ const content: Record<Locale, BackorderProContent> = {
       subtitle: 'Gratis plan beschikbaar, geen creditcard nodig.',
       body: 'Installeer in minuten, koppel je eerste feed en laat BackorderPRO levertijden, pre-orders en backorders automatisch beheren.',
     },
-    mockLabels: {
-      product: { vendor: 'Karp Tackle', name: 'Carbon Reel 8000', price: '\u20ac129,95', stockTag: '0 op voorraad', leadBadge: 'Levering in 5\u20138 werkdagen', restock: 'Verwacht op voorraad: 18 jun', preorderBtn: 'Pre-order nu', preorderSub: 'Verzonden zodra binnen', addToCart: 'In winkelmandje' },
-      tracker: { title: 'Backorder Tracker', colOrder: 'Order', colProduct: 'Product', colQty: 'Aantal', colStatus: 'Status', statusOnTrack: 'Op tijd', statusDueSoon: 'Bijna te laat', statusOverdue: 'Te laat' },
-    },
   },
 
   en: {
@@ -221,11 +210,17 @@ const content: Record<Locale, BackorderProContent> = {
       ],
     },
     showcase: {
-      title: 'See it on your storefront',
-      intro: 'You control all copy and colours from inside the app \u2014 no theme code edits required.',
+      title: 'See BackorderPRO in action',
+      intro: 'From storefront to admin \u2014 a quick tour of what your customers see and how you stay in control.',
       items: [
-        { mock: 'product', title: 'Delivery time & pre-order on the product page', text: 'A clear lead-time badge, the expected restock date and \u2014 when stock runs out \u2014 a pre-order button instead of the regular add-to-cart. The customer knows exactly where they stand and keeps buying.' },
-        { mock: 'tracker', title: 'Backorder Tracker: never lose an order again', text: 'All open backorders grouped per order, with status (on track / due soon / overdue), snooze, bulk actions and CSV export. Plus Buy Advice for your shopping list.' },
+        { title: 'Lead time visible up front', text: 'Show a delivery time on the product card as soon as the item is in stock at your supplier \u2014 so customers keep buying with confidence.' },
+        { title: 'Pre-order with a delivery date', text: 'Sold out? The card shows the expected delivery date and lets the customer pre-order right away instead of leaving.' },
+        { title: 'Crystal clear in the cart', text: 'The pre-order and expected delivery date stay visible in the cart, so the customer knows exactly what they are ordering.' },
+        { title: 'Customers see their own pre-orders', text: 'An optional overview in the customer account shows all pre-orders and backorders, expected dates and the order type.' },
+        { title: 'Every backorder on one dashboard', text: 'See open backorders, waiting time and expected delivery date in one view \u2014 filter by vendor, status or days waiting.' },
+        { title: 'Date changed? Email the customer in one click', text: 'Adjust the expected delivery date and automatically send a clean update in the customer\u2019s own language.' },
+        { title: 'Buy Advice: know what to reorder', text: 'BackorderPRO bundles everything already sold but not yet received into a shopping list per supplier \u2014 check off and export.' },
+        { title: 'Delivery times as a Shopify filter', text: 'Delivery statuses become metafields, so you can use them as a filter in Search & Discovery.' },
       ],
     },
     beforeAfter: {
@@ -286,10 +281,6 @@ const content: Record<Locale, BackorderProContent> = {
       subtitle: 'Free plan available, no credit card required.',
       body: 'Install in minutes, connect your first feed and let BackorderPRO manage delivery times, pre-orders and backorders automatically.',
     },
-    mockLabels: {
-      product: { vendor: 'Karp Tackle', name: 'Carbon Reel 8000', price: '$129.95', stockTag: '0 in stock', leadBadge: 'Delivery in 5\u20138 working days', restock: 'Expected back in stock: Jun 18', preorderBtn: 'Pre-order now', preorderSub: 'Ships as soon as it arrives', addToCart: 'Add to cart' },
-      tracker: { title: 'Backorder Tracker', colOrder: 'Order', colProduct: 'Product', colQty: 'Qty', colStatus: 'Status', statusOnTrack: 'On track', statusDueSoon: 'Due soon', statusOverdue: 'Overdue' },
-    },
   },
 
   de: {
@@ -332,11 +323,17 @@ const content: Record<Locale, BackorderProContent> = {
       ],
     },
     showcase: {
-      title: 'Sieh es in deinem Storefront',
-      intro: 'Alle Texte und Farben stellst du in der App ein \u2014 keine \u00c4nderungen am Theme-Code n\u00f6tig.',
+      title: 'Sieh BackorderPRO in Aktion',
+      intro: 'Vom Storefront bis zum Admin \u2014 eine kurze Tour durch das, was deine Kunden sehen und wie du die Kontrolle beh\u00e4ltst.',
       items: [
-        { mock: 'product', title: 'Lieferzeit & Vorbestellung auf der Produktseite', text: 'Ein klares Lieferzeit-Badge, das erwartete Restock-Datum und \u2014 wenn der Bestand leer ist \u2014 ein Vorbestell-Button statt des normalen Warenkorb-Buttons. Der Kunde wei\u00df genau Bescheid und kauft weiter.' },
-        { mock: 'tracker', title: 'Backorder Tracker: nie wieder eine Bestellung verlieren', text: 'Alle offenen Nachbestellungen nach Bestellung gruppiert, mit Status (p\u00fcnktlich / bald f\u00e4llig / \u00fcberf\u00e4llig), Snooze, Massenaktionen und CSV-Export. Plus Buy Advice f\u00fcr deine Einkaufsliste.' },
+        { title: 'Lieferzeit von vornherein sichtbar', text: 'Zeige eine Lieferzeit auf der Produktkarte, sobald der Artikel bei deinem Lieferanten auf Lager ist \u2014 so kaufen Kunden mit Vertrauen weiter.' },
+        { title: 'Vorbestellung mit Liefertermin', text: 'Ausverkauft? Die Karte zeigt den erwarteten Liefertermin und l\u00e4sst den Kunden sofort vorbestellen, statt zu gehen.' },
+        { title: 'Glasklar im Warenkorb', text: 'Vorbestellung und erwarteter Liefertermin bleiben im Warenkorb sichtbar, damit der Kunde genau wei\u00df, was er bestellt.' },
+        { title: 'Kunden sehen ihre eigenen Vorbestellungen', text: 'Eine optionale \u00dcbersicht im Kundenkonto zeigt alle Vorbestellungen und Nachbestellungen, erwartete Termine und den Bestelltyp.' },
+        { title: 'Jede Nachbestellung auf einem Dashboard', text: 'Sieh offene Nachbestellungen, Wartezeit und erwarteten Liefertermin in einer Ansicht \u2014 filtere nach Lieferant, Status oder Wartetagen.' },
+        { title: 'Termin ge\u00e4ndert? Kunde per Klick informieren', text: 'Passe den erwarteten Liefertermin an und sende automatisch ein sauberes Update in der Sprache des Kunden.' },
+        { title: 'Buy Advice: wissen, was nachzubestellen ist', text: 'BackorderPRO b\u00fcndelt alles, was bereits verkauft, aber noch nicht eingetroffen ist, zu einer Einkaufsliste pro Lieferant \u2014 abhaken und exportieren.' },
+        { title: 'Lieferzeiten als Shopify-Filter', text: 'Lieferstatus werden zu Metafields, sodass du sie als Filter in Search & Discovery nutzen kannst.' },
       ],
     },
     beforeAfter: {
@@ -397,10 +394,6 @@ const content: Record<Locale, BackorderProContent> = {
       subtitle: 'Kostenloser Plan verf\u00fcgbar, keine Kreditkarte n\u00f6tig.',
       body: 'In Minuten installiert, ersten Feed verbinden und BackorderPRO Lieferzeiten, Vorbestellungen und Nachbestellungen automatisch verwalten lassen.',
     },
-    mockLabels: {
-      product: { vendor: 'Karp Tackle', name: 'Carbon Reel 8000', price: '129,95\u20ac', stockTag: '0 auf Lager', leadBadge: 'Lieferung in 5\u20138 Werktagen', restock: 'Erwartet ab: 18. Juni', preorderBtn: 'Jetzt vorbestellen', preorderSub: 'Versand sobald verf\u00fcgbar', addToCart: 'In den Warenkorb' },
-      tracker: { title: 'Backorder Tracker', colOrder: 'Bestellung', colProduct: 'Produkt', colQty: 'Menge', colStatus: 'Status', statusOnTrack: 'P\u00fcnktlich', statusDueSoon: 'Bald f\u00e4llig', statusOverdue: '\u00dcberf\u00e4llig' },
-    },
   },
 
   fr: {
@@ -443,11 +436,17 @@ const content: Record<Locale, BackorderProContent> = {
       ],
     },
     showcase: {
-      title: 'Voyez-le sur votre boutique',
-      intro: 'Vous contr\u00f4lez tous les textes et couleurs depuis l\u2019application \u2014 aucune modification du code du th\u00e8me.',
+      title: 'Voyez BackorderPRO en action',
+      intro: 'De la boutique \u00e0 l\u2019admin \u2014 un tour rapide de ce que vos clients voient et de la fa\u00e7on dont vous gardez le contr\u00f4le.',
       items: [
-        { mock: 'product', title: 'D\u00e9lai & pr\u00e9commande sur la page produit', text: 'Un badge de d\u00e9lai clair, la date de r\u00e9assort attendue et \u2014 en rupture \u2014 un bouton de pr\u00e9commande \u00e0 la place de l\u2019ajout au panier. Le client sait exactement \u00e0 quoi s\u2019attendre et continue d\u2019acheter.' },
-        { mock: 'tracker', title: 'Backorder Tracker : ne perdez plus une commande', text: 'Toutes les commandes en attente group\u00e9es par commande, avec statut (\u00e0 temps / bient\u00f4t d\u00fb / en retard), report, actions group\u00e9es et export CSV. Plus Buy Advice pour votre liste d\u2019achat.' },
+        { title: 'D\u00e9lai visible d\u00e8s le d\u00e9part', text: 'Affichez un d\u00e9lai de livraison sur la carte produit d\u00e8s que l\u2019article est en stock chez votre fournisseur \u2014 les clients continuent d\u2019acheter en confiance.' },
+        { title: 'Pr\u00e9commande avec date de livraison', text: 'En rupture ? La carte affiche la date de livraison attendue et permet au client de pr\u00e9commander imm\u00e9diatement au lieu de partir.' },
+        { title: 'Limpide dans le panier', text: 'La pr\u00e9commande et la date de livraison attendue restent visibles dans le panier, pour que le client sache exactement ce qu\u2019il commande.' },
+        { title: 'Les clients voient leurs pr\u00e9commandes', text: 'Un aper\u00e7u optionnel dans le compte client montre toutes les pr\u00e9commandes et commandes en attente, les dates attendues et le type de commande.' },
+        { title: 'Chaque commande en attente sur un tableau de bord', text: 'Voyez les commandes en attente, le temps d\u2019attente et la date de livraison attendue d\u2019un coup d\u2019\u0153il \u2014 filtrez par fournisseur, statut ou jours d\u2019attente.' },
+        { title: 'Date modifi\u00e9e ? Pr\u00e9venez le client en un clic', text: 'Ajustez la date de livraison attendue et envoyez automatiquement une mise \u00e0 jour soign\u00e9e dans la langue du client.' },
+        { title: 'Buy Advice : savoir quoi recommander', text: 'BackorderPRO regroupe tout ce qui est d\u00e9j\u00e0 vendu mais pas encore re\u00e7u en une liste d\u2019achat par fournisseur \u2014 \u00e0 cocher et exporter.' },
+        { title: 'Les d\u00e9lais comme filtre dans Shopify', text: 'Les statuts de livraison deviennent des m\u00e9tachamps, utilisables comme filtre dans Search & Discovery.' },
       ],
     },
     beforeAfter: {
@@ -508,10 +507,6 @@ const content: Record<Locale, BackorderProContent> = {
       subtitle: 'Plan gratuit disponible, sans carte bancaire.',
       body: 'Installez en quelques minutes, connectez votre premier flux et laissez BackorderPRO g\u00e9rer automatiquement d\u00e9lais, pr\u00e9commandes et commandes en attente.',
     },
-    mockLabels: {
-      product: { vendor: 'Karp Tackle', name: 'Carbon Reel 8000', price: '129,95\u20ac', stockTag: '0 en stock', leadBadge: 'Livraison en 5\u20138 jours ouvr\u00e9s', restock: 'Retour pr\u00e9vu : 18 juin', preorderBtn: 'Pr\u00e9commander', preorderSub: 'Exp\u00e9di\u00e9 d\u00e8s r\u00e9ception', addToCart: 'Ajouter au panier' },
-      tracker: { title: 'Backorder Tracker', colOrder: 'Commande', colProduct: 'Produit', colQty: 'Qt\u00e9', colStatus: 'Statut', statusOnTrack: '\u00c0 temps', statusDueSoon: 'Bient\u00f4t d\u00fb', statusOverdue: 'En retard' },
-    },
   },
 
   es: {
@@ -554,11 +549,17 @@ const content: Record<Locale, BackorderProContent> = {
       ],
     },
     showcase: {
-      title: 'M\u00edralo en tu tienda',
-      intro: 'Controlas todos los textos y colores desde la app \u2014 sin tocar el c\u00f3digo del tema.',
+      title: 'Mira BackorderPRO en acci\u00f3n',
+      intro: 'De la tienda al admin \u2014 un recorrido r\u00e1pido por lo que ven tus clientes y c\u00f3mo mantienes el control.',
       items: [
-        { mock: 'product', title: 'Plazo y pre-pedido en la p\u00e1gina de producto', text: 'Una etiqueta de plazo clara, la fecha de reposici\u00f3n esperada y \u2014 cuando se agota \u2014 un bot\u00f3n de pre-pedido en lugar del de a\u00f1adir al carrito. El cliente sabe exactamente qu\u00e9 esperar y sigue comprando.' },
-        { mock: 'tracker', title: 'Backorder Tracker: nunca m\u00e1s pierdas un pedido', text: 'Todos los pedidos pendientes agrupados por pedido, con estado (a tiempo / pr\u00f3ximo / vencido), posponer, acciones masivas y exportaci\u00f3n CSV. Adem\u00e1s Buy Advice para tu lista de compra.' },
+        { title: 'Plazo visible desde el principio', text: 'Muestra un plazo de entrega en la tarjeta de producto en cuanto el art\u00edculo est\u00e1 en stock en tu proveedor \u2014 los clientes siguen comprando con confianza.' },
+        { title: 'Pre-pedido con fecha de entrega', text: '\u00bfAgotado? La tarjeta muestra la fecha de entrega esperada y permite al cliente pre-pedir al momento en lugar de irse.' },
+        { title: 'Cristalino en el carrito', text: 'El pre-pedido y la fecha de entrega esperada siguen visibles en el carrito, para que el cliente sepa exactamente qu\u00e9 pide.' },
+        { title: 'Los clientes ven sus propios pre-pedidos', text: 'Una vista opcional en la cuenta de cliente muestra todos los pre-pedidos y pedidos pendientes, fechas esperadas y el tipo de pedido.' },
+        { title: 'Cada pedido pendiente en un panel', text: 'Ve pedidos pendientes, tiempo de espera y fecha de entrega esperada de un vistazo \u2014 filtra por proveedor, estado o d\u00edas de espera.' },
+        { title: '\u00bfCambi\u00f3 la fecha? Avisa al cliente con un clic', text: 'Ajusta la fecha de entrega esperada y env\u00eda autom\u00e1ticamente una actualizaci\u00f3n cuidada en el idioma del cliente.' },
+        { title: 'Buy Advice: saber qu\u00e9 reponer', text: 'BackorderPRO agrupa todo lo ya vendido pero a\u00fan no recibido en una lista de compra por proveedor \u2014 marcar y exportar.' },
+        { title: 'Plazos como filtro en Shopify', text: 'Los estados de entrega se convierten en metacampos, para usarlos como filtro en Search & Discovery.' },
       ],
     },
     beforeAfter: {
@@ -619,10 +620,6 @@ const content: Record<Locale, BackorderProContent> = {
       subtitle: 'Plan gratuito disponible, sin tarjeta de cr\u00e9dito.',
       body: 'Inst\u00e1lalo en minutos, conecta tu primer feed y deja que BackorderPRO gestione plazos, pre-pedidos y pedidos pendientes autom\u00e1ticamente.',
     },
-    mockLabels: {
-      product: { vendor: 'Karp Tackle', name: 'Carbon Reel 8000', price: '129,95\u20ac', stockTag: '0 en stock', leadBadge: 'Entrega en 5\u20138 d\u00edas laborables', restock: 'Reposici\u00f3n prevista: 18 jun', preorderBtn: 'Pre-pedir ahora', preorderSub: 'Se env\u00eda al llegar', addToCart: 'A\u00f1adir al carrito' },
-      tracker: { title: 'Backorder Tracker', colOrder: 'Pedido', colProduct: 'Producto', colQty: 'Cant.', colStatus: 'Estado', statusOnTrack: 'A tiempo', statusDueSoon: 'Pr\u00f3ximo', statusOverdue: 'Vencido' },
-    },
   },
 
   pl: {
@@ -665,11 +662,17 @@ const content: Record<Locale, BackorderProContent> = {
       ],
     },
     showcase: {
-      title: 'Zobacz to w swoim sklepie',
-      intro: 'Wszystkie teksty i kolory ustawiasz w aplikacji \u2014 bez zmian w kodzie motywu.',
+      title: 'Zobacz BackorderPRO w akcji',
+      intro: 'Od sklepu po panel admina \u2014 kr\u00f3tka wycieczka po tym, co widzi klient i jak Ty zachowujesz kontrol\u0119.',
       items: [
-        { mock: 'product', title: 'Czas dostawy i przedsprzeda\u017c na stronie produktu', text: 'Czytelna plakietka z czasem dostawy, oczekiwana data uzupe\u0142nienia i \u2014 gdy zabraknie stanu \u2014 przycisk przedsprzeda\u017cy zamiast zwyk\u0142ego dodawania do koszyka. Klient wie, na czym stoi, i kupuje dalej.' },
-        { mock: 'tracker', title: 'Backorder Tracker: nigdy nie zgub zam\u00f3wienia', text: 'Wszystkie otwarte zam\u00f3wienia oczekuj\u0105ce pogrupowane wed\u0142ug zam\u00f3wienia, ze statusem (na czas / wkr\u00f3tce / po terminie), drzemk\u0105, akcjami masowymi i eksportem CSV. Plus Buy Advice na list\u0119 zakup\u00f3w.' },
+        { title: 'Czas dostawy widoczny od razu', text: 'Poka\u017c czas dostawy na karcie produktu, gdy tylko artyku\u0142 jest dost\u0119pny u dostawcy \u2014 klienci kupuj\u0105 dalej z pewno\u015bci\u0105.' },
+        { title: 'Przedsprzeda\u017c z dat\u0105 dostawy', text: 'Wyprzedane? Karta pokazuje oczekiwan\u0105 dat\u0119 dostawy i pozwala klientowi od razu z\u0142o\u017cy\u0107 przedsprzeda\u017c zamiast odej\u015b\u0107.' },
+        { title: 'Przejrzy\u015bcie w koszyku', text: 'Przedsprzeda\u017c i oczekiwana data dostawy pozostaj\u0105 widoczne w koszyku, by klient dok\u0142adnie wiedzia\u0142, co zamawia.' },
+        { title: 'Klienci widz\u0105 w\u0142asne przedsprzeda\u017ce', text: 'Opcjonalny przegl\u0105d na koncie klienta pokazuje wszystkie przedsprzeda\u017ce i zam\u00f3wienia oczekuj\u0105ce, oczekiwane daty i typ zam\u00f3wienia.' },
+        { title: 'Ka\u017cde zam\u00f3wienie oczekuj\u0105ce na jednym pulpicie', text: 'Zobacz otwarte zam\u00f3wienia oczekuj\u0105ce, czas oczekiwania i oczekiwan\u0105 dat\u0119 dostawy w jednym widoku \u2014 filtruj wed\u0142ug dostawcy, statusu lub dni oczekiwania.' },
+        { title: 'Zmiana daty? Powiadom klienta jednym klikni\u0119ciem', text: 'Dostosuj oczekiwan\u0105 dat\u0119 dostawy i automatycznie wy\u015blij schludn\u0105 aktualizacj\u0119 w j\u0119zyku klienta.' },
+        { title: 'Buy Advice: wiedz, co zam\u00f3wi\u0107', text: 'BackorderPRO \u0142\u0105czy wszystko, co ju\u017c sprzedane, ale jeszcze nieotrzymane, w list\u0119 zakup\u00f3w na dostawc\u0119 \u2014 odhaczaj i eksportuj.' },
+        { title: 'Czasy dostawy jako filtr w Shopify', text: 'Statusy dostawy staj\u0105 si\u0119 metapolami, dzi\u0119ki czemu mo\u017cesz ich u\u017cy\u0107 jako filtru w Search & Discovery.' },
       ],
     },
     beforeAfter: {
@@ -730,10 +733,6 @@ const content: Record<Locale, BackorderProContent> = {
       subtitle: 'Dost\u0119pny darmowy plan, bez karty kredytowej.',
       body: 'Zainstaluj w kilka minut, pod\u0142\u0105cz pierwszy feed i pozw\u00f3l BackorderPRO automatycznie zarz\u0105dza\u0107 czasami dostawy, przedsprzeda\u017c\u0105 i zam\u00f3wieniami oczekuj\u0105cymi.',
     },
-    mockLabels: {
-      product: { vendor: 'Karp Tackle', name: 'Carbon Reel 8000', price: '129,95\u20ac', stockTag: '0 w magazynie', leadBadge: 'Dostawa w 5\u20138 dni roboczych', restock: 'Spodziewany dost\u0119p: 18 cze', preorderBtn: 'Zam\u00f3w w przedsprzeda\u017cy', preorderSub: 'Wysy\u0142ka po dostawie', addToCart: 'Do koszyka' },
-      tracker: { title: 'Backorder Tracker', colOrder: 'Zam\u00f3wienie', colProduct: 'Produkt', colQty: 'Ilo\u015b\u0107', colStatus: 'Status', statusOnTrack: 'Na czas', statusDueSoon: 'Wkr\u00f3tce', statusOverdue: 'Po terminie' },
-    },
   },
 
   cs: {
@@ -776,11 +775,17 @@ const content: Record<Locale, BackorderProContent> = {
       ],
     },
     showcase: {
-      title: 'Pod\u00edvejte se na to ve sv\u00e9m obchod\u011b',
-      intro: 'V\u0161echny texty a barvy nastav\u00edte v aplikaci \u2014 \u017e\u00e1dn\u00e9 z\u00e1sahy do k\u00f3du \u0161ablony.',
+      title: 'Pod\u00edvejte se na BackorderPRO v akci',
+      intro: 'Od obchodu po administraci \u2014 kr\u00e1tk\u00e1 prohl\u00eddka toho, co vid\u00ed z\u00e1kazn\u00edci a jak si udr\u017e\u00edte kontrolu.',
       items: [
-        { mock: 'product', title: 'Dodac\u00ed lh\u016fta a p\u0159edobjedn\u00e1vka na str\u00e1nce produktu', text: 'P\u0159ehledn\u00fd odznak s dodac\u00ed lh\u016ftou, o\u010dek\u00e1van\u00e9 datum nask\u00e1dnov\u00e1n\u00ed a \u2014 kdy\u017e dojde sklad \u2014 tla\u010d\u00edtko p\u0159edobjedn\u00e1vky m\u00edsto b\u011b\u017en\u00e9ho p\u0159id\u00e1n\u00ed do ko\u0161\u00edku. Z\u00e1kazn\u00edk p\u0159esn\u011b v\u00ed, na \u010dem je, a nakupuje d\u00e1l.' },
-        { mock: 'tracker', title: 'Backorder Tracker: u\u017e nikdy neztra\u0165te objedn\u00e1vku', text: 'V\u0161echny otev\u0159en\u00e9 nevy\u0159\u00edzen\u00e9 objedn\u00e1vky seskupen\u00e9 podle objedn\u00e1vky, se stavem (v\u010das / brzy / po term\u00ednu), odlo\u017een\u00edm, hromadn\u00fdmi akcemi a exportem CSV. Plus Buy Advice pro v\u00e1\u0161 n\u00e1kupn\u00ed seznam.' },
+        { title: 'Dodac\u00ed lh\u016fta viditeln\u00e1 hned', text: 'Zobrazte dodac\u00ed lh\u016ftu na kart\u011b produktu, jakmile je zbo\u017e\u00ed skladem u dodavatele \u2014 z\u00e1kazn\u00edci tak nakupuj\u00ed d\u00e1l s d\u016fv\u011brou.' },
+        { title: 'P\u0159edobjedn\u00e1vka s datem doru\u010den\u00ed', text: 'Vyprod\u00e1no? Karta zobraz\u00ed o\u010dek\u00e1van\u00e9 datum doru\u010den\u00ed a umo\u017en\u00ed z\u00e1kazn\u00edkovi ihned p\u0159edobjednat m\u00edsto odchodu.' },
+        { title: 'Jasn\u011b v ko\u0161\u00edku', text: 'P\u0159edobjedn\u00e1vka a o\u010dek\u00e1van\u00e9 datum doru\u010den\u00ed z\u016fst\u00e1vaj\u00ed viditeln\u00e9 v ko\u0161\u00edku, aby z\u00e1kazn\u00edk p\u0159esn\u011b v\u011bd\u011bl, co objedn\u00e1v\u00e1.' },
+        { title: 'Z\u00e1kazn\u00edci vid\u00ed sv\u00e9 p\u0159edobjedn\u00e1vky', text: 'Voliteln\u00fd p\u0159ehled v z\u00e1kaznick\u00e9m \u00fa\u010dtu zobrazuje v\u0161echny p\u0159edobjedn\u00e1vky a nevy\u0159\u00edzen\u00e9 objedn\u00e1vky, o\u010dek\u00e1van\u00e1 data a typ objedn\u00e1vky.' },
+        { title: 'Ka\u017cd\u00e1 nevy\u0159\u00edzen\u00e1 objedn\u00e1vka na jednom dashboardu', text: 'Vidíte otev\u0159en\u00e9 nevy\u0159\u00edzen\u00e9 objedn\u00e1vky, dobu \u010dek\u00e1n\u00ed a o\u010dek\u00e1van\u00e9 datum doru\u010den\u00ed v jednom p\u0159ehledu \u2014 filtrujte podle dodavatele, stavu nebo dn\u016f \u010dek\u00e1n\u00ed.' },
+        { title: 'Zm\u011bna data? Informujte z\u00e1kazn\u00edka jedn\u00edm klikem', text: 'Upravte o\u010dek\u00e1van\u00e9 datum doru\u010den\u00ed a automaticky ode\u0161lete \u010distou aktualizaci v jazyce z\u00e1kazn\u00edka.' },
+        { title: 'Buy Advice: v\u011bzte, co doobjednat', text: 'BackorderPRO slo\u017e\u00ed v\u0161e, co je ji\u017e prod\u00e1no, ale je\u0161t\u011b nedorazilo, do n\u00e1kupn\u00edho seznamu na dodavatele \u2014 od\u0161krt\u00e1vejte a exportujte.' },
+        { title: 'Dodac\u00ed lh\u016fty jako filtr v Shopify', text: 'Stavy doru\u010den\u00ed se st\u00e1vaj\u00ed metapoli, tak\u017ee je m\u016f\u017eete pou\u017e\u00edt jako filtr v Search & Discovery.' },
       ],
     },
     beforeAfter: {
@@ -841,10 +846,6 @@ const content: Record<Locale, BackorderProContent> = {
       subtitle: 'K dispozici bezplatn\u00fd plán, bez platebn\u00ed karty.',
       body: 'Nainstalujte za p\u00e1r minut, propojte prvn\u00ed feed a nechte BackorderPRO automaticky spravovat dodac\u00ed lh\u016fty, p\u0159edobjedn\u00e1vky a nevy\u0159\u00edzen\u00e9 objedn\u00e1vky.',
     },
-    mockLabels: {
-      product: { vendor: 'Karp Tackle', name: 'Carbon Reel 8000', price: '129,95\u20ac', stockTag: '0 skladem', leadBadge: 'Doru\u010den\u00ed za 5\u20138 pracovn\u00edch dn\u00ed', restock: 'O\u010dek\u00e1van\u00e9 nask\u00e1dnov\u00e1n\u00ed: 18. \u010dervna', preorderBtn: 'P\u0159edobjednat', preorderSub: 'Odesl\u00e1no ihned po na skladn\u011bn\u00ed', addToCart: 'Do ko\u0161\u00edku' },
-      tracker: { title: 'Backorder Tracker', colOrder: 'Objedn\u00e1vka', colProduct: 'Produkt', colQty: 'Po\u010det', colStatus: 'Stav', statusOnTrack: 'V\u010das', statusDueSoon: 'Brzy', statusOverdue: 'Po term\u00ednu' },
-    },
   },
 
   sv: {
@@ -887,11 +888,17 @@ const content: Record<Locale, BackorderProContent> = {
       ],
     },
     showcase: {
-      title: 'Se det i din butik',
-      intro: 'Du styr alla texter och f\u00e4rger inifr\u00e5n appen \u2014 inga \u00e4ndringar i temats kod.',
+      title: 'Se BackorderPRO i praktiken',
+      intro: 'Fr\u00e5n butik till admin \u2014 en snabb rundtur i vad dina kunder ser och hur du beh\u00e5ller kontrollen.',
       items: [
-        { mock: 'product', title: 'Leveranstid & f\u00f6rbest\u00e4llning p\u00e5 produktsidan', text: 'En tydlig leveranstidsbricka, det f\u00f6rv\u00e4ntade \u00e5terlagerdatumet och \u2014 n\u00e4r lagret tar slut \u2014 en f\u00f6rbest\u00e4llningsknapp i st\u00e4llet f\u00f6r den vanliga l\u00e4gg-i-varukorg. Kunden vet exakt vad som g\u00e4ller och forts\u00e4tter k\u00f6pa.' },
-        { mock: 'tracker', title: 'Backorder Tracker: tappa aldrig en order igen', text: 'Alla \u00f6ppna restorder grupperade per order, med status (i tid / snart / f\u00f6rsenad), snooze, massåtg\u00e4rder och CSV-export. Plus Buy Advice f\u00f6r din ink\u00f6pslista.' },
+        { title: 'Leveranstid synlig direkt', text: 'Visa en leveranstid p\u00e5 produktkortet s\u00e5 snart varan finns i lager hos din leverant\u00f6r \u2014 kunder forts\u00e4tter k\u00f6pa med f\u00f6rtroende.' },
+        { title: 'F\u00f6rbest\u00e4llning med leveransdatum', text: 'Slutsåld? Kortet visar f\u00f6rv\u00e4ntat leveransdatum och l\u00e5ter kunden f\u00f6rbest\u00e4lla direkt i st\u00e4llet f\u00f6r att l\u00e4mna.' },
+        { title: 'Glasklart i varukorgen', text: 'F\u00f6rbest\u00e4llningen och f\u00f6rv\u00e4ntat leveransdatum f\u00f6rblir synliga i varukorgen, s\u00e5 att kunden vet exakt vad den best\u00e4ller.' },
+        { title: 'Kunder ser sina egna f\u00f6rbest\u00e4llningar', text: 'En valfri \u00f6versikt i kundkontot visar alla f\u00f6rbest\u00e4llningar och restorder, f\u00f6rv\u00e4ntade datum och ordertyp.' },
+        { title: 'Varje restorder p\u00e5 en instrumentpanel', text: 'Se \u00f6ppna restorder, v\u00e4ntetid och f\u00f6rv\u00e4ntat leveransdatum i en vy \u2014 filtrera p\u00e5 leverant\u00f6r, status eller v\u00e4ntedagar.' },
+        { title: '\u00c4ndrat datum? Mejla kunden med ett klick', text: 'Justera f\u00f6rv\u00e4ntat leveransdatum och skicka automatiskt en snygg uppdatering p\u00e5 kundens eget spr\u00e5k.' },
+        { title: 'Buy Advice: vet vad som ska best\u00e4llas', text: 'BackorderPRO samlar allt som redan s\u00e5lts men inte mottagits till en ink\u00f6pslista per leverant\u00f6r \u2014 bocka av och exportera.' },
+        { title: 'Leveranstider som filter i Shopify', text: 'Leveransstatusar blir metaf\u00e4lt, s\u00e5 att du kan anv\u00e4nda dem som filter i Search & Discovery.' },
       ],
     },
     beforeAfter: {
@@ -951,10 +958,6 @@ const content: Record<Locale, BackorderProContent> = {
       title: 'B\u00f6rja med BackorderPRO idag',
       subtitle: 'Gratisplan tillg\u00e4nglig, inget kreditkort beh\u00f6vs.',
       body: 'Installera p\u00e5 n\u00e5gra minuter, koppla din f\u00f6rsta feed och l\u00e5t BackorderPRO sk\u00f6ta leveranstider, f\u00f6rbest\u00e4llningar och restorder automatiskt.',
-    },
-    mockLabels: {
-      product: { vendor: 'Karp Tackle', name: 'Carbon Reel 8000', price: '129,95\u20ac', stockTag: '0 i lager', leadBadge: 'Leverans p\u00e5 5\u20138 arbetsdagar', restock: 'F\u00f6rv\u00e4ntas \u00e5ter: 18 jun', preorderBtn: 'F\u00f6rbest\u00e4ll nu', preorderSub: 'Skickas s\u00e5 snart den kommer', addToCart: 'L\u00e4gg i varukorg' },
-      tracker: { title: 'Backorder Tracker', colOrder: 'Order', colProduct: 'Produkt', colQty: 'Antal', colStatus: 'Status', statusOnTrack: 'I tid', statusDueSoon: 'Snart', statusOverdue: 'F\u00f6rsenad' },
     },
   },
 };
