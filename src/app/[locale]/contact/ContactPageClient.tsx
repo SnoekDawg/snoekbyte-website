@@ -3,6 +3,7 @@
 import React from 'react';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/Button';
+import { LiveChatButton } from '@/components/ui/LiveChatButton';
 import { getTranslation, getLocaleFromPath } from '@/lib/i18n';
 import type { Locale } from '@/types';
 
@@ -31,6 +32,27 @@ export default function ContactPageClient() {
       <section className="py-12 md:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-8">
+            {/* Live Chat Card */}
+            <div className="bg-navy-light/30 backdrop-blur-sm rounded-2xl border border-pike/20 p-8 hover:border-pike/40 transition-all duration-300">
+              <div className="w-14 h-14 rounded-xl bg-pike/20 flex items-center justify-center mb-6">
+                <svg className="w-7 h-7 text-pike" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg>
+              </div>
+              <h2 className="text-xl font-bold text-white mb-2">{t.liveChat.start}</h2>
+              <p className="text-gray-400 mb-6">
+                {locale === 'nl'
+                  ? 'Direct antwoord op je vragen over apps, services of partnerschappen.'
+                  : 'Get instant answers about our apps, services, or partnerships.'}
+              </p>
+              <LiveChatButton variant="primary">
+                {t.liveChat.start}
+                <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </LiveChatButton>
+            </div>
+
             {/* Email Card */}
             <div className="bg-navy-light/30 backdrop-blur-sm rounded-2xl border border-circuit/20 p-8 hover:border-circuit/40 transition-all duration-300">
               <div className="w-14 h-14 rounded-xl bg-circuit/20 flex items-center justify-center mb-6">
@@ -98,19 +120,22 @@ export default function ContactPageClient() {
       <section className="py-16 md:py-24 bg-gradient-to-b from-navy-light/20 to-navy">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-            {locale === 'nl' ? 'Direct contact opnemen?' : 'Want to get in touch directly?'}
+            {locale === 'nl' ? 'Liever direct chatten?' : 'Prefer to chat directly?'}
           </h2>
           <p className="text-gray-300 mb-8">
-            {locale === 'nl' 
-              ? 'Stuur ons een email en we komen zo snel mogelijk bij je terug.'
-              : 'Send us an email and we\'ll get back to you as soon as possible.'}
+            {locale === 'nl'
+              ? 'Start een live chat en we helpen je meteen verder.'
+              : 'Start a live chat and we\'ll help you right away.'}
           </p>
-          <a
-            href="mailto:info@snoekbyte.nl"
-            className="text-2xl md:text-3xl font-bold text-circuit hover:text-circuit/80 transition-colors"
-          >
-            info@snoekbyte.nl
-          </a>
+          <LiveChatButton variant="primary" size="lg">
+            {t.liveChat.start}
+          </LiveChatButton>
+          <p className="text-gray-500 text-sm mt-6">
+            {locale === 'nl' ? 'Of mail ons op' : 'Or email us at'}{' '}
+            <a href="mailto:info@snoekbyte.nl" className="text-circuit hover:underline">
+              info@snoekbyte.nl
+            </a>
+          </p>
         </div>
       </section>
     </div>

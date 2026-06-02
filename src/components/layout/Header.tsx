@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Logo } from '@/components/ui/Logo';
-import { Button } from '@/components/ui/Button';
+import { LiveChatButton } from '@/components/ui/LiveChatButton';
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
 import { MobileNav } from './MobileNav';
 import { getTranslation, getLocaleFromPath } from '@/lib/i18n';
@@ -79,9 +79,9 @@ export function Header() {
               {/* Language Switcher Dropdown */}
               <LanguageSwitcher variant="desktop" />
               
-              <Button variant="primary" size="sm" href={`/${locale}/contact`}>
-                {t.contact.email.cta}
-              </Button>
+              <LiveChatButton variant="primary" size="sm">
+                {t.liveChat.start}
+              </LiveChatButton>
             </div>
 
             {/* Mobile menu button */}

@@ -65,7 +65,6 @@ export default function PrivacyPageClient() {
 }
 
 function BackorderProPrivacy({ locale: _locale }: { locale: Locale }) {
-  // locale available for future translations
   void _locale;
   return (
     <article className="prose prose-invert prose-lg max-w-none">
@@ -107,499 +106,373 @@ function BackorderProPrivacy({ locale: _locale }: { locale: Locale }) {
           padding: 2px 6px;
           border-radius: 4px;
         }
+        .prose blockquote {
+          border-left-color: rgba(77, 195, 224, 0.4);
+          color: #9ca3af;
+        }
       `}</style>
 
-      <h1>Privacy Policy - BackorderPro</h1>
-      
-      <p><strong>Last Updated: January 12, 2026</strong></p>
-      
-      <p>This Privacy Policy describes how SnoekByte (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) collects, uses, and shares information when you use the BackorderPro application (&quot;App&quot;) available through the Shopify App Store.</p>
-      
+      <h1>Privacy Statement — BackorderPro</h1>
+
+      <p><strong>Last updated:</strong> 1 June 2026</p>
+
+      <p>
+        This Privacy Statement explains what data the BackorderPro app (&quot;BackorderPro&quot;,
+        &quot;the app&quot;, &quot;we&quot;, &quot;us&quot;) processes, why we process it, how long we keep it, and
+        the rights you and your customers have. BackorderPro is a Shopify app that helps
+        merchants manage backorders, pre-orders, supplier feeds, purchasing advice,
+        AI-assisted inventory analysis, and optional backorder/delivery-update emails.
+      </p>
+
+      <blockquote>
+        <p>
+          <strong>Operator / data controller for the app:</strong> SnoekByte, Netherlands.
+          Trading as <strong>SnoekByte</strong>.
+          <br />
+          <strong>Contact:</strong>{' '}
+          <a href="mailto:support@snoekbyte.nl">support@snoekbyte.nl</a>
+        </p>
+      </blockquote>
+
       <hr />
-      
-      <h2>1. Introduction</h2>
-      
-      <p>BackorderPro is a Shopify application that helps merchants automatically manage their inventory backorder policies based on supplier feed data. We are committed to protecting your privacy and handling your data in an open and transparent manner.</p>
-      
-      <p>This Privacy Policy applies to merchants (&quot;you&quot; or &quot;Merchant&quot;) who install and use BackorderPro, as well as to the customers of those merchants (&quot;End Customers&quot;).</p>
-      
-      <hr />
-      
-      <h2>2. Information We Collect</h2>
-      
-      <h3>2.1 Merchant Information</h3>
-      
-      <p>When you install BackorderPro, we collect and store:</p>
-      
-      <table>
-        <thead>
-          <tr>
-            <th>Data Type</th>
-            <th>Purpose</th>
-            <th>Retention</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Shop domain</td>
-            <td>Identify your store</td>
-            <td>Until app uninstall + 48 hours</td>
-          </tr>
-          <tr>
-            <td>Access tokens</td>
-            <td>API authentication</td>
-            <td>Until app uninstall</td>
-          </tr>
-          <tr>
-            <td>Timezone settings</td>
-            <td>Schedule synchronizations</td>
-            <td>Until app uninstall</td>
-          </tr>
-          <tr>
-            <td>Feed configurations</td>
-            <td>Process supplier data</td>
-            <td>Until app uninstall</td>
-          </tr>
-          <tr>
-            <td>App preferences</td>
-            <td>Personalize your experience</td>
-            <td>Until app uninstall</td>
-          </tr>
-        </tbody>
-      </table>
-      
-      <h3>2.2 Product & Order Information</h3>
-      
-      <p>To provide our services, we process:</p>
-      
-      <table>
-        <thead>
-          <tr>
-            <th>Data Type</th>
-            <th>Purpose</th>
-            <th>Retention</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Product IDs & Variant IDs</td>
-            <td>Match products with supplier feeds</td>
-            <td>Until app uninstall</td>
-          </tr>
-          <tr>
-            <td>Product titles & SKUs</td>
-            <td>Display in logs and analytics</td>
-            <td>Configurable (default 24 months)</td>
-          </tr>
-          <tr>
-            <td>EAN/Barcodes</td>
-            <td>Product matching</td>
-            <td>Duration of sync process only</td>
-          </tr>
-          <tr>
-            <td>Order IDs & Order names (#1234)</td>
-            <td>Track backorder sales</td>
-            <td>Configurable (default 24 months)</td>
-          </tr>
-          <tr>
-            <td>Order quantities & prices</td>
-            <td>Calculate backorder revenue</td>
-            <td>Configurable (default 24 months)</td>
-          </tr>
-          <tr>
-            <td>Inventory levels</td>
-            <td>Determine backorder status</td>
-            <td>Duration of sync process only</td>
-          </tr>
-        </tbody>
-      </table>
-      
-      <h3>2.3 Supplier Feed Data</h3>
-      
-      <p>When you configure supplier feeds, we temporarily process:</p>
-      
+
+      <h2>1. Roles: who is responsible for what</h2>
+
       <ul>
-        <li>Feed URLs or FTP paths</li>
-        <li>Authentication credentials (stored encrypted)</li>
-        <li>CSV/Excel/XML file contents (processed, not permanently stored)</li>
-        <li>Column mappings and rules you configure</li>
-      </ul>
-      
-      <h3>2.4 What We Do NOT Collect</h3>
-      
-      <p><strong>We explicitly do NOT collect or store:</strong></p>
-      
-      <ul>
-        <li>❌ Customer names</li>
-        <li>❌ Customer email addresses</li>
-        <li>❌ Customer shipping or billing addresses</li>
-        <li>❌ Customer phone numbers</li>
-        <li>❌ Payment information or credit card details</li>
-        <li>❌ Customer IP addresses</li>
-        <li>❌ Any other personally identifiable information (PII) of your customers</li>
-      </ul>
-      
-      <hr />
-      
-      <h2>3. How We Use Your Information</h2>
-      
-      <p>We use the collected information solely to:</p>
-      
-      <ol>
-        <li><strong>Provide the Service</strong> - Synchronize supplier feeds with your Shopify store and update inventory policies</li>
-        <li><strong>Display Analytics</strong> - Show you backorder sales statistics and performance metrics</li>
-        <li><strong>Maintain Logs</strong> - Record execution history for troubleshooting and transparency</li>
-        <li><strong>Schedule Tasks</strong> - Run automated synchronizations at your configured times</li>
-        <li><strong>Improve the App</strong> - Analyze aggregate usage patterns to improve functionality</li>
-      </ol>
-      
-      <p>We do NOT:</p>
-      <ul>
-        <li>Sell your data to third parties</li>
-        <li>Use your data for advertising</li>
-        <li>Share your data with other merchants</li>
-        <li>Access your store for any purpose other than providing the service</li>
-      </ul>
-      
-      <hr />
-      
-      <h2>4. Data Storage & Security</h2>
-      
-      <h3>4.1 Where Data is Stored</h3>
-      
-      <p>Your data is stored on secure servers hosted by:</p>
-      <ul>
-        <li><strong>Fly.io</strong> (Cloud hosting provider) - Data centers in compliance with GDPR</li>
-        <li><strong>SQLite database</strong> - Encrypted at rest</li>
-      </ul>
-      
-      <h3>4.2 Security Measures</h3>
-      
-      <p>We implement industry-standard security measures:</p>
-      
-      <table>
-        <thead>
-          <tr>
-            <th>Measure</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Encryption at rest</td>
-            <td>Database and sensitive credentials are encrypted</td>
-          </tr>
-          <tr>
-            <td>Encrypted credentials</td>
-            <td>FTP/OAuth passwords are encrypted using AES-256</td>
-          </tr>
-          <tr>
-            <td>Secure transmission</td>
-            <td>All data transmitted via HTTPS/TLS</td>
-          </tr>
-          <tr>
-            <td>Access control</td>
-            <td>Only authorized systems can access your data</td>
-          </tr>
-          <tr>
-            <td>Webhook verification</td>
-            <td>HMAC signature verification for all Shopify webhooks</td>
-          </tr>
-        </tbody>
-      </table>
-      
-      <h3>4.3 Credential Storage</h3>
-      
-      <p>When you provide FTP or OAuth credentials for supplier feeds:</p>
-      <ul>
-        <li>Credentials are encrypted before storage using industry-standard encryption</li>
-        <li>We cannot view your plain-text passwords</li>
-        <li>Credentials are only decrypted momentarily during feed synchronization</li>
-      </ul>
-      
-      <hr />
-      
-      <h2>5. Data Retention</h2>
-      
-      <h3>5.1 Default Retention Period</h3>
-      
-      <p>By default, we retain your data for <strong>24 months</strong> after creation. This includes:</p>
-      <ul>
-        <li>Backorder sales records</li>
-        <li>Execution logs</li>
-        <li>Analytics data</li>
-      </ul>
-      
-      <h3>5.2 Configurable Retention</h3>
-      
-      <p>You can configure your data retention period in the App Settings:</p>
-      <ul>
-        <li>Minimum: 6 months</li>
-        <li>Maximum: 36 months</li>
-        <li>Changes apply to future cleanup cycles</li>
-      </ul>
-      
-      <h3>5.3 Automatic Cleanup</h3>
-      
-      <p>Our data retention service automatically removes data older than your configured retention period. This runs periodically to ensure compliance.</p>
-      
-      <h3>5.4 Data Deletion on Uninstall</h3>
-      
-      <p>When you uninstall BackorderPro:</p>
-      <ul>
-        <li>Your session data is immediately deleted</li>
-        <li>Within 48 hours, Shopify sends a <code>shop/redact</code> webhook</li>
-        <li>Upon receiving this webhook, we permanently delete ALL your data including:
-          <ul>
-            <li>All backorder sales records</li>
-            <li>All feed configurations and rules</li>
-            <li>All execution logs</li>
-            <li>All app settings</li>
-          </ul>
+        <li>
+          For the <strong>merchant&apos;s own store data and their customers&apos; personal data</strong>,
+          the <strong>merchant</strong> (the Shopify store owner who installs BackorderPro) is the
+          <strong> data controller</strong>. BackorderPro acts as a <strong>data processor</strong> that processes
+          this data on the merchant&apos;s behalf and only on their instructions (the
+          settings they choose in the app).
+        </li>
+        <li>
+          For <strong>account and operational data about the merchant</strong> (e.g. shop domain,
+          subscription, support correspondence), SnoekByte acts as a <strong>controller</strong>.
         </li>
       </ul>
-      
+
+      <p>
+        If you are a shopper and have a question about your data, please contact the
+        store you purchased from — they are the controller for your order data.
+      </p>
+
       <hr />
-      
-      <h2>6. Data Sharing</h2>
-      
-      <h3>6.1 Third-Party Services</h3>
-      
-      <p>We use the following third-party services:</p>
-      
+
+      <h2>2. What data we process</h2>
+
+      <h3>2.1 Store &amp; configuration data (merchant)</h3>
+      <ul>
+        <li>Shopify shop domain and the access token/session needed to operate the app.</li>
+        <li>
+          App settings: timezones, schedules, delivery/pre-order settings, retention
+          preferences, feature toggles, locale.
+        </li>
+        <li>Subscription/plan information synced from Shopify Billing.</li>
+        <li>
+          Supplier feed configuration and <strong>supplier credentials</strong> (FTP / form logins),
+          which are <strong>encrypted at rest using AES-256-GCM</strong>.
+        </li>
+      </ul>
+
+      <h3>2.2 Product &amp; inventory data</h3>
+      <ul>
+        <li>Variant-level metafields in the <code>snoek_bpo</code> namespace.</li>
+        <li>
+          Product titles, SKUs, variant IDs, vendor names, prices, and inventory levels
+          at the time of an order.
+        </li>
+      </ul>
+
+      <h3>2.3 Backorder &amp; sales data (optional — only when &quot;Backorder Sales Tracking&quot; is on)</h3>
+      <ul>
+        <li>Order IDs and order numbers (e.g. <code>#1234</code>).</li>
+        <li>Order line items, quantities, totals and currency.</li>
+        <li>
+          Inventory level at the time of order; what the customer saw at checkout
+          (e.g. the pre-order/expected-stock message) and any promised delivery date.
+        </li>
+      </ul>
+
+      <p>
+        We do <strong>not</strong> store customer <strong>names</strong>, <strong>phone numbers</strong>,{' '}
+        <strong>shipping/billing addresses</strong>, or <strong>payment/card details</strong>.
+      </p>
+
+      <h3>2.4 Customer contact data (optional — only when you enable email notifications)</h3>
+      <p>If, and only if, the merchant turns on backorder/delivery-update emails:</p>
+      <ul>
+        <li>The affected customer&apos;s <strong>email address</strong>, stored <strong>encrypted at rest</strong>.</li>
+        <li>
+          The customer&apos;s <strong>Shopify customer ID</strong> and <strong>locale</strong> (used to send the email
+          in the right language).
+        </li>
+        <li>
+          An <strong>email send log</strong>: recipient address, locale, which template was used,
+          timestamp, and the email provider&apos;s message ID.
+        </li>
+      </ul>
+
+      <p>
+        This data is used <strong>solely</strong> to send the merchant&apos;s backorder/delivery-update
+        emails to that customer. It is <strong>never</strong> used for marketing, <strong>never</strong> sold, and
+        <strong> never</strong> shared with the AI analysis feature. Access to customer contact data
+        requires Shopify&apos;s approval for <strong>Protected Customer Data</strong>.
+      </p>
+
+      <h3>2.5 AI Analyze data (optional — only with explicit, revocable consent)</h3>
+      <p>
+        The AI Analyze feature produces a plain-language inventory report. It only runs
+        after the merchant explicitly opts in, and consent can be revoked at any time.
+        When enabled, the following <strong>aggregated, non-personal</strong> data is sent to our AI
+        sub-processor (OpenAI) to generate the report:
+      </p>
+      <ul>
+        <li>
+          Aggregated product performance (titles, SKUs, vendor names, units sold while
+          in vs. out of stock, sales velocity, suggested reorder quantities).
+        </li>
+        <li>
+          Vendor reliability metrics (open/overdue backorder counts, configured lead
+          times).
+        </li>
+        <li>
+          The merchant&apos;s configuration (global rules, feed settings, pre-order and
+          delivery settings) and aggregated backorder statistics.
+        </li>
+      </ul>
+
+      <p>
+        <strong>No customer personal data</strong> (no names, emails, addresses, phone numbers),{' '}
+        <strong>no individual orders or order numbers</strong>, and <strong>no payment data</strong> are ever sent
+        to the AI model.
+      </p>
+
+      <hr />
+
+      <h2>3. Why we process this data (purposes &amp; legal bases)</h2>
+
       <table>
         <thead>
           <tr>
-            <th>Service</th>
             <th>Purpose</th>
-            <th>Data Shared</th>
+            <th>Data used</th>
+            <th>Legal basis (GDPR Art. 6)</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Shopify</td>
-            <td>Platform & API</td>
-            <td>Product/order data as needed for functionality</td>
+            <td>Provide core app functionality (inventory/backorder management, feeds)</td>
+            <td>2.1–2.3</td>
+            <td>Performance of a contract; legitimate interests</td>
           </tr>
           <tr>
-            <td>Fly.io</td>
-            <td>Hosting</td>
-            <td>All app data (encrypted)</td>
+            <td>Show analytics, purchasing advice and pre-order insights</td>
+            <td>2.2–2.3</td>
+            <td>Performance of a contract; legitimate interests</td>
           </tr>
           <tr>
-            <td>Your configured suppliers</td>
-            <td>Feed retrieval</td>
-            <td>Only the credentials you provide</td>
+            <td>Send backorder/delivery-update emails to customers</td>
+            <td>2.4</td>
+            <td>
+              Merchant&apos;s instruction; controller&apos;s legal basis (typically legitimate interest or
+              consent of the shopper, determined by the merchant)
+            </td>
+          </tr>
+          <tr>
+            <td>Generate the optional AI inventory report</td>
+            <td>2.5</td>
+            <td>Consent (explicit opt-in in the app)</td>
+          </tr>
+          <tr>
+            <td>Billing, support, fraud/abuse prevention, security</td>
+            <td>2.1, support data</td>
+            <td>Performance of a contract; legitimate interests; legal obligation</td>
           </tr>
         </tbody>
       </table>
-      
-      <h3>6.2 We Do Not Share</h3>
-      
-      <ul>
-        <li>We do not sell your data</li>
-        <li>We do not share data with advertisers</li>
-        <li>We do not provide data to other merchants</li>
-        <li>We do not use your data for purposes unrelated to the App</li>
-      </ul>
-      
-      <h3>6.3 Legal Requirements</h3>
-      
-      <p>We may disclose your information if required by law, such as:</p>
-      <ul>
-        <li>To comply with legal process</li>
-        <li>To protect our rights or property</li>
-        <li>To prevent fraud or security issues</li>
-      </ul>
-      
+
+      <p>
+        We never sell personal data and never use it for advertising or profiling
+        beyond providing the features described here.
+      </p>
+
       <hr />
-      
-      <h2>7. Your Rights (GDPR)</h2>
-      
-      <p>Under the General Data Protection Regulation (GDPR) and similar laws, you have the right to:</p>
-      
+
+      <h2>4. Sub-processors</h2>
+
+      <p>
+        BackorderPro relies on the following sub-processors. Each only receives the data
+        necessary to perform its function:
+      </p>
+
       <table>
         <thead>
           <tr>
-            <th>Right</th>
-            <th>Description</th>
-            <th>How to Exercise</th>
+            <th>Sub-processor</th>
+            <th>Purpose</th>
+            <th>Data shared</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><strong>Access</strong></td>
-            <td>Request a copy of your data</td>
-            <td>Contact us at privacy@snoekbyte.nl</td>
+            <td><strong>Shopify</strong></td>
+            <td>App platform; source of store, product, order and (with approval) customer data</td>
+            <td>Store, product, order and customer data as authorised by the merchant</td>
           </tr>
           <tr>
-            <td><strong>Rectification</strong></td>
-            <td>Correct inaccurate data</td>
-            <td>Update in App Settings or contact us</td>
+            <td><strong>Fly.io</strong></td>
+            <td>Application hosting &amp; database (EU region, Amsterdam)</td>
+            <td>All data at rest, used to run the app</td>
           </tr>
           <tr>
-            <td><strong>Erasure</strong></td>
-            <td>Delete your data</td>
-            <td>Uninstall the app or contact us</td>
+            <td><strong>OpenAI</strong></td>
+            <td>AI Analyze report generation (model: <code>gpt-4o-mini</code>)</td>
+            <td>
+              Only the aggregated, non-personal data in section 2.5, and only with consent.
+              Per OpenAI&apos;s API data-usage policy, API data is not used to train their models
+            </td>
           </tr>
           <tr>
-            <td><strong>Portability</strong></td>
-            <td>Export your data</td>
-            <td>Contact us for a data export</td>
-          </tr>
-          <tr>
-            <td><strong>Restriction</strong></td>
-            <td>Limit processing</td>
-            <td>Contact us</td>
-          </tr>
-          <tr>
-            <td><strong>Objection</strong></td>
-            <td>Object to processing</td>
-            <td>Contact us</td>
+            <td><strong>Resend</strong></td>
+            <td>Sending backorder/delivery-update emails (only when enabled)</td>
+            <td>Recipient email address and email content</td>
           </tr>
         </tbody>
       </table>
-      
-      <p>To exercise any of these rights, please contact us at <strong>privacy@snoekbyte.nl</strong>.</p>
-      
+
       <hr />
-      
-      <h2>8. End Customer Privacy</h2>
-      
-      <h3>8.1 Customer Data</h3>
-      
-      <p>BackorderPro does NOT process personal data of your customers. We only process:</p>
+
+      <h2>5. Data retention</h2>
+
       <ul>
-        <li>Order IDs (e.g., <code>gid://shopify/Order/12345</code>)</li>
-        <li>Order names (e.g., <code>#1001</code>)</li>
-        <li>Product quantities and prices</li>
+        <li>
+          Backorder sales data, product sale events and execution logs are retained for
+          a <strong>configurable window of 3–24 months</strong> (default <strong>24 months</strong>), which the
+          merchant sets in <strong>Settings → Data &amp; Privacy</strong>. The plan may impose a maximum
+          window.
+        </li>
+        <li>
+          Old data beyond the retention window is <strong>automatically deleted</strong> by a daily
+          cleanup job.
+        </li>
+        <li>
+          Merchants can <strong>delete all backorder data at any time</strong> from the Settings
+          page.
+        </li>
+        <li>
+          Customer email addresses and customer IDs live on the backorder-sale records;
+          deleting those records (via retention, manual purge, or a redaction request)
+          removes the stored email.
+        </li>
+        <li>
+          When the app is uninstalled, <strong>all shop data is deleted</strong> (within Shopify&apos;s
+          required window) in response to the <code>shop/redact</code> webhook.
+        </li>
       </ul>
-      
-      <p>This data cannot be used to identify individual customers.</p>
-      
-      <h3>8.2 GDPR Compliance for Customer Requests</h3>
-      
-      <p>When your customers exercise their GDPR rights:</p>
+
+      <hr />
+
+      <h2>6. Security</h2>
+
       <ul>
-        <li><strong>Customer Data Request</strong>: We report that no personal customer data is stored</li>
-        <li><strong>Customer Redact Request</strong>: We confirm no personal data needs deletion</li>
+        <li>Data is hosted on Fly.io infrastructure in the EU (Amsterdam region).</li>
+        <li>
+          <strong>Supplier credentials and stored customer email addresses are encrypted at
+          rest using AES-256-GCM.</strong>
+        </li>
+        <li>Data in transit is protected with TLS/HTTPS.</li>
+        <li>Access tokens and session data are stored securely and scoped to each shop.</li>
+        <li>
+          Access to production data is limited to what is necessary to operate and
+          support the app.
+        </li>
       </ul>
-      
-      <p>You remain the data controller for your customer data. BackorderPro acts as a data processor only for the limited, non-personal order metadata described above.</p>
-      
+
+      <p>
+        No method of transmission or storage is 100% secure; we work to protect data
+        using industry-standard measures and continuously improve our safeguards.
+      </p>
+
       <hr />
-      
-      <h2>9. Cookies & Tracking</h2>
-      
-      <p>BackorderPro does NOT:</p>
+
+      <h2>7. International transfers</h2>
+
+      <p>
+        The app and its primary database are hosted in the EU. Some sub-processors
+        (e.g. OpenAI, Resend) may process data outside the EU/EEA. Where that is the
+        case, transfers are made under an appropriate safeguard such as the EU Standard
+        Contractual Clauses or an adequacy decision.
+      </p>
+
+      <hr />
+
+      <h2>8. Your rights (data subjects)</h2>
+
+      <p>
+        Depending on your location (e.g. under the GDPR), you may have the right to:
+        access, rectify, erase, restrict or object to processing, data portability, and
+        to withdraw consent at any time. For <strong>AI Analyze</strong>, consent can be withdrawn
+        directly in the app (Analyze → AI Analyze → Revoke consent).
+      </p>
+
       <ul>
-        <li>Set any cookies on your customers&apos; browsers</li>
-        <li>Use any tracking pixels or analytics on your storefront</li>
-        <li>Collect any data from your customers directly</li>
+        <li>
+          <strong>Shoppers:</strong> please contact the store you bought from; they are the
+          controller of your order data.
+        </li>
+        <li>
+          <strong>Merchants:</strong> contact us at{' '}
+          <a href="mailto:support@snoekbyte.nl"><strong>support@snoekbyte.nl</strong></a>.
+        </li>
       </ul>
-      
-      <p>The App operates entirely within the Shopify Admin and does not interact with your storefront or customers.</p>
-      
-      <hr />
-      
-      <h2>10. Children&apos;s Privacy</h2>
-      
-      <p>BackorderPro is a business application intended for use by merchants. We do not knowingly collect information from children under 16. If you believe we have collected information from a child, please contact us immediately.</p>
-      
-      <hr />
-      
-      <h2>11. International Data Transfers</h2>
-      
-      <p>Your data may be processed in countries outside your own. We ensure appropriate safeguards are in place:</p>
+
+      <p>BackorderPro fully supports Shopify&apos;s mandatory privacy webhooks:</p>
       <ul>
-        <li>Standard Contractual Clauses (SCCs) with service providers</li>
-        <li>Compliance with GDPR requirements for international transfers</li>
+        <li>
+          <code>customers/data_request</code> — we provide the merchant with the data we hold that
+          is linkable to the requested orders.
+        </li>
+        <li>
+          <code>customers/redact</code> — we delete the customer-linkable backorder records (and
+          the email addresses they contain) for the supplied orders.
+        </li>
+        <li>
+          <code>shop/redact</code> — we delete all data for the shop after uninstall.
+        </li>
       </ul>
-      
+
       <hr />
-      
-      <h2>12. Changes to This Policy</h2>
-      
-      <p>We may update this Privacy Policy from time to time. When we do:</p>
-      <ul>
-        <li>We will update the &quot;Last Updated&quot; date at the top</li>
-        <li>For significant changes, we will notify you via the App or email</li>
-        <li>Continued use of the App after changes constitutes acceptance</li>
-      </ul>
-      
+
+      <h2>9. Children&apos;s data</h2>
+
+      <p>
+        BackorderPro is a business tool for merchants and is not directed at children.
+        We do not knowingly process children&apos;s personal data.
+      </p>
+
       <hr />
-      
-      <h2>13. Contact Us</h2>
-      
-      <p>If you have any questions about this Privacy Policy or our data practices, please contact us:</p>
-      
-      <p><strong>SnoekByte</strong></p>
-      <ul>
-        <li>Email: privacy@snoekbyte.nl</li>
-        <li>Website: https://snoekbyte.nl</li>
-      </ul>
-      
-      <p>For Shopify-specific privacy concerns, you may also refer to <a href="https://www.shopify.com/legal/privacy" target="_blank" rel="noopener noreferrer">Shopify&apos;s Privacy Policy</a>.</p>
-      
+
+      <h2>10. Changes to this statement</h2>
+
+      <p>
+        We may update this Privacy Statement to reflect changes in the app or in legal
+        requirements. The &quot;Last updated&quot; date at the top indicates the latest revision.
+        Material changes will be communicated through the app where appropriate.
+      </p>
+
       <hr />
-      
-      <h2>14. Legal Basis for Processing (GDPR)</h2>
-      
-      <p>We process your data based on the following legal grounds:</p>
-      
-      <table>
-        <thead>
-          <tr>
-            <th>Data Type</th>
-            <th>Legal Basis</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Merchant account data</td>
-            <td>Contract performance (providing the App service)</td>
-          </tr>
-          <tr>
-            <td>Product/Order metadata</td>
-            <td>Legitimate interest (App functionality)</td>
-          </tr>
-          <tr>
-            <td>Analytics data</td>
-            <td>Legitimate interest (improving the service)</td>
-          </tr>
-          <tr>
-            <td>Execution logs</td>
-            <td>Legitimate interest (troubleshooting & transparency)</td>
-          </tr>
-        </tbody>
-      </table>
-      
-      <hr />
-      
-      <h2>15. Data Protection Officer</h2>
-      
-      <p>For data protection inquiries, contact our Data Protection Officer:</p>
-      <ul>
-        <li>Email: dpo@snoekbyte.nl</li>
-      </ul>
-      
-      <hr />
-      
-      <p><em>This Privacy Policy is effective as of January 12, 2026.</em></p>
-      
-      <hr />
-      
-      <h2>Summary</h2>
-      
-      <p>BackorderPro is designed with privacy in mind:</p>
-      <ul>
-        <li>✅ No customer PII collected</li>
-        <li>✅ GDPR compliant</li>
-        <li>✅ Automatic data deletion on uninstall</li>
-        <li>✅ Configurable data retention</li>
-        <li>✅ Encrypted credential storage</li>
-        <li>✅ Transparent data practices</li>
-      </ul>
+
+      <h2>11. Contact</h2>
+
+      <p>Questions about this Privacy Statement or BackorderPro&apos;s data practices:</p>
+
+      <p>
+        <strong>SnoekByte</strong> —{' '}
+        <a href="mailto:support@snoekbyte.nl">support@snoekbyte.nl</a>
+        <br />
+        Website: <a href="https://snoekbyte.nl">https://snoekbyte.nl</a>
+      </p>
     </article>
   );
 }

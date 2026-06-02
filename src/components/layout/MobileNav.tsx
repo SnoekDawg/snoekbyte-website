@@ -3,7 +3,7 @@
 import React, { useEffect } from 'react';
 import Link from 'next/link';
 import { Logo } from '@/components/ui/Logo';
-import { Button } from '@/components/ui/Button';
+import { LiveChatButton } from '@/components/ui/LiveChatButton';
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
 import { getTranslation } from '@/lib/i18n';
 import type { Locale, NavItem } from '@/types';
@@ -116,9 +116,9 @@ export function MobileNav({ isOpen, onClose, navItems, locale, currentPath }: Mo
 
         {/* CTA Button */}
         <div className="p-4 border-t border-circuit/20">
-          <Button variant="primary" className="w-full" href={`/${locale}/contact`} onClick={onClose}>
-            {t.contact.email.cta}
-          </Button>
+          <LiveChatButton variant="primary" className="w-full" onAfterClick={onClose}>
+            {t.liveChat.start}
+          </LiveChatButton>
         </div>
       </div>
     </>

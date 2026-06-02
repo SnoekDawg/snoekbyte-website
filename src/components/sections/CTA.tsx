@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/Button';
+import { LiveChatButton } from '@/components/ui/LiveChatButton';
 import { getTranslation, getLocaleFromPath } from '@/lib/i18n';
 import { usePathname } from 'next/navigation';
 import type { Locale } from '@/types';
@@ -41,9 +42,9 @@ export function CTA() {
                 />
               </svg>
             </Button>
-            <Button variant="secondary" size="lg" href={`/${locale}/contact`}>
-              {t.cta.button}
-            </Button>
+            <LiveChatButton variant="secondary" size="lg">
+              {t.liveChat.start}
+            </LiveChatButton>
           </div>
         </div>
       </div>

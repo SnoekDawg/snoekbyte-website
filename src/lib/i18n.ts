@@ -267,7 +267,8 @@ const translations: Record<Locale, Translation> = {
     },
     contact: { title: 'Get in Touch', subtitle: 'Interested in our apps or services? Let\'s talk.', email: { title: 'Email Us', description: 'For apps, services, or partnerships.', cta: 'Send Email' }, social: { title: 'Connect' } },
     footer: { tagline: 'E-commerce innovation by entrepreneurs, for entrepreneurs.', links: [], copyright: '© 2024 SnoekByte. All rights reserved.' },
-    cta: { title: 'Ready to Grow Your E-commerce?', subtitle: 'Discover our affordable apps or contact us for custom services.', button: 'Contact Us' },
+    cta: { title: 'Ready to Grow Your E-commerce?', subtitle: 'Discover our affordable apps or chat with us for custom services.', button: 'Start a live chat' },
+    liveChat: { start: 'Start a live chat', enterprise: 'Start a live chat for enterprise solutions.' },
   },
 
   // DUTCH
@@ -374,7 +375,8 @@ const translations: Record<Locale, Translation> = {
     },
     contact: { title: 'Neem Contact Op', subtitle: 'Interesse in onze apps of services?', email: { title: 'Email Ons', description: 'Voor apps, services of partnerschappen.', cta: 'Stuur Email' }, social: { title: 'Connect' } },
     footer: { tagline: 'E-commerce innovatie door ondernemers, voor ondernemers.', links: [], copyright: '© 2024 SnoekByte. Alle rechten voorbehouden.' },
-    cta: { title: 'Klaar om te Groeien?', subtitle: 'Ontdek onze apps of neem contact op.', button: 'Neem Contact Op' },
+    cta: { title: 'Klaar om te Groeien?', subtitle: 'Ontdek onze apps of start een live chat.', button: 'Start een live chat' },
+    liveChat: { start: 'Start een live chat', enterprise: 'Start een live chat voor enterprise oplossingen.' },
   },
 
   // GERMAN
@@ -438,7 +440,8 @@ const translations: Record<Locale, Translation> = {
     services: { title: 'Unsere Services', subtitle: 'Maßgeschneiderte Lösung?', cta: 'Kontakt', webdev: { name: 'Web Development', tagline: 'Schnelle Shops', description: 'High-Performance.', features: ['Shopify & Lightspeed', 'Mehrsprachig', 'Optimiert', 'Custom Themes', 'Migration', 'Wartung'] }, marketing: { name: 'Marketing', tagline: 'KI Google Shopping', description: 'KI-Optimierung.', features: ['Google Shopping', 'KI-Optimierung', 'Multi-Land', 'ROI-fokussiert', 'Analytics', 'Konkurrenzanalyse'] }, appdev: { name: 'App Development', tagline: 'Custom Apps', description: 'Maßgeschneidert.', features: ['Custom Apps', 'API', 'Automatisierung', 'Connectors', 'ERP/WMS', 'Support'] } },
     contact: { title: 'Kontakt', subtitle: 'Interesse?', email: { title: 'E-Mail', description: 'Für Apps, Services oder Partnerschaften.', cta: 'E-Mail Senden' }, social: { title: 'Verbinden' } },
     footer: { tagline: 'E-Commerce-Innovation.', links: [], copyright: '© 2024 SnoekByte.' },
-    cta: { title: 'Bereit für Wachstum?', subtitle: 'Entdecken Sie unsere Apps.', button: 'Kontakt' },
+    cta: { title: 'Bereit für Wachstum?', subtitle: 'Entdecken Sie unsere Apps oder starten Sie einen Live-Chat.', button: 'Live-Chat starten' },
+    liveChat: { start: 'Live-Chat starten', enterprise: 'Live-Chat für Enterprise-Lösungen starten.' },
   },
 
   // FRENCH
@@ -502,7 +505,8 @@ const translations: Record<Locale, Translation> = {
     services: { title: 'Nos Services', subtitle: 'Solution personnalisée?', cta: 'Nous Contacter', webdev: { name: 'Développement Web', tagline: 'Boutiques rapides', description: 'Haute performance.', features: ['Shopify & Lightspeed', 'Multilingue', 'Optimisé', 'Thèmes custom', 'Migration', 'Maintenance'] }, marketing: { name: 'Marketing', tagline: 'IA Google Shopping', description: 'Optimisation IA.', features: ['Google Shopping', 'Optimisation IA', 'Multi-pays', 'ROI-focused', 'Analytics', 'Analyse concurrence'] }, appdev: { name: 'Développement Apps', tagline: 'Apps personnalisées', description: 'Sur mesure.', features: ['Custom apps', 'API', 'Automatisation', 'Connecteurs', 'ERP/WMS', 'Support'] } },
     contact: { title: 'Contactez-Nous', subtitle: 'Intéressé?', email: { title: 'Email', description: 'Pour apps, services ou partenariats.', cta: 'Envoyer Email' }, social: { title: 'Connexion' } },
     footer: { tagline: 'Innovation e-commerce.', links: [], copyright: '© 2024 SnoekByte.' },
-    cta: { title: 'Prêt pour la Croissance?', subtitle: 'Découvrez nos apps.', button: 'Nous Contacter' },
+    cta: { title: 'Prêt pour la Croissance?', subtitle: 'Découvrez nos apps ou démarrez un chat en direct.', button: 'Démarrer un chat en direct' },
+    liveChat: { start: 'Démarrer un chat en direct', enterprise: 'Démarrer un chat en direct pour des solutions enterprise.' },
   },
 
   // SPANISH
@@ -566,7 +570,8 @@ const translations: Record<Locale, Translation> = {
     services: { title: 'Nuestros Servicios', subtitle: '¿Solución personalizada?', cta: 'Contactar', webdev: { name: 'Desarrollo Web', tagline: 'Tiendas rápidas', description: 'Alto rendimiento.', features: ['Shopify & Lightspeed', 'Multiidioma', 'Optimizado', 'Temas custom', 'Migración', 'Mantenimiento'] }, marketing: { name: 'Marketing', tagline: 'IA Google Shopping', description: 'Optimización IA.', features: ['Google Shopping', 'Optimización IA', 'Multi-país', 'ROI-focused', 'Analytics', 'Análisis competencia'] }, appdev: { name: 'Desarrollo Apps', tagline: 'Apps personalizadas', description: 'A medida.', features: ['Custom apps', 'API', 'Automatización', 'Conectores', 'ERP/WMS', 'Soporte'] } },
     contact: { title: 'Contacto', subtitle: '¿Interesado?', email: { title: 'Email', description: 'Para apps, servicios o partnerships.', cta: 'Enviar Email' }, social: { title: 'Conectar' } },
     footer: { tagline: 'Innovación e-commerce.', links: [], copyright: '© 2024 SnoekByte.' },
-    cta: { title: '¿Listo para Crecer?', subtitle: 'Descubre nuestras apps.', button: 'Contactar' },
+    cta: { title: '¿Listo para Crecer?', subtitle: 'Descubre nuestras apps o inicia un chat en vivo.', button: 'Iniciar un chat en vivo' },
+    liveChat: { start: 'Iniciar un chat en vivo', enterprise: 'Inicia un chat en vivo para soluciones enterprise.' },
   },
 
   // POLISH
@@ -630,7 +635,8 @@ const translations: Record<Locale, Translation> = {
     services: { title: 'Nasze Usługi', subtitle: 'Rozwiązanie na miarę?', cta: 'Skontaktuj się', webdev: { name: 'Web Development', tagline: 'Szybkie sklepy', description: 'Wysoka wydajność.', features: ['Shopify & Lightspeed', 'Wielojęzyczny', 'Zoptymalizowany', 'Custom themes', 'Migracja', 'Utrzymanie'] }, marketing: { name: 'Marketing', tagline: 'AI Google Shopping', description: 'Optymalizacja AI.', features: ['Google Shopping', 'Optymalizacja AI', 'Multi-kraj', 'ROI-focused', 'Analytics', 'Analiza konkurencji'] }, appdev: { name: 'App Development', tagline: 'Custom aplikacje', description: 'Na zamówienie.', features: ['Custom apps', 'API', 'Automatyzacja', 'Konektory', 'ERP/WMS', 'Wsparcie'] } },
     contact: { title: 'Kontakt', subtitle: 'Zainteresowany?', email: { title: 'Email', description: 'Dla aplikacji, usług lub partnerstw.', cta: 'Wyślij Email' }, social: { title: 'Połącz' } },
     footer: { tagline: 'Innowacje e-commerce.', links: [], copyright: '© 2024 SnoekByte.' },
-    cta: { title: 'Gotowy na Wzrost?', subtitle: 'Odkryj nasze aplikacje.', button: 'Kontakt' },
+    cta: { title: 'Gotowy na Wzrost?', subtitle: 'Odkryj nasze aplikacje lub rozpocznij czat na żywo.', button: 'Rozpocznij czat na żywo' },
+    liveChat: { start: 'Rozpocznij czat na żywo', enterprise: 'Rozpocznij czat na żywo w sprawie rozwiązań enterprise.' },
   },
 
   // CZECH
@@ -694,7 +700,8 @@ const translations: Record<Locale, Translation> = {
     services: { title: 'Naše Služby', subtitle: 'Řešení na míru?', cta: 'Kontaktujte Nás', webdev: { name: 'Web Development', tagline: 'Rychlé obchody', description: 'Vysoký výkon.', features: ['Shopify & Lightspeed', 'Vícejazyčný', 'Optimalizovaný', 'Custom themes', 'Migrace', 'Údržba'] }, marketing: { name: 'Marketing', tagline: 'AI Google Shopping', description: 'AI optimalizace.', features: ['Google Shopping', 'AI optimalizace', 'Multi-země', 'ROI-focused', 'Analytics', 'Analýza konkurence'] }, appdev: { name: 'App Development', tagline: 'Custom aplikace', description: 'Na míru.', features: ['Custom apps', 'API', 'Automatizace', 'Konektory', 'ERP/WMS', 'Podpora'] } },
     contact: { title: 'Kontakt', subtitle: 'Zájem?', email: { title: 'Email', description: 'Pro aplikace, služby nebo partnerství.', cta: 'Poslat Email' }, social: { title: 'Propojit' } },
     footer: { tagline: 'E-commerce inovace.', links: [], copyright: '© 2024 SnoekByte.' },
-    cta: { title: 'Připraveni na Růst?', subtitle: 'Objevte naše aplikace.', button: 'Kontakt' },
+    cta: { title: 'Připraveni na Růst?', subtitle: 'Objevte naše aplikace nebo spusťte live chat.', button: 'Spustit live chat' },
+    liveChat: { start: 'Spustit live chat', enterprise: 'Spusťte live chat ohledně enterprise řešení.' },
   },
 
   // SWEDISH
@@ -758,7 +765,8 @@ const translations: Record<Locale, Translation> = {
     services: { title: 'Våra Tjänster', subtitle: 'Skräddarsydd lösning?', cta: 'Kontakta Oss', webdev: { name: 'Webbutveckling', tagline: 'Snabba butiker', description: 'Hög prestanda.', features: ['Shopify & Lightspeed', 'Flerspråkig', 'Optimerad', 'Custom teman', 'Migration', 'Underhåll'] }, marketing: { name: 'Marknadsföring', tagline: 'AI Google Shopping', description: 'AI-optimering.', features: ['Google Shopping', 'AI-optimering', 'Multi-land', 'ROI-fokuserad', 'Analytik', 'Konkurrentanalys'] }, appdev: { name: 'Apputveckling', tagline: 'Skräddarsydda appar', description: 'På beställning.', features: ['Custom appar', 'API', 'Automatisering', 'Anslutningar', 'ERP/WMS', 'Support'] } },
     contact: { title: 'Kontakt', subtitle: 'Intresserad?', email: { title: 'E-post', description: 'För appar, tjänster eller partnerskap.', cta: 'Skicka E-post' }, social: { title: 'Anslut' } },
     footer: { tagline: 'E-handelsinnovation.', links: [], copyright: '© 2024 SnoekByte.' },
-    cta: { title: 'Redo för Tillväxt?', subtitle: 'Upptäck våra appar.', button: 'Kontakta' },
+    cta: { title: 'Redo för Tillväxt?', subtitle: 'Upptäck våra appar eller starta en livechatt.', button: 'Starta en livechatt' },
+    liveChat: { start: 'Starta en livechatt', enterprise: 'Starta en livechatt för enterprise-lösningar.' },
   },
 };
 

@@ -6,16 +6,30 @@ import { usePathname } from 'next/navigation';
 import { getLocaleFromPath } from '@/lib/i18n';
 import type { Locale } from '@/types';
 
-const languages: { code: Locale; name: string; flag: string }[] = [
-  { code: 'en', name: 'English', flag: '🇬🇧' },
-  { code: 'nl', name: 'Nederlands', flag: '🇳🇱' },
-  { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
-  { code: 'fr', name: 'Français', flag: '🇫🇷' },
-  { code: 'es', name: 'Español', flag: '🇪🇸' },
-  { code: 'pl', name: 'Polski', flag: '🇵🇱' },
-  { code: 'cs', name: 'Čeština', flag: '🇨🇿' },
-  { code: 'sv', name: 'Svenska', flag: '🇸🇪' },
+const languages: { code: Locale; name: string; countryCode: string }[] = [
+  { code: 'en', name: 'English', countryCode: 'gb' },
+  { code: 'nl', name: 'Nederlands', countryCode: 'nl' },
+  { code: 'de', name: 'Deutsch', countryCode: 'de' },
+  { code: 'fr', name: 'Français', countryCode: 'fr' },
+  { code: 'es', name: 'Español', countryCode: 'es' },
+  { code: 'pl', name: 'Polski', countryCode: 'pl' },
+  { code: 'cs', name: 'Čeština', countryCode: 'cz' },
+  { code: 'sv', name: 'Svenska', countryCode: 'se' },
 ];
+
+function FlagIcon({ countryCode, className = 'w-5 h-4' }: { countryCode: string; className?: string }) {
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={`https://flagcdn.com/w40/${countryCode}.png`}
+      srcSet={`https://flagcdn.com/w80/${countryCode}.png 2x`}
+      alt=""
+      aria-hidden="true"
+      className={`${className} object-cover rounded-sm shadow-sm`}
+      loading="lazy"
+    />
+  );
+}
 
 interface LanguageSwitcherProps {
   variant?: 'desktop' | 'mobile';
@@ -71,7 +85,7 @@ export function LanguageSwitcher({ variant = 'desktop' }: LanguageSwitcherProps)
                   : 'text-gray-300 hover:bg-white/5 hover:text-white border border-transparent'
               }`}
             >
-              <span className="text-lg">{lang.flag}</span>
+              <FlagIcon countryCode={lang.countryCode} />
               <span>{lang.name}</span>
             </Link>
           ))}
@@ -88,7 +102,7 @@ export function LanguageSwitcher({ variant = 'desktop' }: LanguageSwitcherProps)
         aria-expanded={isOpen}
         aria-haspopup="true"
       >
-        <span className="text-lg">{currentLanguage.flag}</span>
+        <FlagIcon countryCode={currentLanguage.countryCode} />
         <span className="hidden sm:inline">{currentLanguage.code.toUpperCase()}</span>
         <svg
           className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`}
@@ -114,7 +128,7 @@ export function LanguageSwitcher({ variant = 'desktop' }: LanguageSwitcherProps)
                   : 'text-gray-300 hover:bg-white/5 hover:text-white'
               }`}
             >
-              <span className="text-lg">{lang.flag}</span>
+              <FlagIcon countryCode={lang.countryCode} />
               <span>{lang.name}</span>
               {currentLocale === lang.code && (
                 <svg className="w-4 h-4 ml-auto text-circuit" fill="none" stroke="currentColor" viewBox="0 0 24 24">

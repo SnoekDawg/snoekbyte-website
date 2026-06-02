@@ -27,6 +27,7 @@ export function Footer() {
         { label: t.services.webdev.name, href: `/${locale}/services/web-development` },
         { label: t.services.marketing.name, href: `/${locale}/services/marketing` },
         { label: t.services.appdev.name, href: `/${locale}/services/app-development` },
+        { label: 'KarpCore', href: `/${locale}/services/karpcore` },
       ],
     },
     {

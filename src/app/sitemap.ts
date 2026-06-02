@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/services/web-development',
     '/services/marketing',
     '/services/app-development',
+    '/services/karpcore',
     '/contact',
     '/privacy/feedmapperpro',
     '/privacy/backorderpro',

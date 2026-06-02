@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/Button';
+import { LiveChatButton } from '@/components/ui/LiveChatButton';
 import { getTranslation, getLocaleFromPath } from '@/lib/i18n';
 import type { Locale } from '@/types';
 
@@ -79,12 +80,12 @@ export default function ServiceDetailClient({ serviceId }: ServiceDetailClientPr
             </p>
 
             <div className="mt-8">
-              <Button variant="primary" size="lg" href={`/${locale}/contact`}>
-                {t.services.cta}
+              <LiveChatButton variant="primary" size="lg">
+                {t.liveChat.start}
                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
-              </Button>
+              </LiveChatButton>
             </div>
           </div>
         </div>
@@ -127,9 +128,9 @@ export default function ServiceDetailClient({ serviceId }: ServiceDetailClientPr
               : 'Get in touch and let us know how we can help you.'}
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button variant="primary" size="lg" href={`/${locale}/contact`}>
-              {t.services.cta}
-            </Button>
+            <LiveChatButton variant="primary" size="lg">
+              {t.liveChat.start}
+            </LiveChatButton>
             <Button variant="secondary" size="lg" href={`/${locale}/services`}>
               {locale === 'nl' ? 'Alle Services' : 'All Services'}
             </Button>

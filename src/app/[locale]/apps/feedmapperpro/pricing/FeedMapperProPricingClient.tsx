@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/Button';
+import { LiveChatButton } from '@/components/ui/LiveChatButton';
 import { getTranslation, getLocaleFromPath } from '@/lib/i18n';
 import type { Locale } from '@/types';
 
@@ -198,9 +199,9 @@ export default function FeedMapperProPricingClient() {
             <Button variant="primary" href="https://feedmapper-pro.fly.dev/auth/login" target="_blank">
               {t.apps.getStarted}
             </Button>
-            <Button variant="secondary" href={`/${locale}/contact`}>
-              {t.services.cta}
-            </Button>
+            <LiveChatButton variant="secondary">
+              {t.liveChat.start}
+            </LiveChatButton>
           </div>
         </div>
       </div>

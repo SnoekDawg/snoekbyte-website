@@ -124,6 +124,10 @@ export interface Translation {
     subtitle: string;
     button: string;
   };
+  liveChat: {
+    start: string;
+    enterprise: string;
+  };
 }
 
 export interface NavItem {

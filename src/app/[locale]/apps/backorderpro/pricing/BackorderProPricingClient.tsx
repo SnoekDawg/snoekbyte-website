@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/Button';
+import { openBelcoChat } from '@/lib/belco';
 import { getTranslation, getLocaleFromPath } from '@/lib/i18n';
 import type { Locale } from '@/types';
 
@@ -153,9 +154,13 @@ export default function BackorderProPricingClient() {
               {locale === 'nl' 
                 ? 'Meer nodig? ' 
                 : 'Need more? '}
-              <Link href={`/${locale}/contact`} className="text-circuit hover:underline">
-                {locale === 'nl' ? 'Neem contact op voor enterprise oplossingen.' : 'Contact us for enterprise solutions.'}
-              </Link>
+              <button
+                type="button"
+                onClick={openBelcoChat}
+                className="text-circuit hover:underline"
+              >
+                {t.liveChat.enterprise}
+              </button>
             </p>
           </div>
         </div>
