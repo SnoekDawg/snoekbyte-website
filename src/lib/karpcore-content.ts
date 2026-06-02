@@ -2,9 +2,11 @@ export const karpCoreContent = {
   title: 'KarpCore',
 
   hero: {
+    eyebrow: 'Voor groothandels & importeurs met meerdere merken',
     badge: 'Case study · Live in productie',
     headline: 'Al je merken. Eén platform. Elke dealer ziet alleen wat van hem is.',
     sub: 'KarpCore is het B2B-bestelplatform voor groothandels en importeurs met meerdere merken. Eén systeem voor je hele catalogus, voorraad en prijzen — terwijl elke dealer inlogt en uitsluitend zijn merken, zijn inkoopprijzen en zijn voorraad ziet.',
+    trustLine: 'Live op een eigen domein · Server-side afgeschermd · Gebouwd op Medusa v2 & Next.js 15',
     badges: ['Live op karpcore.com', 'Medusa v2', 'Next.js 15', 'Fly.io'],
   },
 
@@ -207,6 +209,71 @@ export const karpCoreContent = {
           'Dat kan. KarpCore is opgebouwd uit losse modules (merken, bedrijven, offertes, goedkeuringen). Maatwerk bouwen we als nette uitbreiding, zonder de upgradebaarheid van het platform op te offeren.',
       },
     ],
+  },
+
+  beforeAfter: {
+    title: 'Het verschil dat KarpCore maakt',
+    intro: 'Van versnipperd en handmatig naar één strak platform.',
+    before: {
+      title: 'Zonder KarpCore',
+      items: [
+        'Een aparte webshop per merk, met dubbel beheer',
+        'Prijzen en voorraad overal handmatig bijwerken',
+        'Dealers zien prijzen die niet voor hen bedoeld zijn',
+        'Offertes en goedkeuringen via e-mail en Excel',
+        'Nieuw merk = weer een nieuwe shop opzetten',
+      ],
+    },
+    after: {
+      title: 'Met KarpCore',
+      items: [
+        'Eén platform voor al je merken',
+        'Eén keer bijwerken, overal meteen correct',
+        'Elke dealer ziet exact zijn merken en prijzen',
+        'Offertes en goedkeuringen ingebouwd in de portal',
+        'Nieuw merk = met één klik aanzetten',
+      ],
+    },
+  },
+
+  process: {
+    title: 'Zo leveren we het op',
+    intro: 'Van eerste gesprek tot livegang — een duidelijk traject zonder verrassingen.',
+    steps: [
+      {
+        number: '01',
+        title: 'Concept & scope',
+        text: 'We brengen je merken, dealers, prijsstructuur en koppelingen in kaart en bepalen samen de scope.',
+      },
+      {
+        number: '02',
+        title: 'Bouw op bewezen basis',
+        text: 'We bouwen op de Medusa v2 B2B-fundering met jouw merken, prijzen en toegangsregels — geen wegwerp-maatwerk.',
+      },
+      {
+        number: '03',
+        title: 'Koppelingen & data',
+        text: 'Voorraad (Picqer), betalingen (Pay.nl) en je catalogus worden gekoppeld en gemigreerd.',
+      },
+      {
+        number: '04',
+        title: 'Livegang & overdracht',
+        text: 'Een gecontroleerde, geautomatiseerde release naar productie op je eigen domein — plus uitleg voor je team.',
+      },
+    ],
+  },
+
+  testimonial: {
+    placeholder: true,
+    quote:
+      'Vul hier een klantcitaat in — bijvoorbeeld over hoeveel tijd het platform bespaart, of hoe soepel dealers nu zelf bestellen.',
+    name: 'Naam klant',
+    role: 'Functie · bedrijf',
+  },
+
+  midCta: {
+    title: 'Wil je dit voor jouw merken?',
+    button: 'Start een live chat',
   },
 
   cta: {
