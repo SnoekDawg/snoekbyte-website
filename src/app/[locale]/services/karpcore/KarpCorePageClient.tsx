@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { LiveChatButton } from '@/components/ui/LiveChatButton';
-import { karpCoreContent as c } from '@/lib/karpcore-content';
+import { getKarpCoreContent } from '@/lib/karpcore-content';
 import { getTranslation, getLocaleFromPath } from '@/lib/i18n';
 import type { Locale } from '@/types';
 
@@ -53,6 +53,7 @@ export default function KarpCorePageClient() {
   const pathname = usePathname();
   const locale = getLocaleFromPath(pathname) as Locale;
   const t = getTranslation(locale);
+  const c = getKarpCoreContent(locale);
 
   return (
     <div className="min-h-screen">
@@ -93,7 +94,7 @@ export default function KarpCorePageClient() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-circuit/40 text-circuit hover:bg-circuit/10 transition-colors font-medium"
                 >
-                  Bekijk het live platform
+                  {c.hero.viewPlatform}
                   <ExternalIcon />
                 </a>
               </div>
@@ -108,7 +109,7 @@ export default function KarpCorePageClient() {
                 className="max-w-md mx-auto"
               />
               <p className="text-center text-xs text-gray-500 mt-3">
-                Echt scherm uit het live dealerportaal — dealerprijs naast adviesprijs.
+                {c.hero.screenshotCaption}
               </p>
             </div>
           </div>
@@ -141,7 +142,7 @@ export default function KarpCorePageClient() {
                 <div className="bg-red-500/5 border border-red-500/20 rounded-2xl p-6">
                   <div className="flex items-center gap-2 mb-3">
                     <CrossIcon className="text-red-400 w-5 h-5" />
-                    <span className="text-xs font-semibold uppercase tracking-wider text-red-400">Probleem</span>
+                    <span className="text-xs font-semibold uppercase tracking-wider text-red-400">{c.problemSolutions.problemLabel}</span>
                   </div>
                   <h3 className="text-white font-semibold text-lg mb-2">{pair.problem.title}</h3>
                   <p className="text-gray-400 text-sm leading-relaxed">{pair.problem.text}</p>
@@ -157,7 +158,7 @@ export default function KarpCorePageClient() {
                 <div className="bg-pike/5 border border-pike/30 rounded-2xl p-6">
                   <div className="flex items-center gap-2 mb-3">
                     <CheckIcon className="text-pike w-5 h-5" />
-                    <span className="text-xs font-semibold uppercase tracking-wider text-pike">Oplossing</span>
+                    <span className="text-xs font-semibold uppercase tracking-wider text-pike">{c.problemSolutions.solutionLabel}</span>
                   </div>
                   <h3 className="text-white font-semibold text-lg mb-2">{pair.solution.title}</h3>
                   <p className="text-gray-300 text-sm leading-relaxed">{pair.solution.text}</p>
@@ -312,7 +313,7 @@ export default function KarpCorePageClient() {
                   className="w-40 h-auto rounded-md ring-1 ring-white/10 flex-shrink-0"
                 />
                 <p className="text-xs text-gray-400 leading-relaxed">
-                  Geen toegang? Dan zie je geen prijzen — en staan ze ook niet in de broncode.
+                  {c.security.noteText}
                 </p>
               </div>
               <blockquote className="border-l-4 border-pike pl-5 py-2 bg-pike/5 rounded-r-xl">

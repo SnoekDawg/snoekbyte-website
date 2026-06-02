@@ -1,25 +1,28 @@
 import { Metadata } from 'next';
 import KarpCorePageClient from './KarpCorePageClient';
+import { getKarpCoreContent } from '@/lib/karpcore-content';
+import type { Locale } from '@/types';
 
-const locales = ['en', 'nl', 'de', 'fr', 'es', 'pl', 'cs', 'sv'];
+const locales: Locale[] = ['en', 'nl', 'de', 'fr', 'es', 'pl', 'cs', 'sv'];
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
-export async function generateMetadata(): Promise<Metadata> {
-  const title = 'KarpCore — B2B-platform voor meerdere merken | SnoekByte';
-  const description =
-    'Case study: één B2B-bestelplatform voor al je merken. Elke dealer ziet alleen zijn merken, prijzen en voorraad. Wij bouwen jouw B2B-platform van concept tot livegang.';
+export async function generateMetadata({ params }: { params: { locale: Locale } }): Promise<Metadata> {
+  const c = getKarpCoreContent(params.locale);
+  const title = `${c.title} — ${c.hero.eyebrow} | SnoekByte`;
+  const description = c.hero.sub;
+  const url = `/${params.locale}/services/karpcore`;
   return {
     title,
     description,
-    alternates: { canonical: '/nl/services/karpcore' },
+    alternates: { canonical: url },
     openGraph: {
       title,
       description,
       type: 'article',
-      url: '/nl/services/karpcore',
+      url,
       images: ['/images/og-image.png'],
     },
     twitter: {
