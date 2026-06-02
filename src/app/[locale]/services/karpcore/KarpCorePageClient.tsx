@@ -103,14 +103,14 @@ export default function KarpCorePageClient() {
             </div>
 
             <div className="lg:pl-4">
-              <Screenshot
-                src="/images/karpcore/variant-picker.png"
-                alt="KarpCore dealerportaal: variant kiezen met dealerprijs en adviesprijs"
-                className="max-w-md mx-auto"
-              />
-              <p className="text-center text-xs text-gray-500 mt-3">
-                {c.hero.screenshotCaption}
-              </p>
+              <div className="max-w-md mx-auto rounded-2xl bg-white p-8 sm:p-12 ring-1 ring-white/10 shadow-2xl shadow-black/40">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/karpcore/karpcore-logo.png"
+                  alt="KarpCore logo"
+                  className="w-full h-auto"
+                />
+              </div>
             </div>
           </div>
         </div>
