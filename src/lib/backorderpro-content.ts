@@ -160,7 +160,7 @@ const content: Record<Locale, BackorderProContent> = {
     },
     testimonial: {
       placeholder: false,
-      quote: 'We dachten eerst dat een voorraad van 15.000+ producten en een voorraadwaarde van \u20ac800.000 wel voldoende zou zijn, toch wilden we het backorder-principe verder uitrollen en proberen. We verkopen tot op de dag van vandaag ongeveer 15% extra door BackorderPRO. De communicatielijn en inzichten die de app biedt houden de klantvragen lager dan bij traditionele methodes. Ook is de app gemakkelijk te koppelen aan onze leveranciers, zodat we altijd hun data gebruiken. Gebouwd voor ons bedrijf, nu te delen met de wereld.',
+      quote: 'We hebben al een ruime voorraad, toch wilden we het backorder-principe verder uitrollen en proberen. We verkopen tot op de dag van vandaag ongeveer 15% extra door BackorderPRO. De communicatielijn en inzichten die de app biedt houden de klantvragen lager dan bij traditionele methodes. Ook is de app gemakkelijk te koppelen aan onze leveranciers, zodat we altijd hun data gebruiken. Gebouwd voor ons bedrijf, nu te delen met de wereld.',
       name: 'Tom Snoek',
       role: 'KarperCentrale \u00b7 Oprichter',
     },
@@ -274,7 +274,7 @@ const content: Record<Locale, BackorderProContent> = {
     },
     testimonial: {
       placeholder: false,
-      quote: 'At first we thought a stock of 15,000+ products and an inventory value of \u20ac800,000 would be plenty, yet we wanted to roll out and test the backorder principle further. To this day we sell around 15% extra through BackorderPRO. The communication line and insights the app provides keep customer questions lower than with traditional methods. The app is also easy to connect to our suppliers, so we always use their data. Built for our business, now to share with the world.',
+      quote: 'We already carry a substantial stock, yet we wanted to roll out and test the backorder principle further. To this day we sell around 15% extra through BackorderPRO. The communication line and insights the app provides keep customer questions lower than with traditional methods. The app is also easy to connect to our suppliers, so we always use their data. Built for our business, now to share with the world.',
       name: 'Tom Snoek',
       role: 'KarperCentrale \u00b7 Founder',
     },
@@ -388,7 +388,7 @@ const content: Record<Locale, BackorderProContent> = {
     },
     testimonial: {
       placeholder: false,
-      quote: 'Zuerst dachten wir, ein Bestand von \u00fcber 15.000 Produkten und ein Warenwert von 800.000\u00a0\u20ac w\u00fcrden ausreichen, doch wir wollten das Backorder-Prinzip weiter ausrollen und testen. Bis heute verkaufen wir durch BackorderPRO rund 15\u00a0% mehr. Die Kommunikationslinie und die Einblicke der App halten die Kundenfragen niedriger als bei traditionellen Methoden. Au\u00dferdem l\u00e4sst sich die App einfach mit unseren Lieferanten verbinden, sodass wir immer ihre Daten nutzen. F\u00fcr unser Unternehmen gebaut, jetzt mit der Welt geteilt.',
+      quote: 'Wir f\u00fchren bereits einen umfangreichen Bestand, doch wir wollten das Backorder-Prinzip weiter ausrollen und testen. Bis heute verkaufen wir durch BackorderPRO rund 15\u00a0% mehr. Die Kommunikationslinie und die Einblicke der App halten die Kundenfragen niedriger als bei traditionellen Methoden. Au\u00dferdem l\u00e4sst sich die App einfach mit unseren Lieferanten verbinden, sodass wir immer ihre Daten nutzen. F\u00fcr unser Unternehmen gebaut, jetzt mit der Welt geteilt.',
       name: 'Tom Snoek',
       role: 'KarperCentrale \u00b7 Gr\u00fcnder',
     },
@@ -502,7 +502,7 @@ const content: Record<Locale, BackorderProContent> = {
     },
     testimonial: {
       placeholder: false,
-      quote: 'Au d\u00e9but, nous pensions qu\u2019un stock de plus de 15\u00a0000 produits et une valeur de stock de 800\u00a0000\u00a0\u20ac suffiraient, mais nous voulions d\u00e9ployer et tester davantage le principe de la pr\u00e9commande. \u00c0 ce jour, nous vendons environ 15\u00a0% de plus gr\u00e2ce \u00e0 BackorderPRO. La ligne de communication et les analyses qu\u2019offre l\u2019application maintiennent les questions des clients \u00e0 un niveau plus bas qu\u2019avec les m\u00e9thodes traditionnelles. L\u2019application se connecte aussi facilement \u00e0 nos fournisseurs, afin que nous utilisions toujours leurs donn\u00e9es. Con\u00e7ue pour notre entreprise, d\u00e9sormais partag\u00e9e avec le monde.',
+      quote: 'Nous disposons d\u00e9j\u00e0 d\u2019un stock important, mais nous voulions d\u00e9ployer et tester davantage le principe de la pr\u00e9commande. \u00c0 ce jour, nous vendons environ 15\u00a0% de plus gr\u00e2ce \u00e0 BackorderPRO. La ligne de communication et les analyses qu\u2019offre l\u2019application maintiennent les questions des clients \u00e0 un niveau plus bas qu\u2019avec les m\u00e9thodes traditionnelles. L\u2019application se connecte aussi facilement \u00e0 nos fournisseurs, afin que nous utilisions toujours leurs donn\u00e9es. Con\u00e7ue pour notre entreprise, d\u00e9sormais partag\u00e9e avec le monde.',
       name: 'Tom Snoek',
       role: 'KarperCentrale \u00b7 Fondateur',
     },
@@ -616,7 +616,7 @@ const content: Record<Locale, BackorderProContent> = {
     },
     testimonial: {
       placeholder: false,
-      quote: 'Al principio pens\u00e1bamos que un stock de m\u00e1s de 15.000 productos y un valor de inventario de 800.000\u00a0\u20ac ser\u00edan suficientes, pero quer\u00edamos desplegar y probar m\u00e1s el principio de pre-pedido. A d\u00eda de hoy vendemos alrededor de un 15\u00a0% m\u00e1s gracias a BackorderPRO. La l\u00ednea de comunicaci\u00f3n y los an\u00e1lisis que ofrece la app mantienen las preguntas de los clientes m\u00e1s bajas que con los m\u00e9todos tradicionales. Adem\u00e1s, la app se conecta f\u00e1cilmente con nuestros proveedores, de modo que siempre usamos sus datos. Creada para nuestra empresa, ahora para compartir con el mundo.',
+      quote: 'Ya contamos con un stock considerable, pero quer\u00edamos desplegar y probar m\u00e1s el principio de pre-pedido. A d\u00eda de hoy vendemos alrededor de un 15\u00a0% m\u00e1s gracias a BackorderPRO. La l\u00ednea de comunicaci\u00f3n y los an\u00e1lisis que ofrece la app mantienen las preguntas de los clientes m\u00e1s bajas que con los m\u00e9todos tradicionales. Adem\u00e1s, la app se conecta f\u00e1cilmente con nuestros proveedores, de modo que siempre usamos sus datos. Creada para nuestra empresa, ahora para compartir con el mundo.',
       name: 'Tom Snoek',
       role: 'KarperCentrale \u00b7 Fundador',
     },
@@ -730,7 +730,7 @@ const content: Record<Locale, BackorderProContent> = {
     },
     testimonial: {
       placeholder: false,
-      quote: 'Na pocz\u0105tku my\u015bleli\u015bmy, \u017ce zapas ponad 15\u00a0000 produkt\u00f3w i warto\u015b\u0107 magazynu 800\u00a0000\u00a0\u20ac w zupe\u0142no\u015bci wystarcz\u0105, jednak chcieli\u015bmy dalej wdra\u017ca\u0107 i testowa\u0107 zasad\u0119 przedsprzeda\u017cy. Do dzi\u015b sprzedajemy oko\u0142o 15\u00a0% wi\u0119cej dzi\u0119ki BackorderPRO. Linia komunikacji i wgl\u0105d, jaki daje aplikacja, utrzymuj\u0105 pytania klient\u00f3w na ni\u017cszym poziomie ni\u017c przy tradycyjnych metodach. Aplikacj\u0119 \u0142atwo te\u017c po\u0142\u0105czy\u0107 z naszymi dostawcami, dzi\u0119ki czemu zawsze korzystamy z ich danych. Zbudowana dla naszej firmy, teraz do podzielenia si\u0119 ze \u015bwiatem.',
+      quote: 'Mamy ju\u017c spory zapas, jednak chcieli\u015bmy dalej wdra\u017ca\u0107 i testowa\u0107 zasad\u0119 przedsprzeda\u017cy. Do dzi\u015b sprzedajemy oko\u0142o 15\u00a0% wi\u0119cej dzi\u0119ki BackorderPRO. Linia komunikacji i wgl\u0105d, jaki daje aplikacja, utrzymuj\u0105 pytania klient\u00f3w na ni\u017cszym poziomie ni\u017c przy tradycyjnych metodach. Aplikacj\u0119 \u0142atwo te\u017c po\u0142\u0105czy\u0107 z naszymi dostawcami, dzi\u0119ki czemu zawsze korzystamy z ich danych. Zbudowana dla naszej firmy, teraz do podzielenia si\u0119 ze \u015bwiatem.',
       name: 'Tom Snoek',
       role: 'KarperCentrale \u00b7 Za\u0142o\u017cyciel',
     },
@@ -844,7 +844,7 @@ const content: Record<Locale, BackorderProContent> = {
     },
     testimonial: {
       placeholder: false,
-      quote: 'Nejprve jsme si mysleli, \u017ee sklad p\u0159es 15\u00a0000 produkt\u016f a hodnota z\u00e1sob 800\u00a0000\u00a0\u20ac budou sta\u010dit, p\u0159esto jsme cht\u011bli princip backorderu d\u00e1le roz\u0161\u00ed\u0159it a vyzkou\u0161et. Dodnes prod\u00e1v\u00e1me d\u00edky BackorderPRO zhruba o 15\u00a0% v\u00edce. Komunika\u010dn\u00ed linie a p\u0159ehledy, kter\u00e9 aplikace nab\u00edz\u00ed, dr\u017e\u00ed dotazy z\u00e1kazn\u00edk\u016f n\u00ed\u017ee ne\u017e tradi\u010dn\u00ed metody. Aplikaci lze tak\u00e9 snadno propojit s na\u0161imi dodavateli, tak\u017ee v\u017edy pou\u017e\u00edv\u00e1me jejich data. Postaveno pro na\u0161i firmu, nyn\u00ed ke sd\u00edlen\u00ed se sv\u011btem.',
+      quote: 'M\u00e1me u\u017e po\u0159\u00e1dn\u00e9 z\u00e1soby, p\u0159esto jsme cht\u011bli princip backorderu d\u00e1le roz\u0161\u00ed\u0159it a vyzkou\u0161et. Dodnes prod\u00e1v\u00e1me d\u00edky BackorderPRO zhruba o 15\u00a0% v\u00edce. Komunika\u010dn\u00ed linie a p\u0159ehledy, kter\u00e9 aplikace nab\u00edz\u00ed, dr\u017e\u00ed dotazy z\u00e1kazn\u00edk\u016f n\u00ed\u017ee ne\u017e tradi\u010dn\u00ed metody. Aplikaci lze tak\u00e9 snadno propojit s na\u0161imi dodavateli, tak\u017ee v\u017edy pou\u017e\u00edv\u00e1me jejich data. Postaveno pro na\u0161i firmu, nyn\u00ed ke sd\u00edlen\u00ed se sv\u011btem.',
       name: 'Tom Snoek',
       role: 'KarperCentrale \u00b7 Zakladatel',
     },
@@ -958,7 +958,7 @@ const content: Record<Locale, BackorderProContent> = {
     },
     testimonial: {
       placeholder: false,
-      quote: 'F\u00f6rst trodde vi att ett lager p\u00e5 15\u00a0000+ produkter och ett lagerv\u00e4rde p\u00e5 800\u00a0000\u00a0\u20ac skulle r\u00e4cka, men vi ville rulla ut och testa backorder-principen vidare. \u00c4n i dag s\u00e4ljer vi omkring 15\u00a0% extra genom BackorderPRO. Kommunikationslinjen och insikterna som appen ger h\u00e5ller kundfr\u00e5gorna l\u00e4gre \u00e4n med traditionella metoder. Appen \u00e4r ocks\u00e5 enkel att koppla till v\u00e5ra leverant\u00f6rer, s\u00e5 att vi alltid anv\u00e4nder deras data. Byggd f\u00f6r v\u00e5rt f\u00f6retag, nu att dela med v\u00e4rlden.',
+      quote: 'Vi har redan ett rej\u00e4lt lager, men vi ville rulla ut och testa backorder-principen vidare. \u00c4n i dag s\u00e4ljer vi omkring 15\u00a0% extra genom BackorderPRO. Kommunikationslinjen och insikterna som appen ger h\u00e5ller kundfr\u00e5gorna l\u00e4gre \u00e4n med traditionella metoder. Appen \u00e4r ocks\u00e5 enkel att koppla till v\u00e5ra leverant\u00f6rer, s\u00e5 att vi alltid anv\u00e4nder deras data. Byggd f\u00f6r v\u00e5rt f\u00f6retag, nu att dela med v\u00e4rlden.',
       name: 'Tom Snoek',
       role: 'KarperCentrale \u00b7 Grundare',
     },
