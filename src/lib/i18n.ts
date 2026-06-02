@@ -128,18 +128,18 @@ const translations: Record<Locale, Translation> = {
       backorderpro: {
         name: 'BackorderPRO',
         tagline: 'Automate delivery times, inventory & pre-orders for Shopify',
-        shortDescription: 'Sync supplier feeds and let smart rules drive pre-order buttons, delivery messages and Buy Advice across product, cart and checkout.',
-        description: 'BackorderPRO automates delivery times, inventory and pre-order communication in your Shopify store. Import supplier feeds (URL, FTP/SFTP or even JavaScript-rendered websites), match SKUs or barcodes, and let BackorderPRO update delivery status, lead times and pre-order buttons on your product, cart and checkout pages — automatically.',
+        shortDescription: 'Sync supplier feeds and let smart rules drive pre-order buttons, delivery messages and Buy Advice across your product page, cart and customer account.',
+        description: 'BackorderPRO automates delivery times, inventory and pre-order communication in your Shopify store. Import supplier feeds (URL, FTP/SFTP or even JavaScript-rendered websites), match SKUs or barcodes, and let BackorderPRO update delivery status, lead times and pre-order buttons on your product page, cart and customer account — automatically.',
         features: [
           'Import supplier feeds via URL, FTP/SFTP or JS-rendered sites',
           'Auto-match products via SKU or barcode',
           'Smart rule engine with per-supplier overrides',
           'Daily scheduled sync + on-demand "Run Now"',
           'Backorder analytics with raw data export',
-          'Multi-language storefront (NL, EN, DE, FR, ES, IT, PT)',
+          'Customer emails in 11 languages + storefront via Translate & Adapt',
           'GDPR compliant — EU-region data hosting',
           'Per-supplier delivery times',
-          'Pre-order button on product, cart & checkout',
+          'Pre-order button + lead-time badge on the product page',
           'Buy Advice — track purchases & export to CSV',
         ],
         pricing: {
@@ -338,9 +338,9 @@ const translations: Record<Locale, Translation> = {
       backorderpro: {
         name: 'BackorderPRO',
         tagline: 'Automatiseer levertijden, voorraad & pre-orders voor Shopify',
-        shortDescription: 'Synchroniseer leveranciersfeeds en laat slimme regels pre-order knoppen, levertijd-berichten en Buy Advice tonen op product, cart én checkout.',
-        description: 'BackorderPRO automatiseert de levertijd-, voorraad- en pre-order-communicatie in je Shopify-winkel. Importeer leveranciersfeeds (URL, FTP/SFTP of zelfs JavaScript-rendered websites), koppel SKU\'s of barcodes aan je Shopify-varianten, en laat BackorderPRO automatisch de delivery-status, leverdatums en pre-order-knoppen op je productpagina, cartpagina én checkout-overzicht bijwerken.',
-        features: ['Importeer feeds via URL, FTP/SFTP of JS-rendered sites', 'Auto-match producten via SKU of barcode', 'Slimme regel-engine met per-leverancier overrides', 'Dagelijkse geplande sync + handmatige "Run Now"', 'Backorder analytics met raw data export', 'Multi-language storefront (NL, EN, DE, FR, ES, IT, PT)', 'GDPR compliant — data hosting in EU-regio', 'Lever-tijden per leverancier', 'Pre-order knop op product, cart & checkout', 'Buy Advice — markeer aankopen & exporteer naar CSV'],
+        shortDescription: 'Synchroniseer leveranciersfeeds en laat slimme regels pre-order knoppen, levertijd-berichten en Buy Advice tonen op je productpagina, in de cart en in het klantaccount.',
+        description: 'BackorderPRO automatiseert de levertijd-, voorraad- en pre-order-communicatie in je Shopify-winkel. Importeer leveranciersfeeds (URL, FTP/SFTP of zelfs JavaScript-rendered websites), koppel SKU\'s of barcodes aan je Shopify-varianten, en laat BackorderPRO automatisch de delivery-status, leverdatums en pre-order-knoppen op je productpagina, in de cart en in het klantaccount bijwerken.',
+        features: ['Importeer feeds via URL, FTP/SFTP of JS-rendered sites', 'Auto-match producten via SKU of barcode', 'Slimme regel-engine met per-leverancier overrides', 'Dagelijkse geplande sync + handmatige "Run Now"', 'Backorder Tracker + analytics met raw data export', 'Klant-e-mails in 11 talen + storefront via Translate & Adapt', 'GDPR compliant — data hosting in EU-regio', 'Lever-tijden per leverancier', 'Pre-order knop + lead-time badge op de productpagina', 'Buy Advice — markeer aankopen & exporteer naar CSV'],
         pricing: {
           title: 'BackorderPRO Prijzen',
           subtitle: 'Eén vaste prijs per maand, geen transactiekosten. Annual billing levert 2 maanden gratis op (~17% korting).',
@@ -418,9 +418,9 @@ const translations: Record<Locale, Translation> = {
       backorderpro: {
         name: 'BackorderPRO',
         tagline: 'Automatisieren Sie Lieferzeiten, Bestand & Vorbestellungen für Shopify',
-        shortDescription: 'Synchronisieren Sie Lieferanten-Feeds und lassen Sie smarte Regeln Vorbestell-Buttons, Lieferzeit-Meldungen und Buy Advice auf Produkt, Cart & Checkout anzeigen.',
-        description: 'BackorderPRO automatisiert die Lieferzeit-, Bestands- und Vorbestell-Kommunikation in Ihrem Shopify-Shop. Importieren Sie Lieferanten-Feeds (URL, FTP/SFTP oder sogar JavaScript-gerenderte Websites), verknüpfen Sie SKUs oder Barcodes mit Ihren Shopify-Varianten, und lassen Sie BackorderPRO automatisch Lieferstatus, Lieferzeiten und Vorbestell-Buttons auf Ihrer Produkt-, Warenkorb- und Checkout-Seite aktualisieren.',
-        features: ['Feeds per URL, FTP/SFTP oder JS-gerenderten Sites importieren', 'Auto-Match über SKU oder Barcode', 'Intelligente Regel-Engine mit Per-Lieferanten-Overrides', 'Tägliche Auto-Sync + manueller "Run Now"', 'Backorder-Analytics mit Rohdaten-Export', 'Multi-Language Storefront (NL, EN, DE, FR, ES, IT, PT)', 'DSGVO-konform — Daten-Hosting in EU-Region', 'Lieferzeiten pro Lieferant', 'Vorbestell-Button auf Produkt, Cart & Checkout', 'Buy Advice — Käufe verfolgen & nach CSV exportieren'],
+        shortDescription: 'Synchronisieren Sie Lieferanten-Feeds und lassen Sie smarte Regeln Vorbestell-Buttons, Lieferzeit-Meldungen und Buy Advice auf Produktseite, im Warenkorb und im Kundenkonto anzeigen.',
+        description: 'BackorderPRO automatisiert die Lieferzeit-, Bestands- und Vorbestell-Kommunikation in Ihrem Shopify-Shop. Importieren Sie Lieferanten-Feeds (URL, FTP/SFTP oder sogar JavaScript-gerenderte Websites), verknüpfen Sie SKUs oder Barcodes mit Ihren Shopify-Varianten, und lassen Sie BackorderPRO automatisch Lieferstatus, Lieferzeiten und Vorbestell-Buttons auf Ihrer Produktseite, im Warenkorb und im Kundenkonto aktualisieren.',
+        features: ['Feeds per URL, FTP/SFTP oder JS-gerenderten Sites importieren', 'Auto-Match über SKU oder Barcode', 'Intelligente Regel-Engine mit Per-Lieferanten-Overrides', 'Tägliche Auto-Sync + manueller "Run Now"', 'Backorder Tracker + Analytics mit Rohdaten-Export', 'Kunden-E-Mails in 11 Sprachen + Storefront via Translate & Adapt', 'DSGVO-konform — Daten-Hosting in EU-Region', 'Lieferzeiten pro Lieferant', 'Vorbestell-Button + Lieferzeit-Badge auf der Produktseite', 'Buy Advice — Käufe verfolgen & nach CSV exportieren'],
         pricing: {
           title: 'BackorderPRO Preise',
           subtitle: 'Ein fester Preis pro Monat, keine Transaktionsgebühren. Jährliche Abrechnung bietet 2 Monate gratis (~17% Rabatt).',
@@ -483,9 +483,9 @@ const translations: Record<Locale, Translation> = {
       backorderpro: {
         name: 'BackorderPRO',
         tagline: 'Automatisez délais, stock & précommandes pour Shopify',
-        shortDescription: 'Synchronisez les feeds fournisseurs et laissez des règles intelligentes piloter boutons de précommande, messages de livraison et Buy Advice sur produit, panier et checkout.',
-        description: 'BackorderPRO automatise la communication des délais de livraison, du stock et des précommandes dans votre boutique Shopify. Importez les feeds fournisseurs (URL, FTP/SFTP ou même sites JavaScript-rendered), associez les SKU ou codes-barres, et laissez BackorderPRO mettre à jour automatiquement le statut de livraison, les délais et les boutons de précommande sur vos pages produit, panier et checkout.',
-        features: ['Import de feeds via URL, FTP/SFTP ou sites JS-rendered', 'Auto-match produits via SKU ou code-barres', 'Moteur de règles intelligent avec overrides par fournisseur', 'Sync quotidienne planifiée + "Run Now" à la demande', 'Analytics backorder avec export de données brutes', 'Storefront multilingue (NL, EN, DE, FR, ES, IT, PT)', 'Conforme RGPD — hébergement des données en région UE', 'Délais de livraison par fournisseur', 'Bouton de précommande sur produit, panier & checkout', 'Buy Advice — suivi des achats & export CSV'],
+        shortDescription: 'Synchronisez les feeds fournisseurs et laissez des règles intelligentes piloter boutons de précommande, messages de livraison et Buy Advice sur la page produit, le panier et le compte client.',
+        description: 'BackorderPRO automatise la communication des délais de livraison, du stock et des précommandes dans votre boutique Shopify. Importez les feeds fournisseurs (URL, FTP/SFTP ou même sites JavaScript-rendered), associez les SKU ou codes-barres, et laissez BackorderPRO mettre à jour automatiquement le statut de livraison, les délais et les boutons de précommande sur votre page produit, le panier et le compte client.',
+        features: ['Import de feeds via URL, FTP/SFTP ou sites JS-rendered', 'Auto-match produits via SKU ou code-barres', 'Moteur de règles intelligent avec overrides par fournisseur', 'Sync quotidienne planifiée + "Run Now" à la demande', 'Backorder Tracker + analytics avec export de données brutes', 'E-mails clients en 11 langues + boutique via Translate & Adapt', 'Conforme RGPD — hébergement des données en région UE', 'Délais de livraison par fournisseur', 'Bouton de précommande + badge de délai sur la page produit', 'Buy Advice — suivi des achats & export CSV'],
         pricing: {
           title: 'Prix BackorderPRO',
           subtitle: 'Un prix fixe par mois, sans frais de transaction. Facturation annuelle = 2 mois gratuits (~17% de réduction).',
@@ -548,9 +548,9 @@ const translations: Record<Locale, Translation> = {
       backorderpro: {
         name: 'BackorderPRO',
         tagline: 'Automatiza tiempos de entrega, stock & pre-pedidos para Shopify',
-        shortDescription: 'Sincroniza feeds de proveedores y deja que reglas inteligentes muestren botones de pre-pedido, mensajes de entrega y Buy Advice en producto, carrito y checkout.',
-        description: 'BackorderPRO automatiza la comunicación de tiempos de entrega, stock y pre-pedidos en tu tienda Shopify. Importa feeds de proveedores (URL, FTP/SFTP o incluso sitios renderizados con JavaScript), conecta SKUs o códigos de barras, y deja que BackorderPRO actualice automáticamente el estado de entrega, los plazos y los botones de pre-pedido en tus páginas de producto, carrito y checkout.',
-        features: ['Importa feeds vía URL, FTP/SFTP o sitios JS-rendered', 'Auto-coincidencia vía SKU o código de barras', 'Motor de reglas inteligente con overrides por proveedor', 'Sync diaria programada + "Run Now" bajo demanda', 'Analytics de backorder con exportación de datos brutos', 'Storefront multiidioma (NL, EN, DE, FR, ES, IT, PT)', 'Cumple RGPD — alojamiento de datos en región UE', 'Tiempos de entrega por proveedor', 'Botón de pre-pedido en producto, carrito & checkout', 'Buy Advice — registra compras & exporta a CSV'],
+        shortDescription: 'Sincroniza feeds de proveedores y deja que reglas inteligentes muestren botones de pre-pedido, mensajes de entrega y Buy Advice en la página de producto, el carrito y la cuenta de cliente.',
+        description: 'BackorderPRO automatiza la comunicación de tiempos de entrega, stock y pre-pedidos en tu tienda Shopify. Importa feeds de proveedores (URL, FTP/SFTP o incluso sitios renderizados con JavaScript), conecta SKUs o códigos de barras, y deja que BackorderPRO actualice automáticamente el estado de entrega, los plazos y los botones de pre-pedido en tu página de producto, el carrito y la cuenta de cliente.',
+        features: ['Importa feeds vía URL, FTP/SFTP o sitios JS-rendered', 'Auto-coincidencia vía SKU o código de barras', 'Motor de reglas inteligente con overrides por proveedor', 'Sync diaria programada + "Run Now" bajo demanda', 'Backorder Tracker + analytics con exportación de datos brutos', 'E-mails a clientes en 11 idiomas + tienda vía Translate & Adapt', 'Cumple RGPD — alojamiento de datos en región UE', 'Tiempos de entrega por proveedor', 'Botón de pre-pedido + etiqueta de plazo en la página de producto', 'Buy Advice — registra compras & exporta a CSV'],
         pricing: {
           title: 'Precios BackorderPRO',
           subtitle: 'Un precio fijo al mes, sin comisiones por transacción. La facturación anual te da 2 meses gratis (~17% de descuento).',
@@ -613,9 +613,9 @@ const translations: Record<Locale, Translation> = {
       backorderpro: {
         name: 'BackorderPRO',
         tagline: 'Zautomatyzuj czasy dostaw, stany i przedsprzedaż dla Shopify',
-        shortDescription: 'Synchronizuj feedy dostawców i pozwól, by inteligentne reguły wyświetlały przyciski przedsprzedaży, komunikaty o dostawie i Buy Advice na produkcie, koszyku i checkout.',
-        description: 'BackorderPRO automatyzuje komunikację o czasach dostaw, stanach magazynowych i przedsprzedaży w Twoim sklepie Shopify. Importuj feedy dostawców (URL, FTP/SFTP lub nawet strony renderowane JavaScriptem), połącz SKU lub kody kreskowe, i pozwól BackorderPRO automatycznie aktualizować status dostawy, terminy i przyciski przedsprzedaży na stronach produktu, koszyka i checkout.',
-        features: ['Import feedów przez URL, FTP/SFTP lub strony JS-rendered', 'Auto-dopasowanie produktów przez SKU lub kod kreskowy', 'Inteligentny silnik reguł z nadpisaniami per-dostawca', 'Codzienna zaplanowana synchronizacja + manualne "Run Now"', 'Analytics backorder z eksportem surowych danych', 'Wielojęzyczny storefront (NL, EN, DE, FR, ES, IT, PT)', 'Zgodny z RODO — hosting danych w regionie UE', 'Czasy dostawy per dostawca', 'Przycisk przedsprzedaży na produkcie, koszyku & checkout', 'Buy Advice — śledź zakupy & eksportuj do CSV'],
+        shortDescription: 'Synchronizuj feedy dostawców i pozwól, by inteligentne reguły wyświetlały przyciski przedsprzedaży, komunikaty o dostawie i Buy Advice na stronie produktu, w koszyku i na koncie klienta.',
+        description: 'BackorderPRO automatyzuje komunikację o czasach dostaw, stanach magazynowych i przedsprzedaży w Twoim sklepie Shopify. Importuj feedy dostawców (URL, FTP/SFTP lub nawet strony renderowane JavaScriptem), połącz SKU lub kody kreskowe, i pozwól BackorderPRO automatycznie aktualizować status dostawy, terminy i przyciski przedsprzedaży na stronie produktu, w koszyku i na koncie klienta.',
+        features: ['Import feedów przez URL, FTP/SFTP lub strony JS-rendered', 'Auto-dopasowanie produktów przez SKU lub kod kreskowy', 'Inteligentny silnik reguł z nadpisaniami per-dostawca', 'Codzienna zaplanowana synchronizacja + manualne "Run Now"', 'Backorder Tracker + analityka z eksportem surowych danych', 'E-maile do klientów w 11 językach + storefront przez Translate & Adapt', 'Zgodny z RODO — hosting danych w regionie UE', 'Czasy dostawy per dostawca', 'Przycisk przedsprzedaży + plakietka czasu dostawy na stronie produktu', 'Buy Advice — śledź zakupy & eksportuj do CSV'],
         pricing: {
           title: 'Ceny BackorderPRO',
           subtitle: 'Jedna stała cena miesięczna, bez opłat transakcyjnych. Płatność roczna = 2 miesiące gratis (~17% zniżki).',
@@ -678,9 +678,9 @@ const translations: Record<Locale, Translation> = {
       backorderpro: {
         name: 'BackorderPRO',
         tagline: 'Automatizujte dodací lhůty, sklad & předobjednávky pro Shopify',
-        shortDescription: 'Synchronizujte dodavatelské feedy a nechte chytrá pravidla zobrazovat tlačítka předobjednávky, dodací zprávy a Buy Advice na produktu, košíku a checkoutu.',
-        description: 'BackorderPRO automatizuje komunikaci o dodacích lhůtách, skladu a předobjednávkách ve vašem Shopify obchodě. Importujte dodavatelské feedy (URL, FTP/SFTP nebo i JavaScript-rendered weby), propojte SKU nebo čárové kódy, a nechte BackorderPRO automaticky aktualizovat stav dodávky, lhůty a tlačítka předobjednávky na stránkách produktu, košíku a checkoutu.',
-        features: ['Import feedů přes URL, FTP/SFTP nebo JS-rendered stránky', 'Auto-párování produktů přes SKU nebo čárový kód', 'Chytrý engine pravidel s overrides per-dodavatel', 'Denní plánovaná sync + manuální "Run Now"', 'Backorder analytics s exportem surových dat', 'Vícejazyčný storefront (NL, EN, DE, FR, ES, IT, PT)', 'GDPR kompatibilní — hosting dat v EU regionu', 'Dodací lhůty per dodavatel', 'Tlačítko předobjednávky na produktu, košíku & checkoutu', 'Buy Advice — sledujte nákupy & exportujte do CSV'],
+        shortDescription: 'Synchronizujte dodavatelské feedy a nechte chytrá pravidla zobrazovat tlačítka předobjednávky, dodací zprávy a Buy Advice na stránce produktu, v košíku a v zákaznickém účtu.',
+        description: 'BackorderPRO automatizuje komunikaci o dodacích lhůtách, skladu a předobjednávkách ve vašem Shopify obchodě. Importujte dodavatelské feedy (URL, FTP/SFTP nebo i JavaScript-rendered weby), propojte SKU nebo čárové kódy, a nechte BackorderPRO automaticky aktualizovat stav dodávky, lhůty a tlačítka předobjednávky na stránce produktu, v košíku a v zákaznickém účtu.',
+        features: ['Import feedů přes URL, FTP/SFTP nebo JS-rendered stránky', 'Auto-párování produktů přes SKU nebo čárový kód', 'Chytrý engine pravidel s overrides per-dodavatel', 'Denní plánovaná sync + manuální "Run Now"', 'Backorder Tracker + analytics s exportem surových dat', 'Zákaznické e-maily v 11 jazycích + storefront přes Translate & Adapt', 'GDPR kompatibilní — hosting dat v EU regionu', 'Dodací lhůty per dodavatel', 'Tlačítko předobjednávky + odznak dodací lhůty na stránce produktu', 'Buy Advice — sledujte nákupy & exportujte do CSV'],
         pricing: {
           title: 'Ceny BackorderPRO',
           subtitle: 'Jedna pevná cena měsíčně, žádné transakční poplatky. Roční fakturace = 2 měsíce zdarma (~17% sleva).',
@@ -743,9 +743,9 @@ const translations: Record<Locale, Translation> = {
       backorderpro: {
         name: 'BackorderPRO',
         tagline: 'Automatisera leveranstider, lager & förbeställningar för Shopify',
-        shortDescription: 'Synkronisera leverantörsflöden och låt smarta regler driva förbeställningsknappar, leveransmeddelanden och Buy Advice på produkt, kundvagn och checkout.',
-        description: 'BackorderPRO automatiserar kommunikationen om leveranstider, lager och förbeställningar i din Shopify-butik. Importera leverantörsflöden (URL, FTP/SFTP eller även JavaScript-renderade webbplatser), koppla SKU eller streckkoder, och låt BackorderPRO automatiskt uppdatera leveransstatus, ledtider och förbeställningsknappar på dina produkt-, kundvagn- och checkout-sidor.',
-        features: ['Importera flöden via URL, FTP/SFTP eller JS-renderade sidor', 'Auto-matchning via SKU eller streckkod', 'Smart regelmotor med per-leverantör overrides', 'Daglig schemalagd synk + manuell "Run Now"', 'Backorder analytics med export av rådata', 'Flerspråkig storefront (NL, EN, DE, FR, ES, IT, PT)', 'GDPR-kompatibel — datahosting i EU-region', 'Leveranstider per leverantör', 'Förbeställningsknapp på produkt, kundvagn & checkout', 'Buy Advice — spåra köp & exportera till CSV'],
+        shortDescription: 'Synkronisera leverantörsflöden och låt smarta regler driva förbeställningsknappar, leveransmeddelanden och Buy Advice på produktsidan, i kundvagnen och i kundkontot.',
+        description: 'BackorderPRO automatiserar kommunikationen om leveranstider, lager och förbeställningar i din Shopify-butik. Importera leverantörsflöden (URL, FTP/SFTP eller även JavaScript-renderade webbplatser), koppla SKU eller streckkoder, och låt BackorderPRO automatiskt uppdatera leveransstatus, ledtider och förbeställningsknappar på din produktsida, i kundvagnen och i kundkontot.',
+        features: ['Importera flöden via URL, FTP/SFTP eller JS-renderade sidor', 'Auto-matchning via SKU eller streckkod', 'Smart regelmotor med per-leverantör overrides', 'Daglig schemalagd synk + manuell "Run Now"', 'Backorder Tracker + analytics med export av rådata', 'Kund-e-post på 11 språk + butik via Translate & Adapt', 'GDPR-kompatibel — datahosting i EU-region', 'Leveranstider per leverantör', 'Förbeställningsknapp + leveranstidsbricka på produktsidan', 'Buy Advice — spåra köp & exportera till CSV'],
         pricing: {
           title: 'BackorderPRO Priser',
           subtitle: 'Ett fast pris per månad, inga transaktionsavgifter. Årsfakturering ger 2 månader gratis (~17% rabatt).',
