@@ -40,104 +40,12 @@ function ExternalIcon({ className = 'w-4 h-4' }: { className?: string }) {
   );
 }
 
-function BrowserFrame({ url, children }: { url: string; children: React.ReactNode }) {
+function Screenshot({ src, alt, className = '' }: { src: string; alt: string; className?: string }) {
   return (
-    <div className="rounded-xl overflow-hidden border border-circuit/25 bg-navy shadow-2xl shadow-circuit/10">
-      <div className="flex items-center gap-2 px-4 py-3 bg-navy-light/60 border-b border-circuit/15">
-        <span className="w-3 h-3 rounded-full bg-red-400/70" />
-        <span className="w-3 h-3 rounded-full bg-yellow-400/70" />
-        <span className="w-3 h-3 rounded-full bg-pike/70" />
-        <div className="ml-3 flex-1 truncate rounded-md bg-navy/70 px-3 py-1 text-xs text-gray-400">{url}</div>
-      </div>
-      <div className="p-4">{children}</div>
+    <div className={`rounded-xl p-2 bg-gradient-to-br from-circuit/15 to-pike/10 ring-1 ring-white/10 shadow-2xl shadow-black/40 ${className}`}>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={src} alt={alt} loading="lazy" className="w-full h-auto rounded-lg" />
     </div>
-  );
-}
-
-const mockProducts = [
-  { name: 'Hengel Pro X', dealer: '€ 89,00', rrp: '€ 149,00', from: 'from-circuit/40', to: 'to-pike/30' },
-  { name: 'Karper Voer 5kg', dealer: '€ 12,50', rrp: '€ 19,95', from: 'from-pike/40', to: 'to-circuit/30' },
-  { name: 'Molen Carbon', dealer: '€ 64,00', rrp: '€ 109,00', from: 'from-circuit/30', to: 'to-navy-light' },
-  { name: 'Tent Bivvy 2-man', dealer: '€ 210,00', rrp: '€ 329,00', from: 'from-pike/30', to: 'to-circuit/40' },
-];
-
-function DealerPortalMock() {
-  return (
-    <BrowserFrame url="karpcore.com  ·  ingelogd als dealer">
-      <div className="flex items-center justify-between mb-3">
-        <span className="text-[11px] uppercase tracking-wider text-gray-500">Jouw merken</span>
-        <span className="text-[11px] text-pike">3 vrijgegeven</span>
-      </div>
-      <div className="flex flex-wrap gap-2 mb-4">
-        {['Merk A', 'Merk B', 'Merk C'].map((b) => (
-          <span key={b} className="px-2.5 py-1 rounded-full text-xs bg-circuit/15 border border-circuit/30 text-circuit">
-            {b}
-          </span>
-        ))}
-        <span className="px-2.5 py-1 rounded-full text-xs bg-navy-light/40 border border-white/5 text-gray-600 line-through">
-          Merk D
-        </span>
-      </div>
-      <div className="grid grid-cols-2 gap-3">
-        {mockProducts.map((p) => (
-          <div key={p.name} className="rounded-lg border border-circuit/15 bg-navy-light/30 p-2.5">
-            <div className={`h-14 rounded-md bg-gradient-to-br ${p.from} ${p.to} mb-2`} />
-            <p className="text-xs text-gray-300 font-medium truncate">{p.name}</p>
-            <div className="flex items-baseline gap-2 mt-1">
-              <span className="text-sm font-bold text-pike">{p.dealer}</span>
-              <span className="text-[11px] text-gray-500 line-through">{p.rrp}</span>
-            </div>
-          </div>
-        ))}
-      </div>
-      <div className="mt-3 text-[11px] text-gray-500 text-center">Jouw dealerprijs · adviesprijs ernaast</div>
-    </BrowserFrame>
-  );
-}
-
-const mockAccess = [
-  { brand: 'Merk A', on: true },
-  { brand: 'Merk B', on: true },
-  { brand: 'Merk C', on: true },
-  { brand: 'Merk D', on: false },
-  { brand: 'Merk E', on: false },
-];
-
-function AdminToggleMock() {
-  return (
-    <BrowserFrame url="admin.karpcore.com  ·  merktoegang">
-      <div className="flex items-center justify-between mb-4">
-        <div>
-          <p className="text-xs text-gray-500">Bedrijf</p>
-          <p className="text-sm text-white font-semibold">Jansen Hengelsport B.V.</p>
-        </div>
-        <span className="text-[11px] px-2 py-0.5 rounded-full bg-pike/15 text-pike border border-pike/30">
-          audit-log aan
-        </span>
-      </div>
-      <div className="space-y-2">
-        {mockAccess.map((row) => (
-          <div
-            key={row.brand}
-            className="flex items-center justify-between rounded-lg border border-circuit/15 bg-navy-light/30 px-3 py-2.5"
-          >
-            <span className="text-sm text-gray-300">{row.brand}</span>
-            <span
-              className={`relative inline-flex h-5 w-9 items-center rounded-full transition-colors ${
-                row.on ? 'bg-pike/70' : 'bg-navy-light border border-white/10'
-              }`}
-            >
-              <span
-                className={`inline-block h-3.5 w-3.5 transform rounded-full bg-white transition-transform ${
-                  row.on ? 'translate-x-4' : 'translate-x-1'
-                }`}
-              />
-            </span>
-          </div>
-        ))}
-      </div>
-      <p className="mt-4 text-[11px] text-gray-500 text-center">Zet merken per bedrijf aan of uit — met één klik</p>
-    </BrowserFrame>
   );
 }
 
@@ -194,7 +102,14 @@ export default function KarpCorePageClient() {
             </div>
 
             <div className="lg:pl-4">
-              <DealerPortalMock />
+              <Screenshot
+                src="/images/karpcore/variant-picker.png"
+                alt="KarpCore dealerportaal: variant kiezen met dealerprijs en adviesprijs"
+                className="max-w-md mx-auto"
+              />
+              <p className="text-center text-xs text-gray-500 mt-3">
+                Echt scherm uit het live dealerportaal — dealerprijs naast adviesprijs.
+              </p>
             </div>
           </div>
         </div>
@@ -291,8 +206,29 @@ export default function KarpCorePageClient() {
         </div>
       </section>
 
+      {/* Product showcase */}
+      <section className="py-16 md:py-24">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">{c.showcase.title}</h2>
+          <p className="text-gray-400 mb-14 max-w-3xl">{c.showcase.intro}</p>
+          <div className="space-y-16">
+            {c.showcase.items.map((item, i) => (
+              <div key={item.title} className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+                <div className={i % 2 === 1 ? 'md:order-2' : ''}>
+                  <Screenshot src={item.img} alt={item.alt} />
+                </div>
+                <div className={i % 2 === 1 ? 'md:order-1' : ''}>
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-3">{item.title}</h3>
+                  <p className="text-gray-300 leading-relaxed">{item.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Outcomes */}
-      <section className="py-16 md:py-20">
+      <section className="py-16 md:py-20 bg-navy-light/20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">{c.outcomes.title}</h2>
           <p className="text-gray-400 mb-10 max-w-3xl">{c.outcomes.intro}</p>
@@ -365,9 +301,21 @@ export default function KarpCorePageClient() {
                 ))}
               </div>
             </div>
-            <div className="lg:sticky lg:top-24">
-              <AdminToggleMock />
-              <blockquote className="mt-6 border-l-4 border-pike pl-5 py-2 bg-pike/5 rounded-r-xl">
+            <div className="lg:sticky lg:top-24 space-y-5">
+              <Screenshot src={c.security.image} alt={c.security.imageAlt} />
+              <div className="rounded-xl border border-circuit/15 bg-navy/50 p-4 flex items-center gap-4">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={c.security.note}
+                  alt={c.security.noteAlt}
+                  loading="lazy"
+                  className="w-40 h-auto rounded-md ring-1 ring-white/10 flex-shrink-0"
+                />
+                <p className="text-xs text-gray-400 leading-relaxed">
+                  Geen toegang? Dan zie je geen prijzen — en staan ze ook niet in de broncode.
+                </p>
+              </div>
+              <blockquote className="border-l-4 border-pike pl-5 py-2 bg-pike/5 rounded-r-xl">
                 <p className="text-gray-200 font-medium text-sm leading-relaxed">{c.security.conclusion}</p>
               </blockquote>
             </div>

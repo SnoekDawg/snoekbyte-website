@@ -141,6 +141,10 @@ export const karpCoreContent = {
     ],
     conclusion:
       'Het resultaat: een dealer kan principieel niet bij data van merken die niet voor hem aanstaan — ook niet via een omweg.',
+    image: '/images/karpcore/dealer-only.png',
+    imageAlt: 'Bestellen alleen voor dealers — log in om dealer-prijzen te zien',
+    note: '/images/karpcore/dealer-price-note.png',
+    noteAlt: 'Neem contact op met je account manager voor dealer-prijzen op dit merk',
   },
 
   results: {
@@ -207,6 +211,37 @@ export const karpCoreContent = {
         question: 'Wat als ik iets unieks nodig heb?',
         answer:
           'Dat kan. KarpCore is opgebouwd uit losse modules (merken, bedrijven, offertes, goedkeuringen). Maatwerk bouwen we als nette uitbreiding, zonder de upgradebaarheid van het platform op te offeren.',
+      },
+    ],
+  },
+
+  showcase: {
+    title: 'Zie KarpCore in actie',
+    intro: 'Echte schermen uit het live platform — gebouwd om dealers in seconden te laten bestellen.',
+    items: [
+      {
+        img: '/images/karpcore/variant-picker.png',
+        alt: 'Variant kiezen met dealerprijs en adviesprijs',
+        title: 'Snel shoppen — direct de juiste variant',
+        text: 'Via de add-to-cart op de catalogus kiest je dealer meteen de juiste variant en het aantal. Zijn dealerprijs en de adviesprijs (RRP) staan netjes naast elkaar.',
+      },
+      {
+        img: '/images/karpcore/quick-add-sku.png',
+        alt: 'Snel toevoegen op SKU of EAN',
+        title: 'Bestellen op SKU of EAN — typen of scannen',
+        text: 'Producten toevoegen in seconden op artikelnummer of barcode. Scannen werkt net zo goed. Aantal = aantal pakken; de verpakkingsgrootte wordt automatisch toegepast.',
+      },
+      {
+        img: '/images/karpcore/quick-search.png',
+        alt: 'Snelzoeken op naam, SKU of EAN',
+        title: 'Snelzoeken op naam, SKU of EAN',
+        text: 'Begin te typen en zie meteen de juiste producten met thumbnail — geen eindeloos scrollen door de catalogus.',
+      },
+      {
+        img: '/images/karpcore/cart-quote.png',
+        alt: 'Offerte aanvragen, direct afrekenen of cart exporteren',
+        title: 'Offerte aanvragen of direct afrekenen',
+        text: 'Vanuit het winkelmandje een offerte aanvragen, meteen afrekenen, of de hele mand exporteren als CSV. De dealer kiest zelf de snelste route.',
       },
     ],
   },
