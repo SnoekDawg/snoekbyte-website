@@ -89,7 +89,7 @@ export default function KarpCorePageClient() {
                   {t.liveChat.start}
                 </LiveChatButton>
                 <a
-                  href="https://karpcore.com"
+                  href="https://karpcore.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-circuit/40 text-circuit hover:bg-circuit/10 transition-colors font-medium"
@@ -464,7 +464,7 @@ export default function KarpCorePageClient() {
               {t.liveChat.start}
             </LiveChatButton>
             <a
-              href="https://karpcore.com"
+              href="https://karpcore.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-circuit/40 text-circuit hover:bg-circuit/10 transition-colors font-medium"

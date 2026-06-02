@@ -184,7 +184,7 @@ export default function ServicesPageClient() {
                       </svg>
                     </Button>
                     <a
-                      href="https://karpcore.com"
+                      href="https://karpcore.com/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-sm text-circuit hover:underline"
