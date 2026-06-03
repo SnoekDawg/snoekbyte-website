@@ -1,0 +1,61 @@
+---
+title: Veelgestelde vragen
+description: Snelle antwoorden op de meest gestelde vragen over BackorderPRO.
+category: faq
+order: 1
+updated: 2026-06-02
+---
+
+## Voegt BackorderPRO een checkout-extensie toe?
+
+Nee. Er is geen checkout-UI-extensie. De levertijd- en pre-order-elementen staan
+op de productpagina, op collectiekaarten en in de winkelmand. De "wat de klant
+zag"-data in de Backorder Tracker is een interne momentopname, geen zichtbaar
+checkout-element.
+
+## Hoe worden feedproducten aan mijn Shopify-producten gekoppeld?
+
+Op SKU of EAN/barcode. Het matchen is tolerant — spaties en voorloopnullen worden
+verwijderd en het is hoofdletterongevoelig — dus kleine verschillen in opmaak
+tussen je feed en Shopify matchen alsnog.
+
+## Welke bestandsformaten en bronnen worden ondersteund?
+
+CSV, Excel (.xls/.xlsx) en XML, geleverd via een openbare URL, bestandsupload of —
+op het Business-abonnement — FTP/SFTP en browser-gerenderde feeds voor
+leveranciersites met veel JavaScript.
+
+## Hoe vaak synchroniseert de feed?
+
+Free synchroniseert wekelijks; Starter, Growth en Business één keer per dag. Je
+kunt ook handmatig syncen: 1/dag op Free, 3/dag op Starter, 20/dag op Growth en
+onbeperkt op Business.
+
+## In hoeveel talen kunnen klant-e-mails worden verstuurd?
+
+Klantmeldingen worden geleverd met 11 ingebouwde sjabloontalen: EN, NL, FR, DA,
+ES, CS, PL, DE, PT, IT en SV. E-mailmeldingen zijn beschikbaar vanaf het
+Starter-abonnement.
+
+## Is mijn klantdata veilig?
+
+Ja. BackorderPRO wordt gehost in de EU en raakt alleen de productdata die nodig
+is voor voorraadupdates. Als e-mailmeldingen aanstaan, wordt het e-mailadres van
+de betreffende klant versleuteld opgeslagen en uitsluitend gebruikt om die
+berichten te versturen — het wordt nooit gedeeld met het AI-model.
+Leveranciersgegevens worden versleuteld met AES-256-GCM, en je kunt alle data op
+elk moment verwijderen.
+
+## Wat doet de AI Inventory Analysis?
+
+Het is een opt-in-rapport (met expliciete toestemming) dat alleen op
+geaggregeerde data wordt gegenereerd. Het vergelijkt de omzet tot nu toe deze
+maand met dezelfde periode vorige maand, analyseert je verkopen op voorraad versus
+uit voorraad en geeft inkoopadvies. Er wordt nooit herleidbare klantdata
+verstuurd, en de toestemming kan op elk moment worden ingetrokken.
+
+## Kan ik voorraadstatus als winkelfilter gebruiken?
+
+Ja. Het metafield `snoek_bpo.stock_status` kan Shopify Search & Discovery-filters
+aansturen (op voorraad / backorder / pre-order), en alle levertijd- en
+pre-ordertekst verschijnt in Shopify Translate & Adapt.

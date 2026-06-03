@@ -1,0 +1,62 @@
+---
+title: Importing & mapping a supplier feed
+description: Connect a supplier feed, match it to your variants and map the right columns.
+category: configuration
+order: 1
+updated: 2026-06-02
+---
+
+A feed is the source of truth BackorderPRO uses to update stock, delivery dates
+and pre-order status. You can add multiple feeds depending on your plan.
+
+## Supported formats & sources
+
+**File formats:** CSV, Excel (`.xls` and `.xlsx`) and XML.
+
+**Sources:**
+
+- Direct **URL** (a public file link).
+- **File upload**.
+- **FTP / SFTP** — credentials are encrypted at rest (AES-256-GCM). *(Business)*
+- **Browser-rendered feeds** for JavaScript-heavy supplier sites. *(Business)*
+
+Feeds are guarded against anti-bot/HTML responses being mis-parsed as a
+spreadsheet, and auto-detection helpers can locate a feed URL inside a supplier
+landing page.
+
+## How products are matched
+
+BackorderPRO matches feed rows to your Shopify variants by **SKU** or
+**EAN/barcode**. Matching is tolerant: it trims whitespace and leading zeros and
+is case-insensitive. A two-tier (in-memory + on-disk) variant cache keeps
+matching fast and reliable, and large catalogues use the Shopify **Bulk
+Operations API** on the Business plan.
+
+## Mapping columns
+
+When you add a feed, map your feed columns to the values the app needs:
+
+| Field | What to map |
+|---|---|
+| SKU / EAN | The column used to match Shopify variants |
+| Stock | The supplier stock level |
+| Delivery date | The expected restock/delivery date |
+| Custom columns | Any extra columns you want to use in rules |
+
+You can also set **buffer days** per feed (`deliveryDateOffsetDays`) — extra days
+added to the supplier date to cover the supplier → you → customer path.
+
+## Scheduling syncs
+
+- **Scheduled sync:** weekly on Free; once per day on Starter, Growth and
+  Business.
+- **Manual "Run Now":** 1/day on Free, 3/day on Starter, 20/day on Growth and
+  unlimited on Business.
+- **"Run All"** executes every feed plus your global rules in the correct order.
+
+Scheduling runs on an always-on machine, so you do not need any external cron
+service.
+
+## Next steps
+
+- [Setting up pre-orders & backorders](/en/docs/backorderpro/preorder-rules)

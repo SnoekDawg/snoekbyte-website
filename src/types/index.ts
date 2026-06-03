@@ -21,6 +21,7 @@ export interface Translation {
     apps: string;
     services: string;
     contact: string;
+    docs: string;
   };
   hero: {
     title: string;
@@ -127,6 +128,32 @@ export interface Translation {
   liveChat: {
     start: string;
     enterprise: string;
+  };
+  docs: {
+    hubTitle: string;
+    hubSubtitle: string;
+    hubCta: string;
+    breadcrumb: string;
+    backToDocs: string;
+    articlesLabel: string;
+    faqTitle: string;
+    searchPlaceholder: string;
+    searchNoResults: string;
+    searchResults: string;
+    inThisArticle: string;
+    prev: string;
+    next: string;
+    lastUpdated: string;
+    fallbackNotice: string;
+    helpTitle: string;
+    helpSubtitle: string;
+    categories: {
+      'getting-started': string;
+      configuration: string;
+      preorders: string;
+      faq: string;
+      general: string;
+    };
   };
 }
 

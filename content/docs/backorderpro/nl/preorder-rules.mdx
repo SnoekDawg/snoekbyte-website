@@ -1,0 +1,69 @@
+---
+title: Pre-orders & backorders instellen
+description: Gebruik de regel-engine, leverdatums en pre-orderinstellingen om te bepalen wat verkoopt.
+category: preorders
+order: 1
+updated: 2026-06-02
+---
+
+BackorderPRO bepaalt het voorraadbeleid van een variant (`CONTINUE` of `DENY`) en
+de leverinformatie die klanten te zien krijgen. Twee lagen regels sturen dit aan.
+
+## De regel-engine
+
+- **Voorraadregels (per feed):** voorwaarden op feedkolommen of Shopify-data
+  (voorraadstand, prijs, vergelijk-prijs). Acties zetten `CONTINUE` (verkopen
+  toestaan) of `DENY`.
+- **Globale regels (winkelbreed):** een vangnet voor varianten die door geen
+  enkele feed meer worden bijgewerkt — bijvoorbeeld oude of verwijderde SKU's. Ze
+  kunnen het voorraadbeleid, de voorraadstatus, het wissen van leverdatums en
+  `preorder_allowed` instellen.
+
+Regellimieten per abonnement: Free/Starter 2, Growth 10, Business onbeperkt.
+
+## Leverdatum & levertijd
+
+- De **verwachte leverdatum** wordt uit een gemapte feedkolom gelezen.
+- **Levertijdbereiken** (min/max met eenheid dagen, weken of werkdagen) kun je
+  globaal en **per leverancier** instellen *(Growth+)*.
+- Waarden worden naar variant-metafields geschreven (`snoek_bpo.delivery`,
+  `vendor_lead_time`, `stock_status`, `preorder_allowed`).
+
+## Pre-orderinstellingen
+
+Zet pre-orders aan met de hoofdschakelaar en configureer vervolgens:
+
+- **Knopstyling:** eigen tekst, subtitel, icoon, kleuren en klikactie
+  (toevoegen aan winkelmandje / houd me op de hoogte / eigen URL).
+- **Minimumprijs:** sta pre-order alleen toe op of boven een bepaalde prijs.
+- **Maximale levertijd (dagen):** weiger pre-order wanneer de verwachte
+  herbevoorradingsdatum van de leverancier (de feed-brondatum, exclusief de
+  buffer per feed) verder dan X dagen in de toekomst ligt. Leeg = geen maximum.
+- **Pre-order op voorraad toestaan** (optioneel).
+- **Overrides per leverancier** *(Growth+)*: aan/uit, minimumprijs en maximale
+  levertijd per leverancier, met een `_default`-fallback.
+
+De originele Toevoegen-aan-winkelmandje-knop kan op pre-orderproducten worden
+verborgen (instelbaar). Producten die de leverancier daadwerkelijk op voorraad
+heeft, worden nooit op `DENY` gezet door de pre-ordergrenzen — een bestaande
+`CONTINUE` uit een voorraadregel blijft behouden.
+
+## Backorders volgen *(Growth+)*
+
+Elke bestelling wordt bij het aanmaken gecontroleerd; regels met negatieve
+voorraad worden opgeslagen als backorder-verkopen met een momentopname (SKU,
+barcode, leverancier, aantal, prijs, voorraad). De **Tracker-pagina** groepeert
+openstaande backorders per bestelling met statusbuckets (op-schema / bijna-due /
+te-laat / gesnoozed / opgelost), zoeken, filters op leverancier en sortering,
+bulk snoozen/oplossen, notities per bestelling en CSV-export.
+
+## Klanten op de hoogte houden *(Starter+)*
+
+Klant-e-mails voor backorder- en leverupdates zijn beschikbaar vanaf Starter, met
+**11 ingebouwde sjabloontalen** (EN, NL, FR, DA, ES, CS, PL, DE, PT, IT, SV).
+E-mailadressen van klanten worden versleuteld opgeslagen en nooit gedeeld met het
+AI-model.
+
+## Volgende stappen
+
+- [Veelgestelde vragen](/nl/docs/backorderpro/faq)

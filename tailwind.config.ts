@@ -49,6 +49,8 @@ const config: Config = {
           800: "#2C5A2C",
           900: "#1B3A1B",
         },
+        // Lighter navy surface used for cards/sections
+        "navy-light": "#13243C",
         // Functional colors
         background: "var(--background)",
         foreground: "var(--foreground)",

@@ -34,6 +34,7 @@ export function Footer() {
       title: locale === 'nl' ? 'Bedrijf' : 'Company',
       links: [
         { label: t.nav.contact, href: `/${locale}/contact` },
+        { label: t.nav.docs, href: `/${locale}/docs` },
         { label: locale === 'nl' ? 'Privacybeleid' : 'Privacy Policy', href: `/${locale}/privacy/backorderpro` },
       ],
     },

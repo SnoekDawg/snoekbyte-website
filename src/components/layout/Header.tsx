@@ -29,6 +29,7 @@ export function Header() {
     { label: t.nav.home, href: `/${locale}` },
     { label: t.nav.apps, href: `/${locale}/apps` },
     { label: t.nav.services, href: `/${locale}/services` },
+    { label: t.nav.docs, href: `/${locale}/docs` },
     { label: t.nav.contact, href: `/${locale}/contact` },
   ];
 

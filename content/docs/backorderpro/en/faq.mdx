@@ -1,0 +1,59 @@
+---
+title: Frequently asked questions
+description: Quick answers to the most common BackorderPRO questions.
+category: faq
+order: 1
+updated: 2026-06-02
+---
+
+## Does BackorderPRO add a checkout extension?
+
+No. There is no checkout UI extension. The delivery and pre-order elements live
+on the product page, on collection cards and in the cart drawer. The "what the
+customer saw" data in the Backorder Tracker is an internal snapshot, not a
+visible checkout element.
+
+## How are feed products matched to my Shopify products?
+
+By SKU or EAN/barcode. Matching is tolerant — it trims whitespace and leading
+zeros and is case-insensitive — so small formatting differences between your
+feed and Shopify still match.
+
+## Which file formats and sources are supported?
+
+CSV, Excel (.xls/.xlsx) and XML, delivered via a public URL, file upload, or —
+on the Business plan — FTP/SFTP and browser-rendered feeds for JavaScript-heavy
+supplier sites.
+
+## How often does the feed sync?
+
+Free syncs weekly; Starter, Growth and Business sync once per day. You can also
+run a sync manually: 1/day on Free, 3/day on Starter, 20/day on Growth and
+unlimited on Business.
+
+## In how many languages can customer emails be sent?
+
+Customer notification emails ship with 11 built-in template languages: EN, NL,
+FR, DA, ES, CS, PL, DE, PT, IT and SV. Email notifications are available from the
+Starter plan and up.
+
+## Is my customer data safe?
+
+Yes. BackorderPRO is hosted in the EU and only touches the product data needed
+for stock updates. If email notifications are enabled, the affected customer's
+email is encrypted at rest and stored solely to send those messages — it is never
+shared with the AI model. Supplier credentials are encrypted with AES-256-GCM,
+and you can delete all data at any time.
+
+## What does the AI Inventory Analysis do?
+
+It is an opt-in report (explicit consent) generated from aggregated data only. It
+compares month-to-date revenue against the same period last month, analyses your
+in-stock versus out-of-stock sales and suggests reorder advice. No
+customer-identifiable data is ever sent, and consent can be revoked at any time.
+
+## Can I use stock status as a storefront filter?
+
+Yes. The `snoek_bpo.stock_status` metafield can power Shopify Search & Discovery
+filters (in stock / backorder / pre-order), and all delivery/pre-order text
+appears in Shopify Translate & Adapt.

@@ -1,0 +1,67 @@
+---
+title: Setting up pre-orders & backorders
+description: Use the rule engine, delivery dates and pre-order settings to control what sells.
+category: preorders
+order: 1
+updated: 2026-06-02
+---
+
+BackorderPRO decides a variant's inventory policy (`CONTINUE` or `DENY`) and the
+delivery information shown to customers. Two layers of rules drive this.
+
+## The rule engine
+
+- **Inventory rules (per feed):** conditions on feed columns or Shopify data
+  (stock level, price, compare-at price). Actions set `CONTINUE` (allow selling)
+  or `DENY`.
+- **Global rules (store-wide):** a safety net for variants that no feed updates
+  anymore — for example old or removed SKUs. They can set inventory policy,
+  stock status, clear delivery dates and set `preorder_allowed`.
+
+Rule limits per plan: Free/Starter 2, Growth 10, Business unlimited.
+
+## Delivery date & lead time
+
+- The **expected delivery date** is read from a mapped feed column.
+- **Lead-time ranges** (min/max with a unit of days, weeks or business days) can
+  be set globally and **per vendor** *(Growth+)*.
+- Values are written to variant metafields (`snoek_bpo.delivery`,
+  `vendor_lead_time`, `stock_status`, `preorder_allowed`).
+
+## Pre-order settings
+
+Enable pre-orders with the master toggle, then configure:
+
+- **Button styling:** custom text, subtitle, icon, colours and click action
+  (add to cart / notify me / custom URL).
+- **Minimum price:** only allow pre-order at or above a price.
+- **Maximum lead time (days):** deny pre-order when the supplier's expected
+  restock date (the feed source date, excluding the per-feed buffer) is further
+  than X days in the future. Leave empty for no maximum.
+- **Allow in-stock pre-order** (optional).
+- **Per-vendor overrides** *(Growth+)*: enable/disable, minimum price and maximum
+  lead time per supplier, with a `_default` fallback.
+
+The original Add-to-cart button can be hidden on pre-order products
+(configurable). Products the supplier actually has in stock are never forced to
+`DENY` by the pre-order gates — an existing `CONTINUE` from a stock rule is
+preserved.
+
+## Tracking backorders *(Growth+)*
+
+Every order is checked on creation; negative-inventory lines are stored as
+backorder sales with a snapshot (SKU, barcode, vendor, quantity, price, stock).
+The **Tracker page** groups open backorders per order with status buckets
+(on-track / due-soon / overdue / snoozed / resolved), search, vendor and sort
+filters, bulk snooze/resolve, per-order notes and CSV export.
+
+## Keeping customers informed *(Starter+)*
+
+Customer emails for backorder and delivery updates are available on Starter and
+up, with **11 built-in template languages** (EN, NL, FR, DA, ES, CS, PL, DE, PT,
+IT, SV). Customer email addresses are encrypted at rest and never shared with the
+AI model.
+
+## Next steps
+
+- [Frequently asked questions](/en/docs/backorderpro/faq)

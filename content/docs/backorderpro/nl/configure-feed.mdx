@@ -1,0 +1,65 @@
+---
+title: Een leveranciersfeed importeren & mappen
+description: Koppel een leveranciersfeed, match hem aan je varianten en map de juiste kolommen.
+category: configuration
+order: 1
+updated: 2026-06-02
+---
+
+Een feed is de bron van waarheid die BackorderPRO gebruikt om voorraad,
+leverdatums en pre-orderstatus bij te werken. Afhankelijk van je abonnement kun
+je meerdere feeds toevoegen.
+
+## Ondersteunde formaten & bronnen
+
+**Bestandsformaten:** CSV, Excel (`.xls` en `.xlsx`) en XML.
+
+**Bronnen:**
+
+- Directe **URL** (een openbare bestandslink).
+- **Bestandsupload**.
+- **FTP / SFTP** — inloggegevens worden versleuteld opgeslagen (AES-256-GCM). *(Business)*
+- **Browser-gerenderde feeds** voor leveranciersites met veel JavaScript. *(Business)*
+
+Feeds zijn beveiligd tegen anti-bot/HTML-responses die ten onrechte als
+spreadsheet worden gelezen, en auto-detectie kan een feed-URL vinden binnen een
+landingspagina van een leverancier.
+
+## Hoe producten worden gematcht
+
+BackorderPRO matcht feedregels aan je Shopify-varianten op **SKU** of
+**EAN/barcode**. Het matchen is tolerant: spaties en voorloopnullen worden
+verwijderd en het is hoofdletterongevoelig. Een tweelaagse cache (in-memory +
+op schijf) houdt het matchen snel en betrouwbaar, en grote catalogi gebruiken op
+het Business-abonnement de Shopify **Bulk Operations API**.
+
+## Kolommen mappen
+
+Wanneer je een feed toevoegt, koppel je je feedkolommen aan de waarden die de app
+nodig heeft:
+
+| Veld | Wat je koppelt |
+|---|---|
+| SKU / EAN | De kolom die Shopify-varianten matcht |
+| Voorraad | De voorraadstand van de leverancier |
+| Leverdatum | De verwachte herbevoorradings-/leverdatum |
+| Eigen kolommen | Extra kolommen die je in regels wilt gebruiken |
+
+Je kunt ook **bufferdagen** per feed instellen (`deliveryDateOffsetDays`) — extra
+dagen bovenop de leveranciersdatum om het traject leverancier → jou → klant te
+dekken.
+
+## Syncs plannen
+
+- **Geplande sync:** wekelijks op Free; eenmaal per dag op Starter, Growth en
+  Business.
+- **Handmatige "Run Now":** 1/dag op Free, 3/dag op Starter, 20/dag op Growth en
+  onbeperkt op Business.
+- **"Run All"** voert elke feed plus je globale regels in de juiste volgorde uit.
+
+Het plannen draait op een altijd-actieve machine, dus je hebt geen externe
+cron-service nodig.
+
+## Volgende stappen
+
+- [Pre-orders & backorders instellen](/nl/docs/backorderpro/preorder-rules)
