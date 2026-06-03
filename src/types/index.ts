@@ -85,6 +85,13 @@ export interface Translation {
         faq: { question: string; answer: string }[];
       };
     };
+    returncontrolpro: {
+      name: string;
+      tagline: string;
+      shortDescription: string;
+      description: string;
+      features: string[];
+    };
   };
   services: {
     title: string;

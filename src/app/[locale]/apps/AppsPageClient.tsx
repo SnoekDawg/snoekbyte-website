@@ -14,6 +14,8 @@ type AppCard = {
   startingPrice: string;
   badge?: string;
   internal?: boolean;
+  /** Allow navigating to the detail page while still marked internal-only */
+  viewDetails?: boolean;
 };
 
 export default function AppsPageClient() {
@@ -22,6 +24,16 @@ export default function AppsPageClient() {
   const t = getTranslation(locale);
 
   const apps: AppCard[] = [
+    {
+      id: 'returncontrolpro',
+      name: t.apps.returncontrolpro.name,
+      tagline: t.apps.returncontrolpro.tagline,
+      description: t.apps.returncontrolpro.shortDescription,
+      startingPrice: locale === 'nl' ? 'Vanaf €9/maand' : 'From €9/month',
+      badge: '2026',
+      internal: true,
+      viewDetails: true,
+    },
     {
       id: 'feedmapperpro',
       name: t.apps.feedmapperpro.name,
@@ -105,17 +117,26 @@ export default function AppsPageClient() {
                     <div className="flex flex-col sm:flex-row lg:flex-col gap-3 lg:min-w-[200px]">
                       {app.internal ? (
                         <>
-                          <Button
-                            variant="primary"
-                            disabled
-                            title={t.apps.internalUseOnly}
-                            className="w-full cursor-not-allowed justify-center opacity-45 pointer-events-none"
-                          >
-                            {locale === 'nl' ? 'Bekijk Details' : 'View Details'}
-                            <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                            </svg>
-                          </Button>
+                          {app.viewDetails ? (
+                            <Button variant="primary" href={`/${locale}/apps/${app.id}`} className="w-full justify-center">
+                              {locale === 'nl' ? 'Bekijk Details' : 'View Details'}
+                              <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                              </svg>
+                            </Button>
+                          ) : (
+                            <Button
+                              variant="primary"
+                              disabled
+                              title={t.apps.internalUseOnly}
+                              className="w-full cursor-not-allowed justify-center opacity-45 pointer-events-none"
+                            >
+                              {locale === 'nl' ? 'Bekijk Details' : 'View Details'}
+                              <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                              </svg>
+                            </Button>
+                          )}
                           <Button
                             variant="secondary"
                             disabled

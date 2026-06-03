@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/apps',
     '/apps/backorderpro',
     '/apps/backorderpro/pricing',
+    '/apps/returncontrolpro',
     '/services',
     '/services/web-development',
     '/services/marketing',
