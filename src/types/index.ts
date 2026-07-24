@@ -92,6 +92,20 @@ export interface Translation {
       description: string;
       features: string[];
     };
+    invoicerpro: {
+      name: string;
+      tagline: string;
+      shortDescription: string;
+      description: string;
+      features: string[];
+    };
+    stockpro: {
+      name: string;
+      tagline: string;
+      shortDescription: string;
+      description: string;
+      features: string[];
+    };
   };
   services: {
     title: string;

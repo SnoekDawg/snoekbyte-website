@@ -16,6 +16,8 @@ type AppCard = {
   internal?: boolean;
   /** Allow navigating to the detail page while still marked internal-only */
   viewDetails?: boolean;
+  /** Development progress toward release, 0-100 */
+  progress: number;
 };
 
 export default function AppsPageClient() {
@@ -33,6 +35,27 @@ export default function AppsPageClient() {
       badge: '2026',
       internal: true,
       viewDetails: true,
+      progress: 20,
+    },
+    {
+      id: 'invoicerpro',
+      name: t.apps.invoicerpro.name,
+      tagline: t.apps.invoicerpro.tagline,
+      description: t.apps.invoicerpro.shortDescription,
+      startingPrice: locale === 'nl' ? 'Vanaf €9/maand' : 'From €9/month',
+      badge: '2026',
+      internal: true,
+      progress: 99,
+    },
+    {
+      id: 'stockpro',
+      name: t.apps.stockpro.name,
+      tagline: t.apps.stockpro.tagline,
+      description: t.apps.stockpro.shortDescription,
+      startingPrice: locale === 'nl' ? 'Vanaf €9/maand' : 'From €9/month',
+      badge: '2026',
+      internal: true,
+      progress: 97,
     },
     {
       id: 'feedmapperpro',
@@ -42,6 +65,7 @@ export default function AppsPageClient() {
       startingPrice: locale === 'nl' ? 'Vanaf €0/maand' : 'From €0/month',
       badge: 'NEW',
       internal: true,
+      progress: 96.5,
     },
     {
       id: 'backorderpro',
@@ -49,8 +73,23 @@ export default function AppsPageClient() {
       tagline: t.apps.backorderpro.tagline,
       description: t.apps.backorderpro.shortDescription,
       startingPrice: locale === 'nl' ? 'Vanaf $0/maand' : 'From $0/month',
+      progress: 100,
     },
   ];
+
+  const formatPercent = (value: number) =>
+    `${value.toLocaleString(locale === 'nl' ? 'nl-NL' : 'en-US', { maximumFractionDigits: 1 })}%`;
+
+  const progressLabel = (value: number) => {
+    if (value >= 100) return locale === 'nl' ? 'Live' : 'Live';
+    return locale === 'nl' ? 'In ontwikkeling' : 'In development';
+  };
+
+  const progressBarClass = (value: number) => {
+    if (value >= 100) return 'bg-pike';
+    if (value >= 90) return 'bg-circuit';
+    return 'bg-amber-400';
+  };
 
   return (
     <div className="min-h-screen">
@@ -111,6 +150,30 @@ export default function AppsPageClient() {
                       <p className="text-gray-400 leading-relaxed max-w-2xl">
                         {app.description}
                       </p>
+
+                      <div className="mt-6 max-w-md">
+                        <div className="flex items-center justify-between mb-1.5">
+                          <span className="text-xs font-medium uppercase tracking-wide text-gray-500">
+                            {progressLabel(app.progress)}
+                          </span>
+                          <span className="text-sm font-semibold text-white">
+                            {formatPercent(app.progress)}
+                          </span>
+                        </div>
+                        <div
+                          className="h-2 w-full overflow-hidden rounded-full bg-white/10"
+                          role="progressbar"
+                          aria-valuenow={app.progress}
+                          aria-valuemin={0}
+                          aria-valuemax={100}
+                          aria-label={`${app.name} — ${progressLabel(app.progress)} ${formatPercent(app.progress)}`}
+                        >
+                          <div
+                            className={`h-full rounded-full transition-all duration-500 ${progressBarClass(app.progress)}`}
+                            style={{ width: `${app.progress}%` }}
+                          />
+                        </div>
+                      </div>
                     </div>
 
                     {/* Right: Actions */}
