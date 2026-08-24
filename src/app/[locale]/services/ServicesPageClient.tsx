@@ -147,53 +147,100 @@ export default function ServicesPageClient() {
             ))}
           </div>
 
-          {/* Case study: KarpCore */}
+          {/* Case studies */}
           <div className="mt-16">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-2 text-center">
-              {locale === 'nl' ? 'Case study' : 'Case study'}
+              {locale === 'nl' ? 'Case studies' : 'Case studies'}
             </h2>
             <p className="text-gray-400 text-center mb-8 max-w-2xl mx-auto">
               {locale === 'nl'
-                ? 'Een volledig B2B-commerceplatform van architectuur tot productie.'
-                : 'A full B2B commerce platform from architecture to production.'}
+                ? 'Van architectuur tot productie — echte platforms die we van idee tot live brachten.'
+                : 'From architecture to production — real platforms we took from idea to live.'}
             </p>
-            <div className="bg-gradient-to-br from-circuit/10 to-pike/5 backdrop-blur-sm rounded-2xl border border-circuit/30 overflow-hidden hover:border-circuit/50 transition-all duration-300">
-              <div className="p-8 md:p-10">
-                <div className="flex flex-col lg:flex-row gap-8 items-start">
-                  <div className="flex-1">
-                    <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-circuit/20 text-circuit mb-4">
-                      B2B Platform
-                    </span>
-                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">KarpCore</h3>
-                    <p className="text-circuit font-medium mb-4">
-                      {locale === 'nl'
-                        ? 'B2B-commerceplatform met merken als datadimensie'
-                        : 'B2B commerce platform with brands as a data dimension'}
-                    </p>
-                    <p className="text-gray-400 leading-relaxed max-w-2xl">
-                      {locale === 'nl'
-                        ? 'Eén headless Medusa-backend, meerdere sub-merken, fijnmazige dealer-toegang en een self-service portal — live op karpcore.com.'
-                        : 'One headless Medusa backend, multiple sub-brands, granular dealer access and a self-service portal — live at karpcore.com.'}
-                    </p>
+
+            <div className="grid gap-6">
+              {/* KarpCore */}
+              <div className="bg-gradient-to-br from-circuit/10 to-pike/5 backdrop-blur-sm rounded-2xl border border-circuit/30 overflow-hidden hover:border-circuit/50 transition-all duration-300">
+                <div className="p-8 md:p-10">
+                  <div className="flex flex-col lg:flex-row gap-8 items-start">
+                    <div className="flex-1">
+                      <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-circuit/20 text-circuit mb-4">
+                        B2B Platform
+                      </span>
+                      <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">KarpCore</h3>
+                      <p className="text-circuit font-medium mb-4">
+                        {locale === 'nl'
+                          ? 'B2B-commerceplatform met merken als datadimensie'
+                          : 'B2B commerce platform with brands as a data dimension'}
+                      </p>
+                      <p className="text-gray-400 leading-relaxed max-w-2xl">
+                        {locale === 'nl'
+                          ? 'Eén headless Medusa-backend, meerdere sub-merken, fijnmazige dealer-toegang en een self-service portal — live op karpcore.com.'
+                          : 'One headless Medusa backend, multiple sub-brands, granular dealer access and a self-service portal — live at karpcore.com.'}
+                      </p>
+                    </div>
+                    <div className="flex flex-wrap gap-3 lg:flex-col lg:items-end">
+                      <Button variant="primary" href={`/${locale}/services/karpcore`}>
+                        {locale === 'nl' ? 'Bekijk case study' : 'View case study'}
+                        <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </Button>
+                      <a
+                        href="https://karpcore.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm text-circuit hover:underline"
+                      >
+                        karpcore.com
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </a>
+                    </div>
                   </div>
-                  <div className="flex flex-wrap gap-3 lg:flex-col lg:items-end">
-                    <Button variant="primary" href={`/${locale}/services/karpcore`}>
-                      {locale === 'nl' ? 'Bekijk case study' : 'View case study'}
-                      <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </Button>
-                    <a
-                      href="https://karpcore.com/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm text-circuit hover:underline"
-                    >
-                      karpcore.com
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
-                    </a>
+                </div>
+              </div>
+
+              {/* Fit in de Buurt */}
+              <div className="bg-gradient-to-br from-pike/10 to-circuit/5 backdrop-blur-sm rounded-2xl border border-pike/30 overflow-hidden hover:border-pike/50 transition-all duration-300">
+                <div className="p-8 md:p-10">
+                  <div className="flex flex-col lg:flex-row gap-8 items-start">
+                    <div className="flex-1">
+                      <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-pike/20 text-pike mb-4">
+                        {locale === 'nl' ? 'Leadplatform' : 'Lead platform'}
+                      </span>
+                      <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">Fit in de Buurt</h3>
+                      <p className="text-pike font-medium mb-4">
+                        {locale === 'nl'
+                          ? 'Leadplatform voor lokale sportstudio\u2019s'
+                          : 'Lead platform for local fitness studios'}
+                      </p>
+                      <p className="text-gray-400 leading-relaxed max-w-2xl">
+                        {locale === 'nl'
+                          ? 'Landingspagina\u2019s, een portaal om leads op te volgen, een gids op postcode en facturatie — in acht dagen van leeg scherm naar de eerste klant live op fitindebuurt.nl.'
+                          : 'Landing pages, a portal to follow up leads, a postcode guide and invoicing — from empty screen to first customer live on fitindebuurt.nl in eight days.'}
+                      </p>
+                    </div>
+                    <div className="flex flex-wrap gap-3 lg:flex-col lg:items-end">
+                      <Button variant="primary" href={`/${locale}/services/fitindebuurt`}>
+                        {locale === 'nl' ? 'Bekijk case study' : 'View case study'}
+                        <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </Button>
+                      <a
+                        href="https://fitindebuurt.nl"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm text-pike hover:underline"
+                      >
+                        fitindebuurt.nl
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>

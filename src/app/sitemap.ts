@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/services/marketing',
     '/services/app-development',
     '/services/karpcore',
+    '/services/fitindebuurt',
     '/docs',
     '/contact',
     '/privacy/feedmapperpro',
